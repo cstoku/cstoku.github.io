@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Toku&#39;s Blog </title>
-    <link>http://blog.sce-toku.jp/tags/type-hints/index.xml</link>
+    <link>http://www.sce-toku.jp/tags/type-hints/index.xml</link>
     <language>en-us</language>
     <author>CS_Toku</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>Python3.5のType Hintについて</title>
-          <link>http://blog.sce-toku.jp/blog/2015/12/23/python-typehints/</link>
+          <link>http://www.sce-toku.jp/blog/2015/12/23/python-typehints/</link>
           <pubDate>Wed, 23 Dec 2015 02:05:50 JST</pubDate>
           <author>CS_Toku</author>
-          <guid>http://blog.sce-toku.jp/blog/2015/12/23/python-typehints/</guid>
+          <guid>http://www.sce-toku.jp/blog/2015/12/23/python-typehints/</guid>
           <description>
 
 &lt;p&gt;この記事は&lt;a href=&#34;http://www.adventar.org/calendars/846#list-2015-12-23&#34;&gt;Python Advent Calendar 2015&lt;/a&gt;の23日目の記事です。&lt;/p&gt;

@@ -1,4 +1,4 @@
-baseurl = "http://blog.sce-toku.jp/"
+baseurl = "http://www.sce-toku.jp/"
 languageCode = "ja"
 title = "Toku's Blog"
 canonifyurls = true
@@ -13,4 +13,4 @@ ignoreFiles = [ "\\.un~$" ]
 
 [Permalinks]
   post = "/blog/:year/:month/:day/:filename/"
-  slide = "/slide/:filename/"
+  slide = "/slide/:year/:filename/"
