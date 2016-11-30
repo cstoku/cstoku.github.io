@@ -1,5 +1,5 @@
 +++
-date = "2015-12-24T02:05:50+09:00"
+date = "2015-12-23T02:05:50+09:00"
 title = "Python3.5のType Hintについて"
 
 description = ""
