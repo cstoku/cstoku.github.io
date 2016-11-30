@@ -6,16 +6,16 @@
     <language>en-us</language>
     <author>CS_Toku</author>
     <rights>(C) 2015</rights>
-    <updated>2015-12-24 02:05:50 &#43;0900 JST</updated>
+    <updated>2015-12-23 02:05:50 &#43;0900 JST</updated>
 
     
       
         <item>
           <title>Python3.5のType Hintについて</title>
-          <link>http://blog.sce-toku.jp/blog/2015/12/24/python-typehints/</link>
-          <pubDate>Thu, 24 Dec 2015 02:05:50 JST</pubDate>
+          <link>http://blog.sce-toku.jp/blog/2015/12/23/python-typehints/</link>
+          <pubDate>Wed, 23 Dec 2015 02:05:50 JST</pubDate>
           <author>CS_Toku</author>
-          <guid>http://blog.sce-toku.jp/blog/2015/12/24/python-typehints/</guid>
+          <guid>http://blog.sce-toku.jp/blog/2015/12/23/python-typehints/</guid>
           <description>
 
 &lt;p&gt;この記事は&lt;a href=&#34;http://www.adventar.org/calendars/846#list-2015-12-23&#34;&gt;Python Advent Calendar 2015&lt;/a&gt;の23日目の記事です。&lt;/p&gt;
