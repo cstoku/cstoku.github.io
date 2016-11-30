@@ -2,46 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.sce-toku.jp/blog/2015/12/23/python-typehints/</loc>
+    <loc>http://www.sce-toku.jp/blog/2015/12/23/python-typehints/</loc>
     <lastmod>2015-12-23T02:05:50+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sce-toku.jp/categories/</loc>
+    <loc>http://www.sce-toku.jp/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sce-toku.jp/post/</loc>
-    <lastmod>2015-12-23T02:05:50+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.sce-toku.jp/categories/python/</loc>
+    <loc>http://www.sce-toku.jp/post/</loc>
     <lastmod>2015-12-23T02:05:50+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sce-toku.jp/tags/python3/</loc>
+    <loc>http://www.sce-toku.jp/categories/python/</loc>
     <lastmod>2015-12-23T02:05:50+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sce-toku.jp/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.sce-toku.jp/</loc>
+    <loc>http://www.sce-toku.jp/tags/python3/</loc>
     <lastmod>2015-12-23T02:05:50+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sce-toku.jp/tags/type-hints/</loc>
+    <loc>http://www.sce-toku.jp/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sce-toku.jp/</loc>
+    <lastmod>2015-12-23T02:05:50+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sce-toku.jp/tags/type-hints/</loc>
     <lastmod>2015-12-23T02:05:50+09:00</lastmod>
     <priority>0</priority>
   </url>
