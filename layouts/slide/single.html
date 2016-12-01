@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {{ .Hugo.Generator }}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/slide/{{ .Params.style }}.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .Site.BaseURL }}/index.xml">
+
+        <title>{{ .Title }} - {{ .Site.Title }}</title>
+        <meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}">
+        <meta property="og:type" content="article">
+
+        <meta property="og:url" content="{{ .Permalink }}">
+        {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+        {{ with .Params.image }}<meta property="og:image" content="{{ $.Site.BaseURL }}images/{{ . }}">{{ end }}
+
+    </head>
+    <body>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/contrib/auto-render.min.js"></script>
+        <script type="text/javascript">
+            var slideshow = remark.create({
+                source: '{{ .Content }}',
+                ratio: '16:9',
+                highlightStyle: '{{ .Params.highlight_style }}',
+                highlightLines: true,
+                countIncrementalSlides: false
+            }, function(){
+                renderMathInElement(document.body)
+            });
+        </script>
+    </body>
+<html>
