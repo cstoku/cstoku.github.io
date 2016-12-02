@@ -1,0 +1,7 @@
+{{ if eq .Site.Params.environment "prod" }}
+<script type="text/javascript">
+    if(location.protocol == 'http:') {
+        location.replace(location.href.replace(/http:/, 'https:'));
+    }
+</script>
+{{ end }}

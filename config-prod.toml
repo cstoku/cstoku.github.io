@@ -1,4 +1,4 @@
-baseurl = "http://www.sce-toku.jp/"
+baseurl = "https://www.sce-toku.jp/"
 languageCode = "ja"
 title = "Toku's Blog"
 canonifyurls = true
@@ -11,7 +11,7 @@ ignoreFiles = [ "\\.un~$" ]
   disqusShortname = "cs-toku"
   GoogleAnalyticsUserID = "UA-71075507-1"
 
-  environment = "dev"
+  environment = "prod"
 
 [Permalinks]
   post = "/blog/:year/:month/:day/:filename/"

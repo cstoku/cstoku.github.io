@@ -27,6 +27,7 @@
     {{ with .Params.image }}<meta property="og:image" content="{{ $.Site.BaseURL }}images/{{ . }}">{{ end }}
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/hybrid.min.css">
+    {{ partial "redirect_http.html" . }}
   </head>
 
   <body>
