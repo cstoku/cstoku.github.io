@@ -1,4 +1,4 @@
-baseurl = "http://www.sce-toku.jp/"
+baseurl = "https://www.sce-toku.jp/"
 languageCode = "ja"
 title = "Toku's Blog"
 canonifyurls = true
