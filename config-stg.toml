@@ -2,7 +2,6 @@ baseurl = "http://www.sce-toku.jp/"
 languageCode = "ja"
 title = "Toku's Blog"
 canonifyurls = true
-buildDrafts = true
 
 ignoreFiles = [ "\\.un~$" ]
 

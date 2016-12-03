@@ -2,7 +2,7 @@
 date = "2015-12-23T02:05:50+09:00"
 title = "Python3.5のType Hintについて"
 
-description = ""
+description = "Python3.5のType Hintについて簡単に解説"
 
 tags = [
     "Python3",
@@ -12,6 +12,9 @@ tags = [
 categories = [
     "Python",
 ]
+
+image = "header.png"
+
 +++
 
 
