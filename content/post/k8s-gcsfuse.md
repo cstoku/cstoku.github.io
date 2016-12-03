@@ -1,7 +1,7 @@
 +++
 date = "2016-12-03T23:03:12+09:00"
 title = "GKEでCloud Storageをマウントしてみる"
-draft = true
+draft = false
 categories = [
   "GKE",
   "Kubernetes",
@@ -279,12 +279,12 @@ Zoneはasia-northeast1-aです。
 
 {{< img src="time_per_req.png" >}}
 
-| クラスタ名　 | File1   | 　　File2  |
-|:-------------|--------:|-----------:|
-| Cluster1     | 12.985  | 59.364     |
-| Cluster2     | 12.320  | 46.882     |
-| Cluster3     | 8.962   | 45.347     |
-| Cluster4     | 5.422   | 45.114     |
+| クラスタ名 | File1   | File2  |
+|:-----------|--------:|-------:|
+| Cluster1   | 12.985  | 59.364 |
+| Cluster2   | 12.320  | 46.882 |
+| Cluster3   | 8.962   | 45.347 |
+| Cluster4   | 5.422   | 45.114 |
 
 
 ## 所感
