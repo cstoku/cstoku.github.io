@@ -1,5 +1,4 @@
-<div class="single">
-  {{ partial "default_head.html" . }}
+{{ partial "default_head.html" . }}
 
   <div class="row">
     <div class="col-sm-9">
@@ -12,7 +11,7 @@
         <meta itemprop="description" content="{{ .Summary }}">
         <meta itemprop="url" content="{{ .Permalink }}">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}" />
+          <meta itemprop="url" content="{{ $.Site.BaseURL }}{{ with .Params.image }}media/{{ $.File.Dir }}{{ $.File.BaseFileName }}/{{ . }}{{ else }}images/default.jpg{{ end }}" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
@@ -78,5 +77,4 @@
 
   </div>
 
-  {{ partial "default_foot.html" . }}
-</div>
+{{ partial "default_foot.html" . }}
