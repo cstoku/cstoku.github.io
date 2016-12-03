@@ -263,7 +263,7 @@ Zoneはasia-northeast1-aです。
 上記のクラスタにデプロイしてみて500リクエスト、並列数10でリクエストを送ってみて、
 10Byteほどのテキストファイル(File1)と300KBほどの画像ファイル(File2)をレスポンスとして返してもらいます。
 
-## Requests per sec
+## Requests per second
 
 {{< img src="req_per_sec.png" >}}
 
@@ -275,7 +275,7 @@ Zoneはasia-northeast1-aです。
 | Cluster4     | 5.422   | 45.114     |
 
 
-## Requests per sec
+## Time per request
 
 {{< img src="time_per_req.png" >}}
 
