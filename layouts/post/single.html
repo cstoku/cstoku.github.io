@@ -27,9 +27,7 @@
         <div itemprop="author" itemscope itemtype="https://schema.org/Person">
           <meta itemprop="name" content="{{ .Site.Params.Author }}">
         </div>
-<!--
-        <div class="image" style="background-image: url({{ .Site.BaseURL }}media/{{ .File.Dir }}{{ .File.BaseFileName }}/{{ . }});"></div>
--->
+
         {{ with .Params.image }}
         <div class="image" style="background-image: url({{ $.Site.BaseURL }}media/{{ $.File.Dir }}{{ $.File.BaseFileName }}/{{ . }});"></div>
         {{ end }}

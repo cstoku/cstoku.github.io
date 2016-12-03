@@ -8,8 +8,6 @@ ignoreFiles = [ "\\.un~$" ]
 [Params]
   subtitle = "とあるエンジニアの備忘録"
   Author = "CS_Toku"
-  disqusShortname = "cs-toku"
-  GoogleAnalyticsUserID = "UA-71075507-1"
 
   environment = "dev"
 
