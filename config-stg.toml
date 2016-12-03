@@ -1,0 +1,18 @@
+baseurl = "http://www.sce-toku.jp/"
+languageCode = "ja"
+title = "Toku's Blog"
+canonifyurls = true
+
+ignoreFiles = [ "\\.un~$" ]
+
+[Params]
+  subtitle = "とあるエンジニアの備忘録"
+  Author = "CS_Toku"
+  disqusShortname = "cs-toku"
+  GoogleAnalyticsUserID = "UA-71075507-1"
+
+  environment = "dev"
+
+[Permalinks]
+  post = "/blog/:year/:month/:day/:filename/"
+  slide = "/slide/:year/:filename/"
