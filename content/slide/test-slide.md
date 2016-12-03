@@ -2,6 +2,8 @@
 date = "2016-12-02T00:46:50+09:00"
 title = "test slide!!"
 
+draft = true
+
 description = "remark.js slide testing!"
 tags = []
 categories = "Slide"
