@@ -52,7 +52,7 @@ image = "header.svg"
 をするだけです。
 コマンドではこんな感じでやってます。
 
-```
+```sh
 gsutil mb gs://bucket-name/
 gsutil defacl ch -u AllUsers:R gs://bucket-name
 gsutil -m rsync -d -r public/ gs://bucket-name/
