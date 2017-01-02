@@ -13,7 +13,7 @@ categories = [
     "Python",
 ]
 
-image = "header.png"
+image = "header.svg"
 
 +++
 

@@ -3,7 +3,7 @@ description = "GCEでインスタンスの立ち上げからプロビジョニ�
 draft = false
 title = "GCEの構築もAnsibleでやろうとした話"
 date = "2017-01-02T17:22:14+09:00"
-image = "header.png"
+image = "header.svg"
 categories = [
   "ansible"
 ]

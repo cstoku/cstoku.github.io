@@ -2,7 +2,7 @@
 title = "VMからDockerに乗り換えてみたらどうでしょう？"
 date = "2016-12-25T20:54:45+09:00"
 description = "VMからDockerのコンテナに置き替えた際の操作方法の解説"
-image = "header.png"
+image = "header.svg"
 tags = [
   "docker",
   "docker-compose",

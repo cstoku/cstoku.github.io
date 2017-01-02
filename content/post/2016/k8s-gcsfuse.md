@@ -14,7 +14,7 @@ tags = [
   "docker",
 ]
 description = "GKE上に動作しているコンテナにCloud Storageのバケットをマウントしてみた。"
-image = "header.png"
+image = "header.svg"
 
 +++
 
