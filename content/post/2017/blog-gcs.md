@@ -35,7 +35,7 @@ image = "header.svg"
 
 のサービスを使用しています。以下、構成図です。
 
-{{< img src="blog-arch.svg" >}}
+{{< img src="blog-arch.png" >}}
 
 まぁ、パッと見はよくある構成ですね。
 

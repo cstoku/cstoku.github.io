@@ -1,7 +1,7 @@
 <!-- image -->
 <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
     {{ with .Get "link"}}<a href="{{.}}">{{ end }}
-        <img src={{ if or (hasPrefix (.Get "src") "/") (hasPrefix (.Get "src") "http") }}"{{ .Get "src" }}"{{ else }}"{{ .Page.Site.BaseURL }}media/{{ .Page.File.Dir }}{{ .Page.File.BaseFileName }}/{{ .Get "src" }}"{{ end }} {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }} />
+        <img src={{ if or (hasPrefix (.Get "src") "/") (hasPrefix (.Get "src") "http") }}"{{ .Get "src" }}"{{ else }}"{{ .Page.Site.BaseURL }}media/{{ .Page.File.Dir }}{{ .Page.File.BaseFileName }}/{{ .Get "src" }}"{{ end }} {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }} data-action="zoom" />
     {{ if .Get "link"}}</a>{{ end }}
     {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
     <figcaption>{{ if isset .Params "title" }}
