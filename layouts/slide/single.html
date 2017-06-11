@@ -24,7 +24,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/contrib/auto-render.min.js"></script>
         <script type="text/javascript">
             var slideshow = remark.create({
-                source: '{{ .Content }}',
+                source: '{{ .RawContent }}',
                 ratio: '16:9',
                 highlightStyle: '{{ .Params.highlight_style }}',
                 highlightLines: true,

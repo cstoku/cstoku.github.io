@@ -7,7 +7,6 @@ draft = true
 description = "remark.js slide testing!"
 tags = []
 categories = "Slide"
-markup = "raw"
 
 style = "simple"
 highlight_style = "monokai"
