@@ -18,12 +18,6 @@ buildDrafts = true
 
 ignoreFiles = [ "\\.un~$" ]
 
-[Params]
-subtitle = "とあるエンジニアの備忘録"
-Author = "CS_Toku"
-
-environment = "dev"
-
 [Permalinks]
 post = "/blog/:year/:month/:day/:filename/"
 slide = "/slide/:year/:filename/"
@@ -67,8 +61,8 @@ optin = true #opt-in: true/false
 # menu for changing language. This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md. It only works if DefaultContentLanguageInSubdir = true
 switchlang = false
 # You can use markdown here.
-BrandImage = "http://blog.appernetic.io/images/apperneticlogo.png" #top header brand image.
-brand = "My awsome blog" # brand image alt text.
+brandImage = ""
+brand = ""
 topline = "few words about your site"
 footline = "code with <i class='fa fa-heart'></i>"
 
@@ -108,98 +102,36 @@ plainIdAnchors = true
 extensions = []
 extensionmask = []
 
-# Menus
-# If you want active menu items highlighted for internal pages don't add them here, they need to be added in each files front matter.
-# like this:
-#[menu]
-#     [menu.main]
-#        name = "Showcase"
-#        weight = 3
-#        identifier = "showcase"
-# i18n menus. A menu will be added for each language to the right in the top menu. This menu will switch to the selected language. Remember to add the corresponding language in pathnamereplace.js.
-#[[Languages.sv.menu.switchlang]]
-#  name = "English"
-#  identifier = ""
-#  weight = 4
-#  url = "en"
-
-
 [Languages]
 [Languages.ja]
 languageCode = "ja"
 weight = 1
 copyright = "(c) 2016 Copyright my blog"
-title = "My blog" # Site title
-
-[[Languages.ja.menu.main]]
-name = "Blog"
-pre = ""
-weight = 2
-idjatifier = "post"
-url = "/post/"
 
 [[Languages.ja.menu.main]]
 name = "About"
 weight = 1
 idjatifier = ""
-url = "https://appernetic.io/app/#/about"
+url = "/"
 pre = "<i class='fa fa-road'></i>"
 
-[[Languages.ja.menu.main]]
-name = "Dashboard"
-idjatifier = ""
-weight = 3
-url = "https://appernetic.io/app/"
-
-[[Languages.ja.menu.footer]] # add  links to the bottom right corner.
-name = "Disclaimer"
-pre = "<i>&middot;</i>"
-idjatifier = "disclaimer"
-weight = 1
-url = "/disclaimer/"
-
-[[Languages.ja.menu.footer]]
-name = "Terms"
-idjatifier = "terms"
-weight = 2
-url = "/terms/"
+# add  links to the bottom right corner.
+# [[Languages.ja.menu.footer]]
+# name = "Footer"
+# pre = "<i>&middot;</i>"
+# idjatifier = "footer"
+# weight = 1
+# url = "/footer/"
 
 [Languages.en]
 languageCode = "en"
 weight = 1
 copyright = "(c) 2016 Copyright my blog"
-title = "My blog" # Site title
-
-[[Languages.en.menu.main]]
-name = "Blog"
-pre = ""
-weight = 2
-identifier = "post"
-url = "/post/"
 
 [[Languages.en.menu.main]]
 name = "About"
 weight = 1
 identifier = ""
-url = "https://appernetic.io/app/#/about"
+url = "/"
 pre = "<i class='fa fa-road'></i>"
-
-[[Languages.en.menu.main]]
-name = "Dashboard"
-identifier = ""
-weight = 3
-url = "https://appernetic.io/app/"
-
-[[Languages.en.menu.footer]] # add  links to the bottom right corner.
-name = "Disclaimer"
-pre = "<i>&middot;</i>"
-identifier = "disclaimer"
-weight = 1
-url = "/disclaimer/"
-
-[[Languages.en.menu.footer]]
-name = "Terms"
-identifier = "terms"
-weight = 2
-url = "/terms/"
 
