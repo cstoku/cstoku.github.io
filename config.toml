@@ -43,25 +43,6 @@ email = "cs.toku.mail@gmail.com"
 [params.theme]
 name = "paper"
 
-[params.popover]
-# This is a highly configurable popover form.
-enablepopover = true #enable or disable popover: true/false.
-posturl = "https://zapier.com/hooks/catch/1227563/" # Your zapier post hook.
-headerimage = "//placehold.it/1000x600"
-expirecookie = 5 #show it again after number of days to visitors that has not subscribed.
-cookiename = "mycookie1" #give the cookie a unique name variable (avoid spaces and strange characters).
-signupheader = "Join Our Newsletter"
-showmodaltimeout = 10000 #show popover modal after time interval in milliseconds.
-mouseleave = true #show popover when mouse leaves window: true/false.
-modalsize = "" #lg or sm. Empty is md. If phone is detected lg is used.
-imagedescription = "Placeholder image for this popover modal optin form"
-signuptext = "Signup today for free and be the first to get notified on new updates."
-inputplaceholder = "Enter your email"
-submitbutton = "Subscribe"
-successmessage = "Thanks for your subscription!"
-errormessage = "Submitting form failed!"
-optin = true #opt-in: true/false
-
 [params]
 # menu for changing language. This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md. It only works if DefaultContentLanguageInSubdir = true
 switchlang = false
@@ -74,8 +55,6 @@ footline = "code with <i class='fa fa-heart'></i>"
 # Default (if omitted) is "Home".
 home = "home"
 
-mailmunchid = "" # Mailmunch site id
-sumomeid = "" # Sumome id
 mathjax = "2.7.1" # cdnjs hosted version; empty string to disable mathjax
 
 # Show a sidebar menu
