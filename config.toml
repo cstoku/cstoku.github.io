@@ -14,6 +14,11 @@ metaDataFormat = "toml"
 paginate = 10
 paginatePath = "page"
 
+# Pygment
+pygmentsCodeFences = true
+pygmentsOptions = ""
+pygmentsStyle = "native"
+
 buildDrafts = true
 
 ignoreFiles = [ "\\.un~$" ]
@@ -75,9 +80,6 @@ mathjax = "2.7.1" # cdnjs hosted version; empty string to disable mathjax
 
 # Show a sidebar menu
 showRightSidebar = true
-# Select a syntax highlight.
-# Check the static/css/highlight directory for options.
-highlight = "default"
 
 # Google Analytics.
 # googleAnalytics = "UA-71075507-1"
