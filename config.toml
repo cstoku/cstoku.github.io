@@ -80,7 +80,7 @@ showRightSidebar = true
 highlight = "default"
 
 # Google Analytics.
-googleAnalytics = "Your Google Analytics tracking code"
+# googleAnalytics = "UA-71075507-1"
 
 # Sidebar social links.
 github = "cstoku"
