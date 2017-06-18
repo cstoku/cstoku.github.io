@@ -60,7 +60,6 @@ optin = true #opt-in: true/false
 [params]
 # menu for changing language. This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md. It only works if DefaultContentLanguageInSubdir = true
 switchlang = false
-# You can use markdown here.
 brandImage = ""
 brand = ""
 topline = "few words about your site"
@@ -84,14 +83,14 @@ highlight = "default"
 googleAnalytics = "Your Google Analytics tracking code"
 
 # Sidebar social links.
-github = "Myprofile" # Your Github profile ID
-bitbucket = "" # Your Bitbucket profile ID
-linkedin = "" # Your LinkedIn profile ID (from public URL)
-googleplus = "Myprofile" # Your Google+ profile ID
-facebook = "Myprofile" # Your Facebook profile ID
-twitter = "Myprofile" # Your Twitter profile ID
-youtube = ""  # Your Youtube channel ID
-flattr = ""  # populate with your flattr uid
+github = "cstoku"
+bitbucket = ""
+linkedin = "cs.toku.mail@gmail.com"
+googleplus = "cs.toku.mail@gmail.com"
+facebook = "takuya.tokuda.0122"
+twitter = "CS_Toku"
+youtube = ""
+flattr = ""
 
 [blackfriday]
 taskList = true
