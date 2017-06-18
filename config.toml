@@ -131,34 +131,34 @@ weight = 1
 copyright = "(c) 2016 Copyright my blog"
 title = "My blog" # Site title
 
-[[Languages.ja.mjau.main]]
+[[Languages.ja.menu.main]]
 name = "Blog"
 pre = ""
 weight = 2
 idjatifier = "post"
 url = "/post/"
 
-[[Languages.ja.mjau.main]]
+[[Languages.ja.menu.main]]
 name = "About"
 weight = 1
 idjatifier = ""
 url = "https://appernetic.io/app/#/about"
 pre = "<i class='fa fa-road'></i>"
 
-[[Languages.ja.mjau.main]]
+[[Languages.ja.menu.main]]
 name = "Dashboard"
 idjatifier = ""
 weight = 3
 url = "https://appernetic.io/app/"
 
-[[Languages.ja.mjau.footer]] # add  links to the bottom right corner.
+[[Languages.ja.menu.footer]] # add  links to the bottom right corner.
 name = "Disclaimer"
 pre = "<i>&middot;</i>"
 idjatifier = "disclaimer"
 weight = 1
 url = "/disclaimer/"
 
-[[Languages.ja.mjau.footer]]
+[[Languages.ja.menu.footer]]
 name = "Terms"
 idjatifier = "terms"
 weight = 2
