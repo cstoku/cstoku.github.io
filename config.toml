@@ -94,10 +94,13 @@ youtube = ""  # Your Youtube channel ID
 flattr = ""  # populate with your flattr uid
 
 [blackfriday]
+taskList = true
+smartypants = true
 angledQuotes = true
 fractions = false
-hrefTargetBlank = false
+smartDashes = true
 latexDashes = true
+hrefTargetBlank = false
 plainIdAnchors = true
 extensions = []
 extensionmask = []
