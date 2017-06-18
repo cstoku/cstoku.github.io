@@ -203,32 +203,3 @@ identifier = "terms"
 weight = 2
 url = "/terms/"
 
-[Languages.sv]
-languageCode = "sv"
-weight = 2
-title = "Min blog" # Site title
-copyright = "(c) 2016 Alla rättigheter"
-
-[[Languages.sv.menu.main]]
-name = "Bloggen"
-pre = ""
-weight = 2
-identifier = "post"
-url = "/sv/post/"
-
-[[Languages.sv.menu.footer]] # add  links to the bottom right corner.
-name = "Ansvarsfriskrivning"
-pre = "<i>&middot;</i>"
-identifier = "friskrivning"
-weight = 1
-url = "/sv/friskrivning/"
-
-[[Languages.sv.menu.footer]]
-name = "Vilkor"
-identifier = "vilkor"
-weight = 2
-url = "/sv/vilkor/"
-
-[Languages.sv.taxonomies]
-tag = "Taggar"
-topic = "Ämne"
