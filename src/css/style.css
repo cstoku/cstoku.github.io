@@ -1,7 +1,6 @@
-@import "variables.scss";
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import "bootswatch.scss";
+@import "variables.css";
+@import "bootstrap.css";
+@import "bootswatch.css";
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
@@ -20,12 +19,12 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
-  //margin-top: 3rem;
+  /* margin-top: 3rem; */
   width: 100%;
   text-align: left;
-  //margin-top: 20px;
+  /* margin-top: 20px; */
   padding-bottom: 1rem;
-  //  padding-top: 1rem;
+  /*   padding-top: 1rem; */
 }
 
 body > .container {

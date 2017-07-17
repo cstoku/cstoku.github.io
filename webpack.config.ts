@@ -36,28 +36,20 @@ module.exports = [
                 loader: 'postcss-loader',
                 options: {
                   plugins: (loader) => [
-                    require('autoprefixer')(),
+                    require("postcss-import")({
+                      addDependencyTo: webpack,
+                      path: [
+                        'node_modules/bootstrap/dist/css'
+                      ]
+                    }),
+                    require("postcss-url")(),
+                    require("postcss-cssnext")(),
+                    require("postcss-browser-reporter")(),
+                    require("postcss-reporter")(),
+                    require("postcss-math")(),
                   ]
                 }
               }
-            ]
-          }),
-        },
-        {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-              'css-loader',
-              {
-                loader: 'postcss-loader',
-                options: {
-                  plugins: (loader) => [
-                    require('autoprefixer')(),
-                  ]
-                }
-              },
-              'sass-loader',
             ]
           }),
         },
@@ -76,7 +68,7 @@ module.exports = [
   },
   {
     entry: {
-      style: './src/scss/style.amp.scss'
+      style: './src/css/style.amp.css'
     },
     output: {
       filename: 'dummy',
@@ -94,28 +86,20 @@ module.exports = [
                 loader: 'postcss-loader',
                 options: {
                   plugins: (loader) => [
-                    require('autoprefixer')(),
+                    require("postcss-import")({
+                      addDependencyTo: webpack,
+                      path: [
+                        'node_modules/bootstrap/dist/css'
+                      ]
+                    }),
+                    require("postcss-url")(),
+                    require("postcss-cssnext")(),
+                    require("postcss-browser-reporter")(),
+                    require("postcss-reporter")(),
+                    require("postcss-math")(),
                   ]
                 }
               }
-            ]
-          })
-        },
-        {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-              'css-loader',
-              {
-                loader: 'postcss-loader',
-                options: {
-                  plugins: (loader) => [
-                    require('autoprefixer')(),
-                  ]
-                }
-              },
-              'sass-loader',
             ]
           })
         },

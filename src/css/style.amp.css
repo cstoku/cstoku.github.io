@@ -1,0 +1,6 @@
+@import "variables.css";
+
+.hello {
+  color: var(--link-color);
+  font-size: var(--input-height-large);
+}
