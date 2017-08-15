@@ -17,3 +17,10 @@ highlight_style = "monokai"
 ---
 
 ## hogehoge
+
+```sh
+docker run -it alpine ash
+```
+\\(\KaTeX{}\\) in remark
+
+$$e^{i\pi} + 1 = 0$$
