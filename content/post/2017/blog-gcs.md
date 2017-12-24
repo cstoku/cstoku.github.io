@@ -1,18 +1,20 @@
-+++
-categories = [
-  "gcp",
-]
-tags = [
-  "gcp",
-  "gcs",
-]
-description = "ブログ環境をバックエンドバケットなどを使って構築してみた"
-draft = false
-title = "GCPのバックエンドバケットを使用してブログの環境を構築してみた"
-date = "2017-01-02T23:23:12+09:00"
-image = "header.svg"
+---
+title: GCPのバックエンドバケットを使用してブログの環境を構築してみた
+description: ブログ環境をバックエンドバケットなどを使って構築してみた
 
-+++
+date: 2017-01-02T23:23:12+09:00
+draft: false
+
+categories:
+  - gcp
+
+tags:
+  - gcp
+  - gcs
+
+image: header.svg
+
+---
 
 # はじめに
 

@@ -1,22 +1,24 @@
-+++
-date = "2016-12-03T23:03:12+09:00"
-title = "GKEでCloud Storageをマウントしてみる"
-draft = false
-categories = [
-  "GKE",
-  "Kubernetes",
-]
-tags = [
-  "GKE",
-  "Kubernetes",
-  "GCS",
-  "gcsfuse",
-  "docker",
-]
-description = "GKE上に動作しているコンテナにCloud Storageのバケットをマウントしてみた。"
-image = "header.svg"
+---
+title: GKEでCloud Storageをマウントしてみる
+description: GKE上に動作しているコンテナにCloud Storageのバケットをマウントしてみた。
 
-+++
+date: 2016-12-03T23:03:12+09:00
+draft: false
+
+categories:
+  - GKE
+  - Kubernetes
+
+tags:
+  - GKE
+  - Kubernetes
+  - GCS
+  - gcsfuse
+  - docker
+
+image: header.svg
+
+---
 
 SGEのGriphoneでインフラエンジニアをしている德田です。
 

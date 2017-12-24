@@ -1,18 +1,20 @@
-+++
-title = "VMからDockerに乗り換えてみたらどうでしょう？"
-date = "2016-12-25T20:54:45+09:00"
-description = "VMからDockerのコンテナに置き替えた際の操作方法の解説"
-image = "header.svg"
-tags = [
-  "docker",
-  "docker-compose",
-]
-draft = false
-categories = [
-  "docker",
-]
+---
+title: VMからDockerに乗り換えてみたらどうでしょう？
+description: VMからDockerのコンテナに置き替えた際の操作方法の解説
 
-+++
+date: 2016-12-25T20:54:45+09:00
+draft: false
+
+categories:
+  - docker
+
+tags:
+  - docker
+  - docker-compose
+
+image: header.svg
+
+---
 
 この記事は[Docker Advent Calandar 2016](http://qiita.com/advent-calendar/2016/docker)の22日目の記事です。(大遅刻)
 

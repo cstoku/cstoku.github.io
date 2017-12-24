@@ -1,18 +1,20 @@
-+++
-description = "GCEでインスタンスの立ち上げからプロビジョニングまでをAnsibleでやろうとしたけど辛くなったお話"
-draft = false
-title = "GCEの構築もAnsibleでやろうとした話"
-date = "2017-01-02T17:22:14+09:00"
-image = "header.svg"
-categories = [
-  "ansible"
-]
-tags = [
-  "python",
-  "ansible",
-]
+---
+title: GCEの構築もAnsibleでやろうとした話
+description: GCEでインスタンスの立ち上げからプロビジョニングまでをAnsibleでやろうとしたけど辛くなったお話
 
-+++
+date: 2017-01-02T17:22:14+09:00
+draft: false
+
+categories:
+  - ansible
+
+tags:
+  - python
+  - ansible
+
+image: header.svg
+
+---
 
 この記事は[Python Advent Calandar 2016](http://qiita.com/advent-calendar/2016/python)の23日目の記事です。(大遅刻その2)
 

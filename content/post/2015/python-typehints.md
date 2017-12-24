@@ -1,21 +1,20 @@
-+++
-date = "2015-12-23T02:05:50+09:00"
-title = "Python3.5のType Hintについて"
+---
+title: Python3.5のType Hintについて
+description: Python3.5のType Hintについて簡単に解説
 
-description = "Python3.5のType Hintについて簡単に解説"
+date: 2015-12-23T02:05:50+09:00
+draft: false
 
-tags = [
-    "Python3",
-    "Type Hints"
-]
+categories:
+  - Python
 
-categories = [
-    "Python",
-]
+tags:
+  - Python3
+  - Type Hints
 
-image = "header.svg"
+image: header.svg
 
-+++
+---
 
 
 この記事は[Python Advent Calendar 2015](http://www.adventar.org/calendars/846#list-2015-12-23)の23日目の記事です。

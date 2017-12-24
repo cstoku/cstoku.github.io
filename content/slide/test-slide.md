@@ -1,16 +1,19 @@
-+++
-date = "2016-12-02T00:46:50+09:00"
-title = "test slide!!"
+---
+title: test slide!!
+description: remark.js slide testing!
 
-draft = true
+date: 2016-12-02T00:46:50+09:00
+draft: true
 
-description = "remark.js slide testing!"
-tags = []
-categories = "Slide"
+categories:
+  - Slide
 
-style = "simple"
-highlight_style = "monokai"
-+++
+tags:
+
+style: simple
+highlight_style: monokai
+
+---
 
 class: center, middle
 
