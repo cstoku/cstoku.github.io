@@ -1,12 +1,13 @@
-+++
-description = ""
+---
+title: {{ replace .TranslationBaseName "-" " " | title }}
+description: ""
 
-tags = [
-    ""
-]
+date: {{ .Date }}
+draft: true
 
-categories = [
-    ""
-]
-draft = true
-+++
+categories: []
+
+tags: []
+
+---
+
