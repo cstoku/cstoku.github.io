@@ -31,6 +31,9 @@ ignoreFiles: [ "\\.un~$" ]
 
 rssLimit: 15
 
+# dummy static folder
+staticDir: dummy
+
 taxonomies:
   - tag: tags
   - category: categories
