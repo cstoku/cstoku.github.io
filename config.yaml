@@ -1,0 +1,108 @@
+#
+# Hugo Parameters
+#
+baseURL: http://localhost/
+title: "Toku's Blog"
+
+buildDrafts: true
+buildFuture: true
+buildExpired: true
+
+canonifyURLs: true
+uglyURLs: true
+
+defaultContentLanguage: ja
+defaultContentLanguageInSubdir: false
+
+enableGitInfo: true
+enableRobotsTXT: true
+enableEmoji: true
+
+summaryLength: 70
+metaDataFormat: yaml
+
+paginate: 10
+paginatePath: "page"
+
+pygmentsStyle: "native"
+pygmentsUseClasses: false
+
+ignoreFiles: [ "\\.un~$" ]
+
+rssLimit: 15
+
+taxonomies:
+  - tag: tags
+  - category: categories
+  - level: level
+
+permalinks:
+  post: /blog/:year/:month/:filename/
+  slide: /slide/:year/:filename/
+
+#
+# Markdown Processer(Blackfriday) Options
+#
+blackfriday:
+  taskList: true
+  smartypants: true
+  smartypantsQuotesNBSP: false
+  angledQuotes: true
+  fractions: false
+  smartDashes: true
+  latexDashes: true
+  hrefTargetBlank: false
+  plainIDAnchors: true
+  extensions: []
+  extensionmask: []
+
+#
+# Output Formats
+#
+outputs:
+  home: ["HTML", "AMP", "RSS"]
+  page: ["HTML", "AMP"]
+
+#
+# Multilingual Settings
+#
+languages:
+  en:
+    languageCode: en
+    languageName: "English"
+    weight: 1
+    copyright: (c) 2016 Copyright my blog
+
+    menu:
+      main:
+        - name: "About"
+          url: "/"
+          weight: 1
+
+  ja:
+    languageCode: ja
+    languageName: "Japanese"
+    weight: 2
+    copyright: (c) 2016 Copyright my blog
+
+    #menu:
+    #  main:
+    #    - name: About
+    #      url: /
+    #      weight: 1
+
+#
+# Site Parameters
+#
+params:
+  # Sidebar social links.
+  github: cstoku
+  linkedin: cs.toku.mail@gmail.com
+  googleplus: cs.toku.mail@gmail.com
+  facebook: takuya.tokuda.0122
+  twitter: CS_Toku
+  youtube: ""
+  flattr: ""
+
+  # Google Analytics.
+  #googleAnalytics: UA-71075507-1
