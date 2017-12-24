@@ -43,6 +43,10 @@ permalinks:
   post: /blog/:year/:month/:filename/
   slide: /slide/:year/:filename/
 
+author:
+  name: Takuya Tokuda
+  email: cs.toku.mail@gmail.com
+
 #
 # Markdown Processer(Blackfriday) Options
 #
@@ -69,6 +73,7 @@ outputs:
 #
 # Multilingual Settings
 #
+languageCode: ja-jp
 languages:
   en:
     languageCode: en
