@@ -15,7 +15,7 @@ defaultContentLanguage: ja
 defaultContentLanguageInSubdir: false
 
 enableGitInfo: true
-enableRobotsTXT: true
+enableRobotsTXT: false
 enableEmoji: true
 
 summaryLength: 70
@@ -33,6 +33,11 @@ rssLimit: 15
 
 # dummy static folder
 staticDir: dummy
+disableKinds:
+  - RSS
+  - sitemap
+  - robotsTXT
+  - 404
 
 taxonomies:
   - tag: tags
