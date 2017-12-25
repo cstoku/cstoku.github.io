@@ -1,0 +1,15 @@
+!!! 5
+html
+  head
+    meta[charset="utf-8"]
+    
+    title
+        block title
+            | aaaaa
+
+  body
+    p test
+
+    block main
+
+    block footer

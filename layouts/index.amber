@@ -1,0 +1,7 @@
+extends _default/baseof
+
+block title
+    | #{Site.Title}
+
+block main
+  h1 Hogehoge
