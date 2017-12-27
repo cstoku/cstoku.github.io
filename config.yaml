@@ -8,9 +8,6 @@ buildDrafts: true
 buildFuture: true
 buildExpired: true
 
-canonifyURLs: true
-uglyURLs: true
-
 defaultContentLanguage: ja
 defaultContentLanguageInSubdir: false
 
@@ -44,13 +41,11 @@ taxonomies:
   - category: categories
   - level: level
 
-permalinks:
-  post: /blog/:year/:month/:filename/
-  slide: /slide/:year/:filename/
-
 author:
   name: Takuya Tokuda
   email: cs.toku.mail@gmail.com
+  page: /about/
+  about:
 
 #
 # Markdown Processer(Blackfriday) Options
@@ -78,11 +73,11 @@ outputs:
 #
 # Multilingual Settings
 #
-languageCode: ja-jp
+languageCode: ja
 languages:
   en:
     languageCode: en
-    languageName: "English"
+    languageName: English
     weight: 1
     copyright: (c) 2016 Copyright my blog
 
@@ -94,9 +89,10 @@ languages:
 
   ja:
     languageCode: ja
-    languageName: "Japanese"
+    languageName: Japanese
     weight: 2
     copyright: (c) 2016 Copyright my blog
+
 
     #menu:
     #  main:
@@ -108,14 +104,19 @@ languages:
 # Site Parameters
 #
 params:
-  # Sidebar social links.
   github: cstoku
   linkedin: cs.toku.mail@gmail.com
   googleplus: cs.toku.mail@gmail.com
-  facebook: takuya.tokuda.0122
-  twitter: CS_Toku
+  facebook:
+    id: takuya.tokuda.0122
+    uid: 100003789482934
+  twitter:
+    card_type: summary
+    id: CS_Toku
+    uid: 131178169
   youtube: ""
   flattr: ""
+  searchConsole: "0000000000"
 
   # Google Analytics.
-  #googleAnalytics: UA-71075507-1
+  googleAnalytics: UA-71075507-1
