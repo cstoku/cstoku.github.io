@@ -1,0 +1,25 @@
+$author_link = index(Site.Author, "page")
+if $author_link
+  link
+    [rel="author"]
+    [href=absLangURL($author_link)]
+
+block page_order
+  link
+    [rel="prev"]
+    [href="prev.html"]
+  link
+    [rel="next"]
+    [href="next.html"]
+
+each $page in Translations
+  link
+    [rel="alternate"]
+    [href=$page.Permalink]
+    [hreflang=$page.Lang]
+
+each $format in AlternativeOutputFormats
+  link
+    [rel=$format.Rel]
+    [type=$format.MediaType.Type]
+    [href=$format.Permalink]

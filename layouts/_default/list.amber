@@ -1,0 +1,9 @@
+extends baseof.amber
+
+block title
+  | #{Site.Title}
+
+block main
+  h1 AMP Page!!!!
+
+  p #{Kind}

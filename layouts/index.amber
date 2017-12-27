@@ -1,7 +1,7 @@
-extends _default/baseof
+extends _default/baseof.amber
 
 block title
-    | #{Site.Title}
+  | #{Site.Title}
 
 block main
-  h1 Hogehoge
+  h1 Normal Page!

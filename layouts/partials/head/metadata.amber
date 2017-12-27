@@ -1,0 +1,108 @@
+meta
+  [charset="utf-8"]
+meta
+  [name="viewport"]
+  [content="width=device-width,minimum-scale=1,initial-scale=1"]
+meta
+  [http-equiv="X-UA-Compatible"]
+  [content="IE=edge"]
+
+meta
+  [http-equiv="content-language"]
+  [content=Lang]
+meta
+  [name="language"]
+  [content=Language.LanguageName]
+
+$author_name = index(Site.Author, "name")
+if $author_name
+  meta
+    [name="author"]
+    [content=$author_name]
+
+if Description
+  meta
+    [name="description"]
+    [content=Description]
+
+if Params.tags
+  meta
+    [name="keywords"]
+    [content=delimit(Params.tags, ",")]
+
+// For OGP
+if Kind == "home"
+  meta
+    [property="og:title"]
+    [content=Site.Title]
+  meta
+    [property="og:type"]
+    [content="website"]
+else
+  meta
+    [property="og:title"]
+    [content=Title + " - " + Site.Title]
+  meta
+    [property="og:type"]
+    [content="article"]
+
+meta
+  [property="og:url"]
+  [content=OutputFormats.Get("HTML").Permalink]
+
+if Params.thumbnail
+  meta
+    [property="og:image"]
+    [content=Permalink + Params.thumbnail]
+
+if Description
+  meta
+    [property="og:description"]
+    [content=Description]
+
+// For Facebook
+meta
+  [property="fb:admins"]
+  [content=Site.Params.facebook.uid]
+meta
+  [property="article:author"]
+  [content=Site.Params.facebook.id]
+meta
+  [property="article:published_time"]
+  [content=PublishDate.Format("2006-01-02T15:04:05-07:00")]
+meta
+  [property="article:modified_time"]
+  [content=Lastmod.Format("2006-01-02T15:04:05-07:00")]
+if time("0001-01-01T00:00:00+00:00").Unix != ExpiryDate.Unix
+  meta
+    [property="article:expiration_time"]
+    [content=ExpiryDate.Format("2006-01-02T15:04:05-07:00")]
+
+if Params.categories
+  meta
+    [property="article:section"]
+    [content=index(Params.categories, 0)]
+
+each $tag in Params.tags
+  meta
+    [property="article:tag"]
+    [content=$tag]
+
+
+// For Twitter
+meta
+  [property="twitter:card"]
+  [content=Site.Params.twitter.card_type]
+meta
+  [property="twitter:site:id"]
+  [content=Site.Params.twitter.uid]
+meta
+  [property="twitter:creator:id"]
+  [content=Site.Params.twitter.uid]
+
+if Kind == "home"
+  meta
+    [name="google-site-verification"]
+    [content=Site.Params.searchConsole]
+
+#{Hugo.Generator}
