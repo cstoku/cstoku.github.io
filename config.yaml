@@ -37,9 +37,9 @@ disableKinds:
   - 404
 
 taxonomies:
-  - tag: tags
-  - category: categories
-  - level: level
+  tag: tags
+  category: categories
+  level: level
 
 author:
   name: Takuya Tokuda
