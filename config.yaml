@@ -67,7 +67,7 @@ blackfriday:
 # Output Formats
 #
 outputs:
-  home: ["HTML", "AMP", "RSS"]
+  home: ["HTML", "RSS"]
   page: ["HTML", "AMP"]
 
 #
