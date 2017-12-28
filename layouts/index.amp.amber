@@ -1,9 +1,0 @@
-extends _default/baseof.amp.amber
-
-block title
-  | #{Site.Title}
-
-block main
-  h1 AMP Page!!!!
-
-  p #{Kind}

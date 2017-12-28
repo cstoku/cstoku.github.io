@@ -3,8 +3,12 @@ extends baseof
 block title
   | #{Site.Title}
 
+block append head
+    import ../partials/head/amp/style
+    import ../partials/head/amp/scripts
+
 block main
-  h1 List Page!!!
+  h1 AMP Page!
 
   h2 Title: #{Title}
   h3 Description: #{Description}

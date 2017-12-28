@@ -1,13 +1,17 @@
 !!! 5
 html
+  [amp] ? OutputFormats.Get("amp") && ! AlternativeOutputFormats.Get("amp")
   [lang=Lang]
-  [prefix="og: http://ogp.me/ns#"]
 
   head
-    meta[charset="utf-8"]
+    [prefix="og: http://ogp.me/ns#  fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"]
 
     title
-        block title
+      block title
+
+    block head
+      import ../partials/head/metadata
+      import ../partials/head/link
 
   body
 

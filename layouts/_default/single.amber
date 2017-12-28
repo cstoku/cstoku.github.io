@@ -1,9 +1,12 @@
-extends baseof.amp.amber
+extends baseof
 
 block title
   | #{Site.Title}
 
 block main
-  h1 AMP Page!!!!
+  h1 Single Page!!!
+
+  h2 Title: #{Title}
+  h3 Description: #{Description}
 
   p #{Content}

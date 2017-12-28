@@ -4,9 +4,11 @@ block title
   | #{Site.Title}
 
 block main
-  h1 List Page!!!
+  h1 Taxonomy Terms Page!!!
 
   h2 Title: #{Title}
   h3 Description: #{Description}
 
   p #{Content}
+
+  p #{Data.Terms.ByCount}
