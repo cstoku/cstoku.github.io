@@ -3,6 +3,16 @@ extends baseof
 block title
   | #{Site.Title}
 
+block ogp_facebook
+  import ../partials/head/ogp/facebook/page
+
+block ogp_twitter
+  import ../partials/head/ogp/twitter/page
+
+block append link
+  import ../partials/head/link/pager
+
+
 block main
   h1 Single Page!!!
 

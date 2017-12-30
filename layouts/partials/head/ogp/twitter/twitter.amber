@@ -8,15 +8,6 @@ meta
   [property="twitter:creator:id"]
   [content=Site.Params.twitter.uid]
 
-if Kind == "home"
-  meta
-    [property="twitter:title"]
-    [content=Site.Title]
-else
-  meta
-    [property="twitter:title"]
-    [content=Title + " - " + Site.Title]
-
 if Description
   meta
     [property="twitter:description"]

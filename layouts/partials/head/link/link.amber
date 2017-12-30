@@ -4,14 +4,6 @@ if $author_link
     [rel="author"]
     [href=absLangURL($author_link)]
 
-block page_order
-  link
-    [rel="prev"]
-    [href="prev.html"]
-  link
-    [rel="next"]
-    [href="next.html"]
-
 each $page in Translations
   link
     [rel="alternate"]

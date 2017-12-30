@@ -27,12 +27,4 @@ if Params.tags
     [name="keywords"]
     [content=delimit(Params.tags, ",")]
 
-if Kind == "home" && Site.Params.searchConsole
-  meta
-    [name="google-site-verification"]
-    [content=Site.Params.searchConsole]
-
-import ogp/facebook/facebook
-import ogp/twitter/twitter
-
 #{Hugo.Generator}

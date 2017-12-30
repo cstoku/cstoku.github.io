@@ -9,9 +9,19 @@ html
     title
       block title
 
-    block head
-      import ../partials/head/metadata
-      import ../partials/head/link
+    block meta
+      import ../partials/head/meta
+
+    import ../partials/head/ogp/facebook/facebook
+    block ogp_facebook
+      import ../partials/head/ogp/facebook/default
+
+    import ../partials/head/ogp/twitter/twitter
+    block ogp_twitter
+      import ../partials/head/ogp/twitter/default
+
+    block link
+      import ../partials/head/link/link
 
   body
 
