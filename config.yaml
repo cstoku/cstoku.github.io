@@ -21,8 +21,9 @@ metaDataFormat: yaml
 paginate: 10
 paginatePath: "page"
 
-pygmentsStyle: "native"
-pygmentsUseClasses: false
+pygmentsOptions: "linenos=table"
+pygmentsCodefences: true
+pygmentsUseClasses: true
 
 ignoreFiles: [ "\\.un~$" ]
 

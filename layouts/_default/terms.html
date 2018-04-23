@@ -1,0 +1,19 @@
+
+{{ define "title" }}
+  {{ .Site.Title }}
+{{ end }}
+
+{{ define "link" }}
+  {{ partial "head/link/link.html" . }}
+  {{ partial "head/link/pager.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <h1>Taxonomy Terms Page!!!</h1>
+
+  <h2>Title: {{ .Title }}</h2>
+
+  <p>{{ .Content }}</p>
+
+  <p>{{ .Data.Terms.ByCount }}</p>
+{{ end }}

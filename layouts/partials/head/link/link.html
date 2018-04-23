@@ -1,0 +1,14 @@
+
+{{ with index .Site.Author "page" }}
+  <link rel="author" href="{{ absLangURL . }}">
+{{ end }}
+
+{{ range .Translations}}
+  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}">
+{{ end }}
+{{ range .AlternativeOutputFormats }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+{{ end }}
+{{ with .OutputFormats.Get "HTML" }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+{{ end }}

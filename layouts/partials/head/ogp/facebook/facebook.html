@@ -1,0 +1,11 @@
+<meta property="og:description" content="{{ .Description }}">
+{{ if .Params.thumbnail }}
+  <meta property="og:image:url" content="{{ .Permalink }}{{ .Params.thumbnail }}">
+  {{ if .Params.thumbalt }}
+    <meta property="og:image:alt" content="{{ .Params.thumbalt }}">
+  {{ end }}
+{{ end }}
+
+<meta property="og:url" content="{{ (.OutputFormats.Get "HTML").Permalink }}">
+<meta property="fb:admins" content="{{ .Site.Params.facebook.uid }}">
+<meta property="fb:profile_id" content="{{ .Site.Params.facebook.id }}">

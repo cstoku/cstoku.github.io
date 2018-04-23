@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ⚡ lang="{{ .Lang }}">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <title >{{ block "title" . }}
+      {{ .Site.Title }}
+    {{ end }}</title>
+
+    {{ block "meta" . }}
+      {{ partial "head/meta.html" . }}
+    {{ end }}
+
+    {{ partial "head/ogp/facebook/facebook.html" . }}
+    {{ block "ogp_facebook" . }}
+      {{ partial "head/ogp/facebook/facebook.html" . }}
+    {{ end }}
+
+    {{ partial "head/ogp/twitter/twitter.html" . }}
+    {{ block "ogp_twitter" . }}
+      {{ partial "head/ogp/twitter/twitter.html" . }}
+    {{ end }}
+
+    {{ block "link" . }}
+      {{ partial "head/link/link.html" . }}
+    {{ end }}
+
+    {{ partial "head/amp/style.html" . }}
+    {{ partial "head/amp/scripts.html" . }}
+  </head>
+  <body>
+    <header>
+      {{ block "header" . }}
+      {{ end }}
+    </header>
+    <main>
+      {{ block "main" . }}
+      {{ end }}
+    </main>
+    <footer>
+      {{ block "footer" . }}
+      {{ end }}
+    </footer>
+  </body>
+</html>
