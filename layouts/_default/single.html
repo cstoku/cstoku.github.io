@@ -57,12 +57,35 @@
                         data-share-endpoint="http://getpocket.com/edit?url=SOURCE_URL">
                 </amp-social-share>
             </li>
-            <li><amp-social-share type="system"></amp-social-share></li>
         </ul>
+        <amp-social-share type="system"></amp-social-share>
     </header>
     {{ .Content }}
     <footer>
-        <p>Footer...</p>
+        <ul>
+            <li><amp-social-share type="twitter"></amp-social-share></li>
+            <li><amp-social-share type="facebook"></amp-social-share></li>
+            <li><amp-social-share type="gplus"></amp-social-share></li>
+            <li>
+            {{ $canonical_page := default . (.OutputFormats.Get "HTML") }}
+                <amp-social-share
+                        type="hatena"
+                        data-share-endpoint="http://b.hatena.ne.jp/entry/{{ $canonical_page.Permalink }}">
+                    B!
+                </amp-social-share>
+            </li>
+            <li><amp-social-share type="pinterest"></amp-social-share></li>
+            <li>
+                <amp-social-share
+                        type="pocket"
+                        data-share-endpoint="http://getpocket.com/edit?url=SOURCE_URL">
+                </amp-social-share>
+            </li>
+        </ul>
+        prev
+        next
+
+        comment
     </footer>
 </article>
 <aside>
