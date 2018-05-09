@@ -1,0 +1,6 @@
+baseURL: https://disqus.cstoku.me/
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+  - sitemap
+  - RSS
