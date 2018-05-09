@@ -82,10 +82,24 @@
                 </amp-social-share>
             </li>
         </ul>
-        prev
-        next
 
-        comment
+        <amp-iframe width=600 height=140
+                    layout="responsive"
+                    sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+                    resizable
+                    src="{{ .Site.Params.disqusIframeURL }}#{{ .RelPermalink | htmlEscape }}">
+            <div overflow></div>
+        </amp-iframe>
+        <ul>
+            <li>
+                <a href="">prev</a>
+            </li>
+            <li>
+                <a href="">next</a>
+            </li>
+        </ul>
+
+        <p>comment</p>
     </footer>
 </article>
 <aside>
