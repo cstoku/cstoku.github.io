@@ -121,3 +121,5 @@ params:
 
   # Google Analytics.
   googleAnalytics: UA-71075507-1
+
+  disqusIframeURL: https://disqus.cstoku.me/
