@@ -87,9 +87,6 @@ languages:
         - name: "Home"
           url: "/"
           weight: 1
-        - name: "Category"
-          url: "/categories/"
-          weight: 2
         - name: "Tag"
           url: "/tags/"
           weight: 3
@@ -111,9 +108,6 @@ languages:
         - name: "Home"
           url: "/"
           weight: 1
-        - name: "Category"
-          url: "/categories/"
-          weight: 2
         - name: "Tag"
           url: "/tags/"
           weight: 3

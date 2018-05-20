@@ -10,14 +10,16 @@
 
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  {{ range (.Paginator 5).Pages }}
-          <p>{{ .Data }}</p>
-  {{ end }}
-  <ul>
   {{ $data := .Data }}
-  {{ range $key, $value := .Data.Terms.ByCount }}
-      <li><a href="{{ $.Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}"> {{ $value.Name }} </a> {{ $value.Count }} </li>
+  {{ range .Data.Terms.Alphabetical }}
+  <section>
+      <h2>{{ .Name }}</h2>
+      <ul>
+          {{ range first 2 .Pages }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+      </ul>
+  </section>
   {{ end }}
-  </ul>
 
 {{ end }}
