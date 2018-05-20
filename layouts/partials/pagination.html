@@ -1,0 +1,8 @@
+<ul>
+    {{ if .HasPrev }}
+        <li><a href="{{ .Prev.URL }}">Prev</a></li>
+    {{ end }}
+    {{ if .HasNext }}
+        <li><a href="{{ .Next.URL }}">Next</a></li>
+    {{ end }}
+</ul>

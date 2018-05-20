@@ -9,17 +9,14 @@
 {{ end }}
 
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ $data := .Data }}
-  {{ range .Data.Terms.Alphabetical }}
-  <section>
-      <h2>{{ .Name }}</h2>
-      <ul>
-          {{ range first 2 .Pages }}
-              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-          {{ end }}
-      </ul>
-  </section>
-  {{ end }}
-
+    <header>
+        <h1>{{ .Title }}</h1>
+    </header>
+    {{ $paginator := .Paginator }}
+    {{ range $paginator.Pages }}
+        {{ partial "term.html" . }}
+    {{ end }}
+    <footer>
+        {{ partial "pagination.html" $paginator }}
+    </footer>
 {{ end }}

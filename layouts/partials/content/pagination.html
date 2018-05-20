@@ -1,0 +1,12 @@
+<ul>
+    {{ with .PrevInSection }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+    {{ end }}
+    {{ with .NextInSection }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+    {{ end }}
+</ul>

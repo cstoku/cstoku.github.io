@@ -1,0 +1,11 @@
+<section>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title | lower }}</a></h2>
+    <ul>
+        {{ range first .Site.Params.maxTaxonomyContents .Pages }}
+            {{ .Render "li" }}
+        {{ end }}
+        {{ if gt .Pages .Site.Params.maxTaxonomyContents  }}
+            <li><a href="{{ .RelPermalink }}">See more...</a></li>
+        {{ end }}
+    </ul>
+</section>

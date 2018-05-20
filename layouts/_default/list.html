@@ -4,9 +4,22 @@
 
 
 {{ define "main" }}
-  <h1>List Page!!!</h1>
+    {{ if eq .IsHome false }}
+        <header>
+            <h1>{{ .Title }}</h1>
+        </header>
+    {{ end }}
 
-  <h2>Title: {{ .Title }}</h2>
+    <ul>
+        {{ $paginator := .Paginator }}
+        {{ range $paginator.Pages }}
+        <li>
+            {{ .Render "summary" }}
+        </li>
+        {{ end }}
+    </ul>
 
-  <p>{{ .Content }}</p>
+    <footer>
+        {{ partial "pagination.html" $paginator }}
+    </footer>
 {{ end }}

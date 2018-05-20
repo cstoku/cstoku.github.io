@@ -1,0 +1,12 @@
+<h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+<p>{{ .CurrentSection.Name }}</p>
+
+<ul>
+{{ range .Params.tags }}
+    <li><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}/">{{ . }}</a></li>
+{{ end }}
+</ul>
+<ul>
+    <li>公開日: {{ .PublishDate.Format .Site.Params.dateFormat }}</li>
+    <li>更新日: {{ .Lastmod.Format .Site.Params.dateFormat }}</li>
+</ul>

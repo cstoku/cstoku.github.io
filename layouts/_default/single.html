@@ -17,91 +17,20 @@
 
 
 {{ define "main" }}
-<article>
-    <header>
-        <h1>{{ .Title }}</h1>
-        <p>{{ .Description }}</p>
-
-        <ul>
-        {{ range .Params.categories }}
-            <li>{{ . }}</li>
-        {{ end }}
-        </ul>
-        <ul>
-        {{ range .Params.tags }}
-            <li>{{ . }}</li>
-        {{ end }}
-        </ul>
-        <ul>
-            <li>公開日: {{ .PublishDate.Format .Site.Params.dateFormat }}</li>
-            <li>更新日: {{ .Lastmod.Format .Site.Params.dateFormat }}</li>
-        </ul>
-        <ul>
-            <li><amp-social-share type="twitter"></amp-social-share></li>
-            <li><amp-social-share type="facebook"></amp-social-share></li>
-            <li><amp-social-share type="gplus"></amp-social-share></li>
-            <li>
-                {{ $canonical_page := default . (.OutputFormats.Get "HTML") }}
-                <amp-social-share
-                        type="hatena"
-                        data-share-endpoint="http://b.hatena.ne.jp/entry/{{ $canonical_page.Permalink }}">
-                    B!
-                </amp-social-share>
-            </li>
-            <li><amp-social-share type="pinterest"></amp-social-share></li>
-            <li>
-                <amp-social-share
-                        type="pocket"
-                        data-share-endpoint="http://getpocket.com/edit?url=SOURCE_URL">
-                </amp-social-share>
-            </li>
-        </ul>
-        <amp-social-share type="system"></amp-social-share>
-    </header>
-    {{ .Content }}
-    <footer>
-        <ul>
-            {{ with .PrevInSection }}
-                <li>
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </li>
-            {{ end }}
-            {{ with .NextInSection }}
-                <li>
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </li>
-            {{ end }}
-        </ul>
-        <ul>
-            <li><amp-social-share type="twitter"></amp-social-share></li>
-            <li><amp-social-share type="facebook"></amp-social-share></li>
-            <li><amp-social-share type="gplus"></amp-social-share></li>
-            <li>
-            {{ $canonical_page := default . (.OutputFormats.Get "HTML") }}
-                <amp-social-share
-                        type="hatena"
-                        data-share-endpoint="http://b.hatena.ne.jp/entry/{{ $canonical_page.Permalink }}">
-                    B!
-                </amp-social-share>
-            </li>
-            <li><amp-social-share type="pinterest"></amp-social-share></li>
-            <li>
-                <amp-social-share
-                        type="pocket"
-                        data-share-endpoint="http://getpocket.com/edit?url=SOURCE_URL">
-                </amp-social-share>
-            </li>
-        </ul>
-        <amp-iframe width=600 height=140
-                    layout="responsive"
-                    sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
-                    resizable
-                    src="{{ .Site.Params.disqusIframeURL }}#{{ .RelPermalink | htmlEscape }}">
-            <div overflow></div>
-        </amp-iframe>
-    </footer>
-</article>
-<aside>
-    {{ .TableOfContents }}
-</aside>
+    <article>
+        <header>
+            {{ partial "content/header.html" . }}
+            {{ partial "content/social-share.html" . }}
+            <amp-social-share type="system"></amp-social-share>
+        </header>
+        {{ .Content }}
+        <footer>
+            {{ partial "content/pagination.html" . }}
+            {{ partial "content/social-share.html" . }}
+            {{ partial "content/disqus.html" . }}
+        </footer>
+    </article>
+    <aside>
+        {{ .TableOfContents }}
+    </aside>
 {{ end }}
