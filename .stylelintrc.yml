@@ -1,3 +1,6 @@
 extends: stylelint-config-standard
-plugins:
-  - 'stylelint-scss'
+rules:
+  selector-type-no-unknown:
+  - true
+  - ignoreTypes:
+    - amp-social-share
