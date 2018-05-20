@@ -1,0 +1,9 @@
+<amp-sidebar id="menu" layout="nodisplay" side="left">
+    <nav toolbar="(min-width: 767px)" toolbar-target="nav-link">
+        <ul>
+            {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+        </ul>
+    </nav>
+</amp-sidebar>

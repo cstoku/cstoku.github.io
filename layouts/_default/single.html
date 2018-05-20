@@ -16,8 +16,6 @@
 {{ end }}
 
 
-{{ define "header" }}
-{{ end }}
 {{ define "main" }}
 <article>
     <header>
@@ -35,8 +33,8 @@
         {{ end }}
         </ul>
         <ul>
-            <li>公開日: </li>
-            <li>更新日: </li>
+            <li>公開日: {{ .PublishDate.Format .Site.Params.dateFormat }}</li>
+            <li>更新日: {{ .Lastmod.Format .Site.Params.dateFormat }}</li>
         </ul>
         <ul>
             <li><amp-social-share type="twitter"></amp-social-share></li>
@@ -63,6 +61,18 @@
     {{ .Content }}
     <footer>
         <ul>
+            {{ with .PrevInSection }}
+                <li>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+            {{ end }}
+            {{ with .NextInSection }}
+                <li>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+            {{ end }}
+        </ul>
+        <ul>
             <li><amp-social-share type="twitter"></amp-social-share></li>
             <li><amp-social-share type="facebook"></amp-social-share></li>
             <li><amp-social-share type="gplus"></amp-social-share></li>
@@ -82,7 +92,6 @@
                 </amp-social-share>
             </li>
         </ul>
-
         <amp-iframe width=600 height=140
                     layout="responsive"
                     sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
@@ -90,22 +99,9 @@
                     src="{{ .Site.Params.disqusIframeURL }}#{{ .RelPermalink | htmlEscape }}">
             <div overflow></div>
         </amp-iframe>
-        <ul>
-            <li>
-                <a href="">prev</a>
-            </li>
-            <li>
-                <a href="">next</a>
-            </li>
-        </ul>
-
-        <p>comment</p>
     </footer>
 </article>
 <aside>
     {{ .TableOfContents }}
 </aside>
-{{ end }}
-
-{{ define "footer" }}
 {{ end }}

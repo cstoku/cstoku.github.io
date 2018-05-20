@@ -80,26 +80,49 @@ languages:
     languageCode: en
     languageName: English
     weight: 1
-    copyright: (c) 2016 Copyright my blog
+    copyright: © 2016-{year} {name}
 
     menu:
       main:
-        - name: "About"
+        - name: "Home"
           url: "/"
           weight: 1
+        - name: "Category"
+          url: "/categories/"
+          weight: 2
+        - name: "Tag"
+          url: "/tags/"
+          weight: 3
+        - name: "About"
+          url: "/about/"
+          weight: 4
+
+    params:
+      dateFormat: "January 2, 2006, 15:04 MST"
 
   ja:
     languageCode: ja
     languageName: Japanese
     weight: 2
-    copyright: (c) 2016 Copyright my blog
+    copyright: © 2016-{year} {name}
 
+    menu:
+      main:
+        - name: "Home"
+          url: "/"
+          weight: 1
+        - name: "Category"
+          url: "/categories/"
+          weight: 2
+        - name: "Tag"
+          url: "/tags/"
+          weight: 3
+        - name: "About"
+          url: "/about/"
+          weight: 4
 
-    #menu:
-    #  main:
-    #    - name: About
-    #      url: /
-    #      weight: 1
+    params:
+      dateFormat: "2006/01/02 15:04"
 
 #
 # Site Parameters
