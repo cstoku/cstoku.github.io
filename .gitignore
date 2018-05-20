@@ -1,7 +1,7 @@
-
 *.un~
 *.swp
 layouts/partials/style.amp.css
 static/assets/
 public/
 node_modules/
+dist/
