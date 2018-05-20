@@ -46,7 +46,29 @@ author:
   name: Takuya Tokuda
   email: cs.toku.mail@gmail.com
   page: /about/
-  about:
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Category"
+      identifier: "category"
+      weight: 2
+    - name: "Post"
+      parent: "category"
+      url: "/posts/"
+      weight: 1
+    - name: "Slide"
+      parent: "category"
+      url: "/slides/"
+      weight: 2
+    - name: "Tag"
+      url: "/tags/"
+      weight: 3
+    - name: "About"
+      url: "/about/"
+      weight: 4
 
 #
 # Markdown Processer(Blackfriday) Options
@@ -82,18 +104,6 @@ languages:
     weight: 1
     copyright: © 2016-{year} {name}
 
-    menu:
-      main:
-        - name: "Home"
-          url: "/"
-          weight: 1
-        - name: "Tag"
-          url: "/tags/"
-          weight: 3
-        - name: "About"
-          url: "/about/"
-          weight: 4
-
     params:
       dateFormat: "January 2, 2006, 15:04 MST"
 
@@ -102,18 +112,6 @@ languages:
     languageName: Japanese
     weight: 2
     copyright: © 2016-{year} {name}
-
-    menu:
-      main:
-        - name: "Home"
-          url: "/"
-          weight: 1
-        - name: "Tag"
-          url: "/tags/"
-          weight: 3
-        - name: "About"
-          url: "/about/"
-          weight: 4
 
     params:
       dateFormat: "2006/01/02 15:04"
@@ -140,3 +138,5 @@ params:
   googleAnalytics: UA-71075507-1
 
   disqusIframeURL: https://disqus.cstoku.me/
+
+  maxTaxonomyContents: 2
