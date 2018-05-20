@@ -5,14 +5,10 @@ description: GKE上に動作しているコンテナにCloud Storageのバケッ
 date: 2016-12-03T23:03:12+09:00
 draft: false
 
-categories:
-  - GKE
-  - Kubernetes
-
 tags:
-  - GKE
-  - Kubernetes
-  - GCS
+  - gke
+  - kubernetes
+  - gcs
   - gcsfuse
   - docker
 

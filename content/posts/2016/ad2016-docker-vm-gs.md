@@ -5,9 +5,6 @@ description: VMからDockerのコンテナに置き替えた際の操作方法�
 date: 2016-12-25T20:54:45+09:00
 draft: false
 
-categories:
-  - docker
-
 tags:
   - docker
   - docker-compose

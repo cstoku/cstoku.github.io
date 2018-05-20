@@ -5,12 +5,9 @@ description: Python3.5のType Hintについて簡単に解説
 date: 2015-12-23T02:05:50+09:00
 draft: false
 
-categories:
-  - Python
-
 tags:
-  - Python3
-  - Type Hints
+  - python3
+  - type-hints
 
 image: header.svg
 

@@ -5,9 +5,6 @@ description: GCEでインスタンスの立ち上げからプロビジョニン�
 date: 2017-01-02T17:22:14+09:00
 draft: false
 
-categories:
-  - ansible
-
 tags:
   - python
   - ansible
