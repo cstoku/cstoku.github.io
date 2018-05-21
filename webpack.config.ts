@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as RemoveAssetsPlugin from 'remove-assets-webpack-plugin';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-const extractStyle = new ExtractTextPlugin('style.amp.css');
+const extractStyle = new ExtractTextPlugin('style.css');
 const extractHighlight = new ExtractTextPlugin('hybrid.css');
 
 module.exports = [
@@ -14,7 +14,7 @@ module.exports = [
         },
         output: {
             filename: 'dummy',
-            path: path.resolve(__dirname, 'dist')
+            path: path.resolve(__dirname, 'layouts/partials/head/amp/css')
         },
         module: {
             rules: [
@@ -37,7 +37,7 @@ module.exports = [
                                         require("postcss-browser-reporter")(),
                                         require("postcss-reporter")(),
                                         require("postcss-math")(),
-                                        require('stylelint')(),
+                                        //require('stylelint')(),
                                     ]
                                 }
                             }
@@ -65,7 +65,7 @@ module.exports = [
         },
         output: {
             filename: 'dummy',
-            path: path.resolve(__dirname, 'dist')
+            path: path.resolve(__dirname, 'layouts/partials/head/amp/css')
         },
         module: {
             rules: [
