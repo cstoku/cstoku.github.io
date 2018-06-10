@@ -1,10 +1,10 @@
-<ul>
+<ul class="flex {{ if (index . 0).Parent }}sub-menu{{ end }} ">
 {{ range . }}
     <li>
         {{ if .URL }}
             <a href="{{ .URL }}">{{ .Name }}</a>
         {{ else }}
-            {{ .Name }}
+            <p>{{ .Name }}</p>
         {{ end }}
         {{ if .HasChildren }}
             {{ partial "menu_part.html" .Children }}

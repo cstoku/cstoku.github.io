@@ -1,0 +1,137 @@
+
+article {
+    padding: 5px;
+}
+
+article header {
+
+    & h1 {
+        font-size: 32px;
+        margin: 0 0 10px 0;
+
+        & a {
+          color: var(--colorPrimary);
+        }
+    }
+
+    & aside {
+        margin: 15px 0;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    & ul {
+        list-style-type: none;
+    }
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+section.posts > article {
+    padding: 25px 20px;
+    border-bottom: solid 1px var(--colorDivider);
+
+    &:last-child {
+        border-bottom: unset;
+    }
+}
+
+article .tag-elem {
+    color: var(--colorText);
+    font-size: 14px;
+    border-radius: 3px;
+    margin: 0 4px;
+    padding: 3px 3px;
+    align-items: center;
+}
+
+article .taxonomy-wrapper {
+    margin: 0 10px;
+
+    & > * {
+        margin: 3px 0;
+    }
+
+    & a {
+        color: var(--colorText)
+    }
+}
+
+article .category {
+    margin-right: auto;
+
+    &.green {
+        background-color: var(--colorCategoryGreen);
+    }
+    &.orange {
+         background-color: var(--colorCategoryOrange);
+    }
+}
+
+article .tags li {
+    background-color: var(--colorPrimary);
+}
+
+article .post-date {
+    color: color-mod(var(--colorPrimaryText) alpha(70%));
+}
+
+article .content {
+
+    & h1 {
+        font-size: var(--fontArticleH1Size);
+        margin: var(--marginArticleH1Size);
+    }
+    & h2 {
+        font-size: var(--fontArticleH2Size);
+        margin: var(--marginArticleH2Size);
+    }
+    & h3 {
+        font-size: var(--fontArticleH3Size);
+        margin: var(--marginArticleH3Size);
+    }
+    & h4 {
+        font-size: var(--fontArticleH4Size);
+        margin: var(--marginArticleH4Size);
+    }
+    & h5 {
+        font-size: var(--fontArticleH5Size);
+        margin: var(--marginArticleH5Size);
+    }
+    & h6 {
+        font-size: var(--fontArticleH6Size);
+        margin: var(--marginArticleH6Size);
+    }
+
+    & a {
+        color: var(--colorPrimary);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    & p {
+        margin: 0.4em 0 0.4em 0;
+    }
+
+    & ul {
+        margin: 1em 0;
+        padding-left: 2em;
+        list-style-type: none;
+
+        & li::before {
+            content: "\2013";
+            font-weight: 800;
+            margin-right: 0.4em;
+        }
+    }
+
+    & code {
+        font-family: 'Ricty Diminished', monospace;
+        background-color: #ddd;
+        border-radius: 2px;
+        padding: 0 2px;
+        margin: 0 3px;
+    }
+}

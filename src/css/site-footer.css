@@ -1,20 +1,9 @@
-.site-header {
-    padding: 10px 0;
-    margin-bottom: 20px;
-    background-color: black;
+.site-footer {
+    background-color: #333;
     color: white;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
-}
+    padding: 30px;
 
-.site-header h1 {
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1.25;
-}
-
-.site-header a {
-    text-decoration: none;
-    color: #ffffff;
+    & .copyright {
+        text-align: center;
+    }
 }

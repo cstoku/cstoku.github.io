@@ -20,17 +20,18 @@
     <article>
         <header>
             {{ partial "content/header.html" . }}
-            {{ partial "content/social-share.html" . }}
-            <amp-social-share type="system"></amp-social-share>
+            {{ partial "content/floating-social-button.html" . }}
         </header>
-        {{ .Content }}
+        <div class="content">
+            {{ .Content }}
+        </div>
         <footer>
             {{ partial "content/pagination.html" . }}
-            {{ partial "content/social-share.html" . }}
+            {{ partial "content/social-button.html" . }}
             {{ partial "content/disqus.html" . }}
         </footer>
-    </article>
-    <aside>
+        <aside>
         {{ .TableOfContents }}
-    </aside>
+        </aside>
+    </article>
 {{ end }}

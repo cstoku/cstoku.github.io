@@ -1,4 +1,4 @@
-<button on="tap:menu.open">menu</button>
-<h1>{{ .Site.Title }}</h1>
-
-<div id="nav-link"></div>
+<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+<nav class="flex site-menu">
+{{ partial "menu_part.html" .Site.Menus.main }}
+</nav>

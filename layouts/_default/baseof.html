@@ -27,8 +27,7 @@
     {{ partial "head/amp/scripts.html" . }}
   </head>
   <body>
-  {{ partial "menu.html" . }}
-    <header>
+    <header class="site-header flex">
       {{ block "header" . }}
         {{ partial "header.html" . }}
       {{ end }}
@@ -37,7 +36,7 @@
       {{ block "main" . }}
       {{ end }}
     </main>
-    <footer>
+    <footer class="site-footer">
       {{ block "footer" . }}
         {{ partial "footer.html" . }}
       {{ end }}

@@ -1,12 +1,31 @@
 <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-<p>{{ .CurrentSection.Name }}</p>
-
-<ul>
-{{ range .Params.tags }}
-    <li><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}/">{{ . }}</a></li>
-{{ end }}
-</ul>
-<ul>
-    <li>公開日: {{ .PublishDate.Format .Site.Params.dateFormat }}</li>
-    <li>更新日: {{ .Lastmod.Format .Site.Params.dateFormat }}</li>
-</ul>
+<aside class="flex">
+    <div class="flex flex-column taxonomy-wrapper">
+        <div class="flex category-wrapper">
+            <i class="material-icons md-18 info-prefix">folder</i>
+            <p class="category tag-elem {{ .CurrentSection.Params.category_color_class }}">
+                <a href="{{ .CurrentSection.Permalink }}">{{ .CurrentSection.Title }}</a>
+            </p>
+        </div>
+        <div class="flex tag-wrapper">
+            {{ with .Params.tags }}
+                <i class="material-icons md-18 info-prefix">local_offer</i>
+                <ul class="flex tags">
+                {{ range . }}
+                    <li class="tag-elem"><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}/">{{ . }}</a></li>
+                {{ end }}
+            {{ end }}
+            </ul>
+        </div>
+    </div>
+    <ul class="flex flex-column post-date">
+        <li class="flex publish-date">
+            <i class="material-icons md-18 info-prefix">event_note</i>
+            {{ .PublishDate.Format .Site.Params.dateFormat }}
+        </li>
+        <li class="flex lastmod-date">
+            <i class="material-icons md-18 info-prefix">create</i>
+            {{ .Lastmod.Format .Site.Params.dateFormat }}
+        </li>
+    </ul>
+</aside>

@@ -1,0 +1,47 @@
+amp-social-share {
+    border-radius: 5px;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
+
+    &[type=hatena] {
+        font-family: Verdana, sans-serif;
+        background-color: #00a4de;
+        font-weight: 700;
+        color: #fff;
+        line-height: 130%;
+        text-align: center;
+        font-size: 24px;
+        vertical-align: baseline;
+    }
+
+    &[type=pocket] {
+        background-color: #ef3e55;
+        background-image: url('../img/pocket.svg');
+    }
+
+}
+
+.social-share.floating {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 999;
+    list-style-type: none;
+
+    & li {
+        margin: 3px 0;
+    }
+
+    & amp-social-share {
+        border-radius: 50%;
+        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
+
+        &[type=hatena] {
+            font-size: 20px;
+            line-height: 150%;
+        }
+
+        &[type=pocket] {
+            background-size: 90%;
+        }
+    }
+}

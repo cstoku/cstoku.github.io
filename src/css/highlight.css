@@ -1,0 +1,12 @@
+.highlight pre code {
+    font-family: 'Ricty Diminished', monospace;
+    font-size: 14px;
+    background-color: transparent;
+    padding: unset;
+    margin: unset;
+}
+
+.highlight {
+    margin: 15px;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1));
+}
