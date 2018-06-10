@@ -1,0 +1,22 @@
+<ul class="social-share">
+    <li><amp-social-share type="twitter" width="32" height="32"></amp-social-share></li>
+    <li><amp-social-share type="facebook" width="32" height="32"></amp-social-share></li>
+    <li><amp-social-share type="gplus" width="32" height="32"></amp-social-share></li>
+    <li>
+    {{ $canonical_page := default . (.OutputFormats.Get "HTML") }}
+        <amp-social-share
+                type="hatena"
+                width="32" height="32"
+                data-share-endpoint="http://b.hatena.ne.jp/entry/{{ $canonical_page.Permalink }}">
+            B!
+        </amp-social-share>
+    </li>
+    <li><amp-social-share type="pinterest" width="32" height="32"></amp-social-share></li>
+    <li>
+        <amp-social-share
+                type="pocket"
+                width="32" height="32"
+                data-share-endpoint="http://getpocket.com/edit?url=SOURCE_URL">
+        </amp-social-share>
+    </li>
+</ul>

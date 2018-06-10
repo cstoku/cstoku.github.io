@@ -33,7 +33,7 @@ module.exports = [
                                             path: []
                                         }),
                                         require("postcss-url")(),
-                                        require("postcss-cssnext")(),
+                                        require("postcss-preset-env")({stage: 0}),
                                         require("postcss-browser-reporter")(),
                                         require("postcss-reporter")(),
                                         require("postcss-math")(),
