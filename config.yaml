@@ -18,7 +18,7 @@ enableEmoji: true
 summaryLength: 70
 metaDataFormat: yaml
 
-paginate: 10
+paginate: 2
 paginatePath: "page"
 
 pygmentsOptions: "linenos=table"
@@ -29,8 +29,6 @@ ignoreFiles: [ "\\.un~$" ]
 
 rssLimit: 15
 
-# dummy static folder
-staticDir: dummy
 disableKinds:
   - RSS
   - sitemap
