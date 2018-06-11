@@ -3,14 +3,9 @@ amp-social-share {
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
 
     &[type=hatena] {
-        font-family: Verdana, sans-serif;
         background-color: #00a4de;
-        font-weight: 700;
-        color: #fff;
-        line-height: 130%;
-        text-align: center;
-        font-size: 24px;
-        vertical-align: baseline;
+        background-image: url('../img/hatena.svg');
+        background-size: 40%;
     }
 
     &[type=pocket] {
@@ -36,8 +31,7 @@ amp-social-share {
         filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
 
         &[type=hatena] {
-            font-size: 20px;
-            line-height: 150%;
+            background-size: 65%;
         }
 
         &[type=pocket] {
