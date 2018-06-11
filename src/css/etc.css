@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Noto Sans JP', system-ui;
-    font-weight: 300;
+    font-weight: 400;
     font-size: var(--fontBaseSize);
     color: var(--colorPrimaryText);
 }

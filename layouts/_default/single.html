@@ -20,13 +20,13 @@
     <article>
         <header>
             {{ partial "content/header.html" . }}
-            {{ partial "content/floating-social-button.html" . }}
         </header>
         <div class="content">
             {{ .Content }}
         </div>
         <footer>
             {{ partial "content/pagination.html" . }}
+            {{ partial "content/floating-social-button.html" . }}
             {{ partial "content/social-button.html" . }}
             {{ partial "content/disqus.html" . }}
         </footer>

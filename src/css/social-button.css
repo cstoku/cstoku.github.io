@@ -12,30 +12,37 @@ amp-social-share {
         background-color: #ef3e55;
         background-image: url('../img/pocket.svg');
     }
-
 }
 
-.social-share.floating {
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-    z-index: 999;
+.social-share {
     list-style-type: none;
 
-    & li {
-        margin: 3px 0;
+    &.mobile{
+        display: none;
     }
 
-    & amp-social-share {
-        border-radius: 50%;
-        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
+    &.floating {
+         position: fixed;
+         bottom: 10px;
+         right: 20px;
+         z-index: 999;
+        display: block;
 
-        &[type=hatena] {
-            background-size: 65%;
+        & li {
+              margin: 5px 0;
         }
 
-        &[type=pocket] {
-            background-size: 90%;
+        & amp-social-share {
+            border-radius: 50%;
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
+
+            &[type=hatena] {
+                background-size: 65%;
+            }
+
+            &[type=pocket] {
+                background-size: 90%;
+            }
         }
     }
 }
