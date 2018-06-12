@@ -1,48 +1,48 @@
 amp-social-share {
-    border-radius: 5px;
-    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
+  border-radius: 5px;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
 
-    &[type=hatena] {
-        background-color: #00a4de;
-        background-image: url('../img/hatena.svg');
-        background-size: 40%;
-    }
+  &[type=hatena] {
+    background-color: #00a4de;
+    background-image: url('../img/hatena.svg');
+    background-size: 40%;
+  }
 
-    &[type=pocket] {
-        background-color: #ef3e55;
-        background-image: url('../img/pocket.svg');
-    }
+  &[type=pocket] {
+    background-color: #ef3e55;
+    background-image: url('../img/pocket.svg');
+  }
 }
 
 .social-share {
-    list-style-type: none;
+  list-style-type: none;
 
-    &.mobile{
-        display: none;
+  &.mobile {
+    display: none;
+  }
+
+  &.floating {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 999;
+    display: block;
+
+    & li {
+      margin: 5px 0;
     }
 
-    &.floating {
-         position: fixed;
-         bottom: 10px;
-         right: 20px;
-         z-index: 999;
-        display: block;
+    & amp-social-share {
+      border-radius: 50%;
+      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
 
-        & li {
-              margin: 5px 0;
-        }
+      &[type=hatena] {
+        background-size: 65%;
+      }
 
-        & amp-social-share {
-            border-radius: 50%;
-            filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
-
-            &[type=hatena] {
-                background-size: 65%;
-            }
-
-            &[type=pocket] {
-                background-size: 90%;
-            }
-        }
+      &[type=pocket] {
+        background-size: 90%;
+      }
     }
+  }
 }
