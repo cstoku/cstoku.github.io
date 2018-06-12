@@ -10,7 +10,7 @@ module.exports = [
     {
         mode: 'development',
         entry: {
-            style: './src/css/style.amp.css',
+            style: './src/pcss/style.amp.pcss',
         },
         output: {
             filename: 'dummy',
@@ -19,7 +19,7 @@ module.exports = [
         module: {
             rules: [
                 {
-                    test: /\.css$/,
+                    test: /\.pcss$/,
                     use: extractStyle.extract({
                         fallback: 'style-loader',
                         use: [
