@@ -5,7 +5,7 @@ amp-social-share {
   &[type=hatena] {
     background-color: #00a4de;
     background-image: url('../img/hatena.svg');
-    background-size: 40%;
+    background-size: 50%;
   }
 
   &[type=pocket] {
@@ -18,7 +18,14 @@ amp-social-share {
   list-style-type: none;
 
   &.mobile {
-    display: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 20px 0;
+
+    & amp-social-share {
+      margin: 0 22px; /* ここ後に調整 */
+    }
   }
 
   &.floating {

@@ -1,12 +1,12 @@
-<nav class="flex pagination-single">
-    <div class="prev">
-    {{ with .PrevInSection }}
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{ end }}
-    </div>
-    <div class="next">
-    {{ with .NextInSection }}
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{ end }}
-    </div>
+<nav class="flex flex-center pagination-single">
+  <div class="pagination-btn">
+  {{ with .PrevInSection }}
+    <a class="flex flex-row flex-center prev" href="{{ .RelPermalink }}"><span>{{ .Title }}</span></a>
+  {{ end }}
+  </div>
+  <div class="pagination-btn">
+  {{ with .NextInSection }}
+    <a class="flex flex-row flex-center next" href="{{ .RelPermalink }}"><span>{{ .Title }}</span></a>
+  {{ end }}
+  </div>
 </nav>

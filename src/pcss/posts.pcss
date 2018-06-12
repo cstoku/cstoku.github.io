@@ -15,7 +15,7 @@ article header {
   }
 
   & aside {
-    margin: 15px 0;
+    margin: 20px 0;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -143,36 +143,38 @@ article .content {
 .pagination-single {
   margin: 3em 0;
 
-  & div {
-    width: 100%;
-    margin: 0 50px;
-    text-align: center;
-  }
-  & a {
-    display: flex;
-    text-decoration: none;
-    padding: 0.5em 30px;
-    background-color: var(--colorPrimary);
-    color: var(--colorText);
-    border-radius: 5px;
-    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
-    text-overflow: ellipsis;
+  & .pagination-btn {
+    margin: 10px 30px;
+    width: 80%;
     overflow: hidden;
-    white-space: nowrap;
-    align-items: center;
-    justify-content: center;
-  }
 
-  & .prev a::before {
-    font-family: 'Material Icons';
-    font-size: 28px;
-    content: "\e408";
-    margin-right: 0.5em;
-  }
-  & .next a::after {
-    font-family: 'Material Icons';
-    font-size: 28px;
-    content: "\e409";
-    margin-left: 0.5em;
+    & a {
+      text-decoration: none;
+      padding: 0.5em 30px;
+      background-color: var(--colorPrimary);
+      color: var(--colorText);
+      border-radius: 5px;
+      filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
+
+      & span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &.prev::before {
+        font-family: 'Material Icons', system-ui;
+        font-size: 28px;
+        content: "\e408";
+        margin-right: 8px;
+      }
+      &.next::after {
+        font-family: 'Material Icons', system-ui;
+        font-size: 28px;
+        content: "\e409";
+        margin-left: 8px;
+      }
+    }
   }
 }
