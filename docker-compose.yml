@@ -1,0 +1,29 @@
+version: '3'
+services:
+  webpack:
+    image: node
+    command:
+      - /bin/sh
+      - -c
+      - yarn && yarn run webpack -w
+    working_dir: /data
+    volumes:
+      - .:/data
+  hugo:
+    image: cstoku/hugo
+    build:
+      context: .
+      args:
+        HUGO_VERSION: 0.42
+    command:
+      - hugo
+      - server
+      - --navigateToChanged
+      - --disableFastRender
+      - --bind
+      - 0.0.0.0
+    volumes:
+      - .:/data
+    ports:
+      - "1313:1313"
+
