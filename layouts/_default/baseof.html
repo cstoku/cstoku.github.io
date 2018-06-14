@@ -32,10 +32,12 @@
         {{ partial "header.html" . }}
       {{ end }}
     </header>
-    <main>
+    <div class="main-wrapper">
+      <main>
       {{ block "main" . }}
       {{ end }}
-    </main>
+      </main>
+    </div>
     <footer class="site-footer">
       {{ block "footer" . }}
         {{ partial "footer.html" . }}
