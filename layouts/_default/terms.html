@@ -1,22 +1,25 @@
-
 {{ define "title" }}
-  {{ .Site.Title }}
+{{ .Site.Title }}
 {{ end }}
 
 {{ define "link" }}
-  {{ partial "head/link/link.html" . }}
-  {{ partial "head/link/pager.html" . }}
+{{ partial "head/link/link.html" . }}
+{{ partial "head/link/pager.html" . }}
 {{ end }}
 
 {{ define "main" }}
+<div class="main-wrapper">
+  <main>
     <header>
-        <h1>{{ .Title }}</h1>
+      <h1>{{ .Title }}</h1>
     </header>
     {{ $paginator := .Paginator }}
     {{ range $paginator.Pages }}
-        {{ partial "term.html" . }}
+    {{ partial "term.html" . }}
     {{ end }}
     <footer>
-        {{ partial "pagination.html" $paginator }}
+      {{ partial "pagination.html" $paginator }}
     </footer>
+  </main>
+</div>
 {{ end }}

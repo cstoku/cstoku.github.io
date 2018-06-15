@@ -21,10 +21,10 @@ amp-social-share {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 20px 0;
+    margin: 10px 0;
 
     & amp-social-share {
-      margin: 0 22px; /* ここ後に調整 */
+      margin: 0 20px;
     }
   }
 
@@ -45,11 +45,31 @@ amp-social-share {
 
       &[type=hatena] {
         background-size: 65%;
+        background-position-y: 8px;
       }
 
       &[type=pocket] {
         background-size: 90%;
+        background-position-y: 3px;
       }
     }
+  }
+}
+
+@media (--desktop) {
+  .social-share.mobile {
+    display: none;
+  }
+}
+
+@media (--tablet) {
+  .social-share.floating {
+    display: none;
+  }
+}
+
+@media (--smartphone) {
+  .social-share.floating {
+    display: none;
   }
 }

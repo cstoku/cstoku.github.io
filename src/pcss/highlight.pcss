@@ -1,12 +1,21 @@
-.highlight pre code {
-  font-family: 'Ricty Diminished', monospace;
-  font-size: 14px;
-  background-color: transparent;
-  padding: unset;
-  margin: unset;
-}
-
 .highlight {
-  margin: 15px;
+  margin: 1em;
+  overflow: auto;
   filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1));
+
+  & pre code {
+    font-family: 'Ricty Diminished', monospace;
+    font-size: 14px;
+    background-color: transparent;
+    padding: unset;
+    margin: unset;
+  }
+
+  & table {
+    border: solid 1em transparent;
+
+    & td:last-child pre {
+      margin-left: 0.5em;
+    }
+  }
 }

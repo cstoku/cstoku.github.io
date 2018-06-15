@@ -35,5 +35,6 @@
   --marginArticleH6Size: 16px 0 10px 0;
 }
 
-@custom-media --smartphone (min-width: 0px);
-@custom-media --desktop    (min-width: 1024px);
+@custom-media --smartphone (width < 768px);
+@custom-media --tablet     (width < 1024px) and (width >= 768px);
+@custom-media --desktop    (width >= 1024px);

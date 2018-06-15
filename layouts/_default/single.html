@@ -1,36 +1,42 @@
 {{ define "title" }}
-  {{ .Site.Title }}
+{{ .Site.Title }}
 {{ end }}
 
 {{ define "ogp_facebook" }}
-  {{ partial "head/ogp/facebook/page.html" . }}
+{{ partial "head/ogp/facebook/page.html" . }}
 {{ end }}
 
 {{ define "ogp_twitter" }}
-  {{ partial "head/ogp/twitter/page.html" . }}
+{{ partial "head/ogp/twitter/page.html" . }}
 {{ end }}
 
 {{ define "link" }}
-  {{ partial "head/link/link.html" . }}
-  {{ partial "head/link/pager.html" . }}
+{{ partial "head/link/link.html" . }}
+{{ partial "head/link/pager.html" . }}
 {{ end }}
 
 
 {{ define "main" }}
-    <article>
-        <header>
-            {{ partial "content/header.html" . }}
-            {{ partial "content/social-button.html" . }}
-            {{ partial "content/floating-social-button.html" . }}
+<div class="main-wrapper single">
+  <main>
+    <article class="flex">
+      <div class="content-container">
+        <header class="flex flex-column">
+          {{ partial "content/header.html" . }}
+          {{ partial "content/social-button.html" . }}
+          {{ partial "content/floating-social-button.html" . }}
         </header>
         <div class="content">
-            {{ .Content }}
+          {{ .Content }}
         </div>
-        <footer>
-            {{ partial "content/footer.html" . }}
+        <footer class="flex flex-column">
+          {{ partial "content/footer.html" . }}
         </footer>
-        <aside>
+      </div>
+      <aside class="toc">
         {{ .TableOfContents }}
-        </aside>
+      </aside>
     </article>
+  </main>
+</div>
 {{ end }}

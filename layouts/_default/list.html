@@ -1,23 +1,27 @@
 {{ define "title" }}
-  {{ .Site.Title }}
+{{ .Site.Title }}
 {{ end }}
 
 
 {{ define "main" }}
+<div class="main-wrapper list">
+  <main>
     {{ if eq .IsHome false }}
-        <header>
-            <h1>{{ .Title }}</h1>
-        </header>
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
     {{ end }}
 
     <section class="posts">
-    {{ $paginator := .Paginator }}
-    {{ range $paginator.Pages }}
-        {{ .Render "summary" }}
-    {{ end }}
+      {{ $paginator := .Paginator }}
+      {{ range $paginator.Pages }}
+      {{ .Render "summary" }}
+      {{ end }}
     </section>
 
     <footer>
-        {{ partial "pagination.html" $paginator }}
+      {{ partial "pagination.html" $paginator }}
     </footer>
+  </main>
+</div>
 {{ end }}

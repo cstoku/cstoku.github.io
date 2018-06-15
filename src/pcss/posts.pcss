@@ -1,13 +1,9 @@
 
-article {
-  padding: 5px;
-}
-
 article header {
 
   & h1 {
     font-size: 32px;
-    margin: 0 0 10px 0;
+    margin: 10px 0;
 
     & a {
       color: var(--colorPrimary);
@@ -15,9 +11,11 @@ article header {
   }
 
   & aside {
-    margin: 20px 0;
-    justify-content: space-between;
-    align-items: flex-start;
+    margin: 10px;
+
+    & i {
+      margin-right: 8px;
+    }
   }
 
   & ul {
@@ -41,17 +39,20 @@ section.posts > article {
 article .tag-elem {
   color: var(--colorText);
   font-size: 14px;
-  border-radius: 3px;
-  margin: 0 4px;
-  padding: 3px 3px;
+  border-radius: 1em;
+  line-height: 2em;
+  margin: 4px;
+  padding: 0 0.8em;
   align-items: center;
+
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
 article .taxonomy-wrapper {
-  margin: 0 10px;
-
-  & > * {
-    margin: 3px 0;
+  & > div {
+    align-items: center;
   }
 
   & a {
@@ -60,25 +61,31 @@ article .taxonomy-wrapper {
 }
 
 article .category {
-  margin-right: auto;
+  margin-left: 0;
 
   &.green {
-    background-color: var(--colorCategoryGreen);
+    background-color: color-mod(var(--colorCategoryGreen) alpha(70%));
   }
   &.orange {
-    background-color: var(--colorCategoryOrange);
+    background-color: color-mod(var(--colorCategoryOrange) alpha(70%));
   }
 }
 
-article .tags li {
-  background-color: var(--colorPrimary);
+article .tags {
+  flex-wrap: wrap;
+
+  & li {
+    background-color: color-mod(var(--colorPrimary) alpha(70%));
+    /*margin: 3px 0;*/
+  }
 }
 
-article .post-date {
-  color: color-mod(var(--colorPrimaryText) alpha(70%));
+article .post-date > * {
+    margin: 3px 0;
 }
 
 article .content {
+  margin: 20px 0;
 
   & h1 {
     font-size: var(--fontArticleH1Size);
@@ -108,17 +115,21 @@ article .content {
   & a {
     color: var(--colorPrimary);
     text-decoration: none;
-    font-weight: 500;
+
+    &:hover {
+      color: var(--colorAccent);
+    }
   }
 
   & p {
-    margin: 0.4em 0 0.4em 0;
+    margin: 0.5em 0;
+    line-height: 1.2em;
   }
 
   & ul, & ol {
     margin: 1em 0;
     padding-left: 2em;
-    list-style-position: inside;
+    line-height: 1.2em;
   }
 
   & ul {
@@ -127,7 +138,7 @@ article .content {
     & li::before {
       content: "\2013";
       font-weight: 800;
-      margin-right: 0.4em;
+      margin: 0 0.5em 0 -1em;
     }
   }
 
@@ -138,10 +149,38 @@ article .content {
     padding: 0 2px;
     margin: 0 3px;
   }
+
+  & table:not(.lntable) {
+    width: 80%;
+    min-width: 320px;
+    margin: 20px auto;
+
+    & tr {
+      & th {
+        padding: 1em;
+        color: color-mod(var(--colorPrimaryText) alpha(40%));
+        border-top: solid 1px var(--colorDivider);
+        border-bottom: solid 1px var(--colorDivider);
+      }
+
+      & td {
+        padding: 1em;
+        border-bottom: solid 1px var(--colorDivider);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 1px;
+      }
+    }
+
+    & tbody tr:hover {
+      background-color: color-mod(var(--colorPrimary) alpha(20%));
+    }
+  }
 }
 
 .pagination-single {
-  margin: 3em 0;
+  margin: 20px 0;
 
   & .pagination-btn {
     margin: 10px 30px;
@@ -176,5 +215,85 @@ article .content {
         margin-left: 8px;
       }
     }
+  }
+}
+
+footer > amp-iframe {
+  margin: 20px 0;
+}
+
+.content-container {
+  min-width: 320px;
+}
+
+aside.toc {
+  padding: 20px 0;
+}
+
+#TableOfContents {
+  & a {
+    color: var(--colorPrimary);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--colorAccent);
+    }
+  }
+
+  & ul {
+    padding-left: 20px;
+
+    & li {
+      margin: 10px 0;
+      line-height: 1.2em;
+    }
+  }
+}
+
+@media (--desktop) {
+  article header aside {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  aside.toc {
+    min-width: 180px;
+    margin-left: 20px;
+    border-left: solid 1px var(--colorDivider);
+  }
+
+  .content-container {
+    width: 100%;
+    max-width: 1100px;
+  }
+}
+
+@media (--tablet) {
+  article {
+    flex-direction: column;
+  }
+
+  article header aside {
+    flex-direction: column-reverse;
+  }
+
+  aside.toc {
+    margin-top: 10px;
+    border-top: solid 1px var(--colorDivider);
+  }
+}
+
+@media (--smartphone) {
+  article {
+    flex-direction: column;
+  }
+
+  article header aside {
+    flex-direction: column-reverse;
+  }
+
+  aside.toc {
+    margin-top: 10px;
+    border-top: solid 1px var(--colorDivider);
   }
 }
