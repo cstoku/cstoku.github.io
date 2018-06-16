@@ -6,7 +6,7 @@
 ## 全体
 
 - [ ] やっぱside-barつかう？
-- [ ] mainをラップして中央配置・・？(タイルにする)
+- [x] mainをラップして中央配置・・？(タイルにする)
 - [ ] Summaryの処理
 - [ ] listのPagerの描画
 - [ ] taxonomyページの描画
@@ -20,13 +20,13 @@
 
 ## Article
 
-- [ ] tableの描画
+- [x] tableの描画
 - [ ] 画像破損分の直し(リンク切れ？)
 - [ ] amp-imgの使用(img用ショートコードの作成)
-- [ ] TOCの描画
-- [ ] レスポンシブにする
+- [x] TOCの描画
+- [x] レスポンシブにする
 - [ ] サムネの扱い
-- [ ] highlightの整形
+- [x] highlightの整形
 
 # Reference
 
