@@ -15,7 +15,7 @@ services:
     build:
       context: .
       args:
-        HUGO_VERSION: 0.42
+        HUGO_VERSION: 0.42.1
     command:
       - hugo
       - server
