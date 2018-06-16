@@ -1,18 +1,37 @@
-<!-- image -->
+{{ .Get "name" | .Page.Resources.GetMatch | .Scratch.Set "buf" }}
+{{ $img := .Scratch.Get "buf" }}
+{{ if gt $img.Width 425 }}
+{{ $img.Resize "425x" | slice | .Scratch.Add "img_set" }}
+{{ end }}
+{{ if gt $img.Width 1024 }}
+{{ $img.Resize "1024x" | slice | .Scratch.Add "img_set" }}
+{{ end }}
+{{ if gt $img.Width 1440 }}
+{{ $img.Resize "1440x" | slice | .Scratch.Add "img_set" }}
+{{ end }}
 <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
-    {{ with .Get "link"}}<a href="{{.}}">{{ end }}
-        <img src={{ if or (hasPrefix (.Get "src") "/") (hasPrefix (.Get "src") "http") }}"{{ .Get "src" }}"{{ else }}"{{ .Page.Site.BaseURL }}media/{{ .Page.File.Dir }}{{ .Page.File.BaseFileName }}/{{ .Get "src" }}"{{ end }} {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }} data-action="zoom" />
-    {{ if .Get "link"}}</a>{{ end }}
-    {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
-    <figcaption>{{ if isset .Params "title" }}
-        <h4>{{ .Get "title" }}</h4>{{ end }}
-        {{ if or (.Get "caption") (.Get "attr")}}<p>
-        {{ .Get "caption" }}
-        {{ with .Get "attrlink"}}<a href="{{.}}"> {{ end }}
-            {{ .Get "attr" }}
-        {{ if .Get "attrlink"}}</a> {{ end }}
-        </p> {{ end }}
-    </figcaption>
-    {{ end }}
+  {{ with .Get "link"}}<a href="{{.}}">{{ end }}
+    <div style="max-width: {{ $img.Width }}px;margin: auto;">
+      <amp-img
+        src="{{ $img.RelPermalink }}"
+        {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }}
+        layout="responsive"
+        width="{{ $img.Width }}"
+        height="{{ $img.Height }}"
+        srcset="{{ $img.RelPermalink }} {{ $img.Width }}w{{ with .Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
+      >
+      </amp-img>
+    </div>
+  {{ if .Get "link"}}</a>{{ end }}
+{{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
+<figcaption>{{ if isset .Params "title" }}
+  <h4>{{ .Get "title" }}</h4>{{ end }}
+  {{ if or (.Get "caption") (.Get "attr")}}<p>
+    {{ .Get "caption" }}
+    {{ with .Get "attrlink"}}<a href="{{.}}"> {{ end }}
+    {{ .Get "attr" }}
+    {{ if .Get "attrlink"}}</a> {{ end }}
+  </p> {{ end }}
+</figcaption>
+{{ end }}
 </figure>
-<!-- image -->
