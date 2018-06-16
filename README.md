@@ -17,6 +17,7 @@
 - [ ] Google Analyticsの設定
 - [ ] JSON-LDの対応
 - [ ] ampコンポーネントのショートコード作成
+- [ ] ページャーボタン修正
 
 ## Article
 
