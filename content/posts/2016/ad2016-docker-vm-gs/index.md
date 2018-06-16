@@ -6,10 +6,12 @@ date: 2016-12-25T20:54:45+09:00
 draft: false
 
 tags:
-  - docker
-  - docker-compose
+- docker
+- docker-compose
 
-image: header.svg
+resources:
+- name: thumbnail
+  src: header.png
 
 ---
 

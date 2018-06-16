@@ -6,10 +6,12 @@ date: 2015-12-23T02:05:50+09:00
 draft: false
 
 tags:
-  - python3
-  - type-hints
+- python3
+- type-hints
 
-image: header.svg
+resources:
+- name: thumbnail
+  src: header.png
 
 ---
 

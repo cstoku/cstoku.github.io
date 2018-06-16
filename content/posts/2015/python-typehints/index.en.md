@@ -9,8 +9,6 @@ tags:
   - python3
   - type-hints
 
-image: header.svg
-
 ---
 
 

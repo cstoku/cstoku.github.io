@@ -6,11 +6,12 @@ date: 2017-01-02T17:22:14+09:00
 draft: false
 
 tags:
-  - python
-  - ansible
+- python
+- ansible
 
-image: header.svg
-
+resources:
+- name: thumbnail
+  src: header.png
 ---
 
 この記事は[Python Advent Calandar 2016](http://qiita.com/advent-calendar/2016/python)の23日目の記事です。(大遅刻その2)

@@ -6,17 +6,21 @@ date: 2016-12-03T23:03:12+09:00
 draft: false
 
 tags:
-  - gke
-  - kubernetes
-  - gcs
-  - gcsfuse
-  - docker
+- gke
+- kubernetes
+- gcs
+- gcsfuse
+- docker
 
-image: header.svg
+resources:
+- name: thumbnail
+  src: header.png
+- name: rps
+  src: req_per_sec.png
+- name: tpr
+  src: time_per_req.png
 
 ---
-
-SGEのGriphoneでインフラエンジニアをしている德田です。
 
 この記事は [CyberAgent Developers Advent Calendar 2016](http://www.adventar.org/calendars/1620) の3日目の記事となります。
 
@@ -263,7 +267,7 @@ Zoneはasia-northeast1-aです。
 
 ## Requests per second
 
-{{< img src="req_per_sec.png" >}}
+{{< img name="rps" >}}
 
 | クラスタ名　 | File1   | 　　File2  |
 |:-------------|--------:|-----------:|
@@ -275,7 +279,7 @@ Zoneはasia-northeast1-aです。
 
 ## Time per request
 
-{{< img src="time_per_req.png" >}}
+{{< img name="tpr" >}}
 
 | クラスタ名 | File1   | File2  |
 |:-----------|--------:|-------:|

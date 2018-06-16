@@ -9,10 +9,14 @@ categories:
   - gcp
 
 tags:
-  - gcp
-  - gcs
+- gcp
+- gcs
 
-image: header.svg
+resources:
+- name: thumbnail
+  src: header.png
+- name: arch
+  src: blog-arch.png
 
 ---
 
@@ -37,7 +41,7 @@ image: header.svg
 
 のサービスを使用しています。以下、構成図です。
 
-{{< img src="blog-arch.png" >}}
+{{< img name="arch" >}}
 
 まぁ、パッと見はよくある構成ですね。
 
