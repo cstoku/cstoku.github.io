@@ -27,19 +27,15 @@
     {{ partial "head/amp/scripts.html" . }}
   </head>
   <body>
-    <header class="site-header flex">
+    <div id="body-container" class="flex flex-column">
       {{ block "header" . }}
         {{ partial "header.html" . }}
       {{ end }}
-    </header>
       {{ block "main" . }}
       {{ end }}
-      </main>
-    </div>
-    <footer class="site-footer">
       {{ block "footer" . }}
         {{ partial "footer.html" . }}
       {{ end }}
-    </footer>
+    </div>
   </body>
 </html>

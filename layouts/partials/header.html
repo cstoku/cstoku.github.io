@@ -1,4 +1,6 @@
-<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-<nav class="flex site-menu">
-{{ partial "menu_part.html" .Site.Menus.main }}
-</nav>
+<header class="site-header flex">
+  <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+  <nav class="flex site-menu">
+    {{ partial "menu_part.html" .Site.Menus.main }}
+  </nav>
+</header>
