@@ -4,3 +4,4 @@ layouts/partials/head/amp/css/
 static/assets/
 public/
 node_modules/
+resources/
