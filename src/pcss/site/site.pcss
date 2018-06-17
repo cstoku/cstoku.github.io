@@ -1,4 +1,4 @@
-
+/* Site Default */
 body {
   font-family: 'Noto Sans JP', system-ui;
   font-weight: 400;
@@ -6,6 +6,26 @@ body {
   color: var(--colorPrimaryText);
 }
 
+a {
+  text-decoration: none;
+  color: var(--colorPrimary);
+
+  &:hover {
+    color: var(--colorAccent);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  color: color-mod(var(--colorPrimaryText) alpha(-0.1));
+}
+
+/* Styles */
 #body-container {
   min-height: 100vh;
 }
@@ -16,7 +36,7 @@ main {
 
 @media (--desktop) {
   main {
-    margin: 50px;
+    margin: 80px;
   }
 }
 

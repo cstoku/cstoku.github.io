@@ -1,0 +1,109 @@
+.content {
+  margin: 20px 0;
+
+  & h1 {
+    font-size: var(--fontArticleH1Size);
+    margin: var(--marginArticleH1Size);
+  }
+  & h2 {
+    font-size: var(--fontArticleH2Size);
+    margin: var(--marginArticleH2Size);
+  }
+  & h3 {
+    font-size: var(--fontArticleH3Size);
+    margin: var(--marginArticleH3Size);
+  }
+  & h4 {
+    font-size: var(--fontArticleH4Size);
+    margin: var(--marginArticleH4Size);
+  }
+  & h5 {
+    font-size: var(--fontArticleH5Size);
+    margin: var(--marginArticleH5Size);
+  }
+  & h6 {
+    font-size: var(--fontArticleH6Size);
+    margin: var(--marginArticleH6Size);
+  }
+
+  & p {
+    margin: 0.5em 0;
+    line-height: 1.2em;
+  }
+
+  & ul, & ol {
+    margin: 1em 0;
+    padding-left: 2em;
+    line-height: 1.2em;
+  }
+
+  & ul {
+    list-style-type: none;
+
+    & li::before {
+      content: "\2013";
+      font-weight: 800;
+      margin: 0 0.5em 0 -1em;
+    }
+  }
+
+  & .highlight {
+    margin: 1em;
+    overflow: auto;
+    boder-radius: 2px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 1);
+
+    & pre code {
+      font-family: 'Ricty Diminished', monospace;
+      font-size: 14px;
+    }
+
+    & table {
+      border: solid 1em transparent;
+
+      & td:last-child pre {
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  & table:not(.lntable) {
+    width: 80%;
+    min-width: 320px;
+    margin: 20px auto;
+
+    & tr {
+      & th {
+        padding: 1em;
+        color: color-mod(var(--colorPrimaryText) alpha(40%));
+        border-top: solid 1px var(--colorDivider);
+        border-bottom: solid 1px var(--colorDivider);
+      }
+
+      & td {
+        padding: 1em;
+        border-bottom: solid 1px var(--colorDivider);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 1px;
+      }
+    }
+
+    & tbody tr:hover {
+      background-color: color-mod(var(--colorPrimary) alpha(20%));
+    }
+  }
+}
+
+@media (--ge-smartphone) {
+  .content {
+    padding: 0 50px;
+  }
+}
+
+@media (--smartphone) {
+  .content {
+    padding: 0 20px;
+  }
+}

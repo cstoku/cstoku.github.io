@@ -12,25 +12,25 @@
   <div class="header-info flex flex-column">
     <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
     <aside class="flex">
-      <div class="flex flex-column taxonomy-wrapper">
-        <div class="flex category-wrapper">
+      <div class="flex flex-column">
+        <div class="flex taxonomy-wrapper">
           <i class="material-icons md-18 info-prefix">folder</i>
-          <p class="category tag-elem {{ .CurrentSection.Params.category_color_class }}">
-            <a href="{{ .CurrentSection.Permalink }}">{{ .CurrentSection.Title }}</a>
-          </p>
+          <ul class="flex taxonomy category">
+            <li class="{{ .CurrentSection.Params.category_color_class }}"><a href="{{ .CurrentSection.Permalink }}">{{ .CurrentSection.Title }}</a></li>
+          </ul>
         </div>
-        <div class="flex tag-wrapper">
+        <div class="flex taxonomy-wrapper">
           {{ with .Params.tags }}
           <i class="material-icons md-18 info-prefix">local_offer</i>
-          <ul class="flex tags">
+          <ul class="flex taxonomy tag">
             {{ range . }}
-            <li class="tag-elem"><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}/">{{ . }}</a></li>
+            <li><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}/">{{ . }}</a></li>
             {{ end }}
             {{ end }}
           </ul>
         </div>
       </div>
-      <ul class="flex flex-column post-date">
+      <ul class="flex flex-column dateinfo-wrapper">
         <li class="flex publish-date">
           <i class="material-icons md-18 info-prefix">event_note</i>
           {{ .PublishDate.Format .Site.Params.dateFormat }}
