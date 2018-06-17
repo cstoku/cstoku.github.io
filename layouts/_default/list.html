@@ -6,19 +6,12 @@
 {{ define "main" }}
 <div class="main-wrapper list">
   <main>
-    {{ if eq .IsHome false }}
-    <header>
-      <h1>{{ .Title }}</h1>
-    </header>
-    {{ end }}
-
-    <section class="posts">
+    <section class="flex posts">
       {{ $paginator := .Paginator }}
       {{ range $paginator.Pages }}
-      {{ .Render "summary" }}
+      {{ .Render "card" }}
       {{ end }}
     </section>
-
     <footer>
       {{ partial "pagination.html" $paginator }}
     </footer>

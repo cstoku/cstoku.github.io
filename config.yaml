@@ -18,7 +18,7 @@ enableEmoji: true
 summaryLength: 70
 metaDataFormat: yaml
 
-paginate: 2
+paginate: 10
 paginatePath: "page"
 
 pygmentsOptions: "linenos=table"

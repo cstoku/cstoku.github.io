@@ -1,6 +1,4 @@
 <header class="site-header flex">
+  <button class="menu-btn" on="tap:sidebar.toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-  <nav class="flex site-menu">
-    {{ partial "menu_part.html" .Site.Menus.main }}
-  </nav>
 </header>

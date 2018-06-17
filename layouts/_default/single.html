@@ -17,22 +17,24 @@
 
 
 {{ define "main" }}
-<main class="flex">
-  <article class="flex flex-column single">
-    <header class="flex flex-column">
-      {{ partial "content/header.html" . }}
-      {{ partial "content/social-button.html" . }}
-      {{ partial "content/floating-social-button.html" . }}
-    </header>
-    <div class="content">
-      {{ .Content }}
-    </div>
-    <footer class="flex flex-column">
-      {{ partial "content/footer.html" . }}
-    </footer>
-  </article>
-  <aside class="toc">
-    {{ .TableOfContents }}
-  </aside>
+<main>
+  <div class="flex article-wrapper">
+    <article class="flex flex-column single">
+      <header class="flex flex-column">
+        {{ partial "content/header.html" . }}
+        {{ partial "content/social-button.html" . }}
+        {{ partial "content/floating-social-button.html" . }}
+      </header>
+      <div class="content">
+        {{ .Content }}
+      </div>
+      <footer class="flex flex-column">
+        {{ partial "content/footer.html" . }}
+      </footer>
+    </article>
+    <aside class="toc">
+      {{ .TableOfContents }}
+    </aside>
+  </div>
 </main>
 {{ end }}

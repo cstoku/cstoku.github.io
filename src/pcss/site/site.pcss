@@ -1,8 +1,5 @@
 /* Site Default */
 body {
-  font-family: 'Noto Sans JP', system-ui;
-  font-weight: 400;
-  font-size: var(--fontBaseSize);
   color: var(--colorPrimaryText);
 }
 
@@ -30,24 +27,21 @@ h6 {
   min-height: 100vh;
 }
 
-main {
-  justify-content: center;
+section.posts {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-@media (--desktop) {
-  main {
-    margin: 80px;
-  }
+amp-image-lightbox {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media (--tablet) {
-  main {
-    flex-direction: column;
+@media (--ge-smartphone) {
+  section.posts {
+    margin: 50px;
   }
 }
 
 @media (--smartphone) {
-  main {
-    flex-direction: column;
-  }
+
 }

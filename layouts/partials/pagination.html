@@ -1,8 +1,12 @@
-<ul>
+<nav class="flex flex-center pagination page">
+  <div class="pagination-btn">
     {{ if .HasPrev }}
-        <li><a href="{{ .Prev.URL }}">Prev</a></li>
+    <a class="flex flex-row flex-center prev" href="{{ .Prev.URL }}"><span>Prev</span></a>
     {{ end }}
+  </div>
+  <div class="pagination-btn">
     {{ if .HasNext }}
-        <li><a href="{{ .Next.URL }}">Next</a></li>
+    <a class="flex flex-row flex-center next" href="{{ .Next.URL }}"><span>Next</span></a>
     {{ end }}
-</ul>
+  </div>
+</nav>

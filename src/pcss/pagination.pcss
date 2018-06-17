@@ -38,7 +38,13 @@
 }
 
 @media (--lt-desktop) {
-  .pagination {
+  .pagination.content {
+    flex-direction: column;
+  }
+}
+
+@media (--smartphone) {
+  .pagination.page {
     flex-direction: column;
   }
 }

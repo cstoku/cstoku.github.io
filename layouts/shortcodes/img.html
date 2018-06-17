@@ -13,6 +13,7 @@
   {{ with .Get "link"}}<a href="{{.}}">{{ end }}
     <div style="max-width: {{ $img.Width }}px;margin: auto;">
       <amp-img
+        on="tap:lightbox"
         src="{{ $img.RelPermalink }}"
         {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }}
         layout="responsive"

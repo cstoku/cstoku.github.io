@@ -27,6 +27,12 @@
     {{ partial "head/amp/scripts.html" . }}
   </head>
   <body>
+    <amp-sidebar id="sidebar" layout="nodisplay" side="left">
+      <nav>
+        {{ partial "menu_part.html" .Site.Menus.main }}
+      </nav>
+    </amp-sidebar>
+    <amp-image-lightbox id="lightbox" layout="nodisplay"></amp-image-lightbox>
     <div id="body-container" class="flex flex-column">
       {{ block "header" . }}
         {{ partial "header.html" . }}
