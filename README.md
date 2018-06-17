@@ -5,19 +5,22 @@
 
 ## 全体
 
-- [ ] やっぱside-barつかう？
+- [x] やっぱside-barつかう
+- [ ] サイドメニューのスタイル設定
+- [ ] Section・Tag名・カテゴリ名をバーに表示(パンくずリストっぽく)
 - [x] mainをラップして中央配置・・？(タイルにする)
-- [ ] Summaryの処理
-- [ ] listのPagerの描画
+- [x] Summaryの処理
+- [x] listのPagerの描画
 - [ ] taxonomyページの描画
 - [ ] ogタグの再確認
 - [ ] 文書以外のページのog:imageの扱い
-- [ ] Footerの処理
+- [x] Footerの処理(特にかんがえなかったｗ)
 - [ ] Aboutページの作成
 - [ ] Google Analyticsの設定
 - [ ] JSON-LDの対応
 - [ ] ampコンポーネントのショートコード作成
-- [ ] ページャーボタン修正
+- [x] ページャーボタン修正
+- [x] 条件でAMPのスクリプトをロードさせる
 
 ## Article
 
@@ -29,7 +32,7 @@
 - [x] サムネの扱い
 - [x] highlightの整形
 - [x] tocの表示調整
-- [ ] html,cssのリファクタリング
+- [x] html,cssのリファクタリング
   - メディアクエリ
   - articleのサイズやcard,singleでの扱い
 - [x] 最小画面の設定(min-width)
@@ -38,7 +41,7 @@
 ### 優先度低め
 
 - [ ] Tableの表示されない部分のScroll
-- [ ] 画像をクリックしたときにズームする仕組み
+- [x] 画像をクリックしたときにズームする仕組み
 
 # Reference
 
