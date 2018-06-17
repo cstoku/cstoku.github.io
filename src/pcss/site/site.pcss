@@ -1,0 +1,33 @@
+
+body {
+  font-family: 'Noto Sans JP', system-ui;
+  font-weight: 400;
+  font-size: var(--fontBaseSize);
+  color: var(--colorPrimaryText);
+}
+
+#body-container {
+  min-height: 100vh;
+}
+
+main {
+  justify-content: center;
+}
+
+@media (--desktop) {
+  main {
+    margin: 50px;
+  }
+}
+
+@media (--tablet) {
+  main {
+    flex-direction: column;
+  }
+}
+
+@media (--smartphone) {
+  main {
+    flex-direction: column;
+  }
+}
