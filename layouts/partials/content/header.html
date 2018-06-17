@@ -1,32 +1,45 @@
-<h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-<aside class="flex">
-    <div class="flex flex-column taxonomy-wrapper">
+<div class="main-header">
+  <div class="header-thubnail">
+    {{ with .Resources.GetMatch "thumbnail" }}
+    <amp-img src="{{ .RelPermalink }}"
+             width="{{ div (float .Width) (float .Height) }}"
+             height="1"
+             layout="responsive"
+             class="thumbnail">
+    </amp-img>
+    {{ end }}
+  </div>
+  <div class="header-info flex flex-column">
+    <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+    <aside class="flex">
+      <div class="flex flex-column taxonomy-wrapper">
         <div class="flex category-wrapper">
-            <i class="material-icons md-18 info-prefix">folder</i>
-            <p class="category tag-elem {{ .CurrentSection.Params.category_color_class }}">
-                <a href="{{ .CurrentSection.Permalink }}">{{ .CurrentSection.Title }}</a>
-            </p>
+          <i class="material-icons md-18 info-prefix">folder</i>
+          <p class="category tag-elem {{ .CurrentSection.Params.category_color_class }}">
+            <a href="{{ .CurrentSection.Permalink }}">{{ .CurrentSection.Title }}</a>
+          </p>
         </div>
         <div class="flex tag-wrapper">
-            {{ with .Params.tags }}
-                <i class="material-icons md-18 info-prefix">local_offer</i>
-                <ul class="flex tags">
-                {{ range . }}
-                    <li class="tag-elem"><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}/">{{ . }}</a></li>
-                {{ end }}
+          {{ with .Params.tags }}
+          <i class="material-icons md-18 info-prefix">local_offer</i>
+          <ul class="flex tags">
+            {{ range . }}
+            <li class="tag-elem"><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}/">{{ . }}</a></li>
             {{ end }}
-            </ul>
+            {{ end }}
+          </ul>
         </div>
-    </div>
-    <ul class="flex flex-column post-date">
+      </div>
+      <ul class="flex flex-column post-date">
         <li class="flex publish-date">
-            <i class="material-icons md-18 info-prefix">event_note</i>
-            {{ .PublishDate.Format .Site.Params.dateFormat }}
+          <i class="material-icons md-18 info-prefix">event_note</i>
+          {{ .PublishDate.Format .Site.Params.dateFormat }}
         </li>
         <li class="flex lastmod-date">
-            <i class="material-icons md-18 info-prefix">create</i>
-            {{ .Lastmod.Format .Site.Params.dateFormat }}
+          <i class="material-icons md-18 info-prefix">create</i>
+          {{ .Lastmod.Format .Site.Params.dateFormat }}
         </li>
-    </ul>
-</aside>
-
+      </ul>
+    </aside>
+  </div>
+</div>
