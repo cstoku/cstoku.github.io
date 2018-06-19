@@ -1,3 +1,3 @@
 <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  <a href="{{ .RelPermalink }}">{{ .Title }}<span class="{{ .CurrentSection.Title | lower }}">{{ .CurrentSection.Title }}</span></a>
 </li>

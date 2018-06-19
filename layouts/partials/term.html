@@ -1,11 +1,13 @@
-<section>
-    <h2><a href="{{ .RelPermalink }}">{{ .Title | lower }}</a></h2>
-    <ul>
-        {{ range first .Site.Params.maxTaxonomyContents .Pages }}
-            {{ .Render "li" }}
-        {{ end }}
-        {{ if gt .Pages .Site.Params.maxTaxonomyContents  }}
-            <li><a href="{{ .RelPermalink }}">See more...</a></li>
-        {{ end }}
-    </ul>
+<section class="term">
+  <h1><a href="{{ .RelPermalink }}">{{ .Title | lower }}</a></h1>
+  <ul>
+    {{ range first .Site.Params.maxTaxonomyContents .Pages }}
+    {{ .Render "li" }}
+    {{ end }}
+  </ul>
+  <div class="more">
+    {{ if gt .Pages .Site.Params.maxTaxonomyContents  }}
+    <a href="{{ .RelPermalink }}">See more...</a>
+    {{ end }}
+  </div>
 </section>

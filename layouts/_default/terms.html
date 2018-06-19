@@ -8,11 +8,8 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="main-wrapper">
+<div class="main-wrapper terms">
   <main>
-    <header>
-      <h1>{{ .Title }}</h1>
-    </header>
     {{ $paginator := .Paginator }}
     {{ range $paginator.Pages }}
     {{ partial "term.html" . }}

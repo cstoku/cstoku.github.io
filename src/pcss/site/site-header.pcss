@@ -1,5 +1,5 @@
 .site-header {
-  background-color: black;
+  background-color: var(--colorBar);
   color: white;
   align-items: center;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -31,8 +31,29 @@
   & span.bar {
     display: block;
     width: 27px;
-    height: 2px;
+    height: 3px;
     background-color: white;
     margin: 6px auto;
+  }
+}
+
+.breadcrumb {
+  list-style-type: none;
+
+  & li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    &::before {
+      content: "\e409";
+      font-family: 'Material Icons', system-ui;
+      margin: 0 8px;
+      font-size: 24px;
+    }
+
+    &.capitalize {
+      text-transform: capitalize;
+    }
   }
 }

@@ -5,14 +5,14 @@
 
 {{ define "main" }}
 <div class="main-wrapper list">
-  <main>
+  <main class="flex flex-column">
     <section class="flex posts">
       {{ $paginator := .Paginator }}
       {{ range $paginator.Pages }}
       {{ .Render "card" }}
       {{ end }}
     </section>
-    <footer>
+    <footer class="flex">
       {{ partial "pagination.html" $paginator }}
     </footer>
   </main>

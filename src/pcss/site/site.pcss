@@ -27,9 +27,21 @@ h6 {
   min-height: 100vh;
 }
 
+.main-wrapper.list,
+.main-wrapper.terms {
+  & main {
+    align-items: center;
+  }
+
+  & footer {
+    width: 100%;
+  }
+}
+
 section.posts {
   justify-content: space-evenly;
   flex-wrap: wrap;
+  max-width: 1650px;
 }
 
 amp-image-lightbox {
