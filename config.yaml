@@ -50,18 +50,13 @@ menu:
     - name: "Home"
       url: "/"
       weight: 1
-    - name: "Category"
-      identifier: "category"
-      weight: 2
     - name: "Post"
-      parent: "category"
       url: "/posts/"
-      weight: 1
-    - name: "Slide"
-      parent: "category"
-      url: "/slides/"
       weight: 2
-    - name: "Tag"
+    - name: "Slide"
+      url: "/slides/"
+      weight: 3
+    - name: "Tags"
       url: "/tags/"
       weight: 3
     - name: "About"
@@ -137,4 +132,4 @@ params:
 
   disqusIframeURL: https://disqus.cstoku.me/
 
-  maxTaxonomyContents: 2
+  maxTaxonomyContents: 5
