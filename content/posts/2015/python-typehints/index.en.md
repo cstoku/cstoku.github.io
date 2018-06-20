@@ -1,6 +1,5 @@
 ---
 title: Python3.5のType Hintについて
-description: Python3.5のType Hintについて簡単に解説
 
 date: 2015-12-23T02:05:50+09:00
 draft: false

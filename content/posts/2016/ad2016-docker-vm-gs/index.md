@@ -1,6 +1,5 @@
 ---
 title: VMからDockerに乗り換えてみたらどうでしょう？
-description: VMからDockerのコンテナに置き替えた際の操作方法の解説
 
 date: 2016-12-25T20:54:45+09:00
 draft: false

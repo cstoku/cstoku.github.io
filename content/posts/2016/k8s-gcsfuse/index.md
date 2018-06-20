@@ -1,6 +1,5 @@
 ---
 title: GKEでCloud Storageをマウントしてみる
-description: GKE上に動作しているコンテナにCloud Storageのバケットをマウントしてみた。
 
 date: 2016-12-03T23:03:12+09:00
 draft: false

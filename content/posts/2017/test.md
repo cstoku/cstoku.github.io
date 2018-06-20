@@ -1,6 +1,5 @@
 ---
 title: test
-description: test
 
 date: 2017-06-19T01:00:00+09:00
 draft: true

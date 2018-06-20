@@ -1,6 +1,5 @@
 ---
 title: GCEの構築もAnsibleでやろうとした話
-description: GCEでインスタンスの立ち上げからプロビジョニングまでをAnsibleでやろうとしたけど辛くなったお話
 
 date: 2017-01-02T17:22:14+09:00
 draft: false
