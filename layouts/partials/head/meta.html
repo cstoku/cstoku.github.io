@@ -9,8 +9,5 @@
 {{ with .Description }}
   <meta name="description" content="{{ . }}">
 {{ end }}
-{{ with .Params.tags }}
-  <meta name="keywords" content="{{ delimit . "," }}">
-{{ end }}
 
 {{ .Hugo.Generator }}
