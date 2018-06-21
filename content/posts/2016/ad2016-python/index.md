@@ -13,7 +13,7 @@ resources:
   src: header.png
 ---
 
-この記事は[Python Advent Calandar 2016](http://qiita.com/advent-calendar/2016/python)の23日目の記事です。(大遅刻その2)
+この記事は[Python Advent Calandar 2016](https://qiita.com/advent-calendar/2016/python)の23日目の記事です。(大遅刻その2)
 
 # やろうとしたこと
 

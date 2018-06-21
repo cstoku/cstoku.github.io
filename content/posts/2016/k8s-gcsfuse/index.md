@@ -21,7 +21,7 @@ resources:
 
 ---
 
-この記事は [CyberAgent Developers Advent Calendar 2016](http://www.adventar.org/calendars/1620) の3日目の記事となります。
+この記事は [CyberAgent Developers Advent Calendar 2016](https://www.adventar.org/calendars/1620) の3日目の記事となります。
 
 では早速本題に。
 
@@ -311,7 +311,7 @@ Zoneはasia-northeast1-aです。
 
 ちょっと悲しい終わり方ですが、以上になります!!
 
-明日の[CyberAgent Developers Advent Calendar 2016](http://www.adventar.org/calendars/1620)もお楽しみください！
+明日の[CyberAgent Developers Advent Calendar 2016](https://www.adventar.org/calendars/1620)もお楽しみください！
 
 
 ## ちょっとだけ追記
