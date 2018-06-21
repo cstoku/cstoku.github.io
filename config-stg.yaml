@@ -93,6 +93,7 @@ params:
   facebook:
     id: takuya.tokuda.0122
     uid: 100003789482934
+    appid: 1168458043296329
   twitter:
     card_type: summary
     id: CS_Toku
