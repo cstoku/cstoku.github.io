@@ -21,15 +21,15 @@
 - [x] 文書以外のページのog:imageの扱い
 - [x] LinkのURLやLangに確認
 - [x] Footerの処理(特にかんがえなかったｗ)
-- [ ] Aboutページの作成
-- [ ] Google Analyticsの設定
-- [ ] JSON-LDの対応
 - [x] ページャーボタン修正
 - [x] 条件でAMPのスクリプトをロードさせる
-- [ ] サイトのDescriptionを `config.yml` に書く
 - [x] 各環境のconfigを作成
 - [x] staging/masterのnetlifyの設定ファイルを作成
 - [x] cssのminify設定
+- [ ] Aboutページの作成
+- [ ] Google Analyticsの設定
+- [ ] JSON-LDの対応
+- [ ] サイトのDescriptionを `config.yml` に書く
 
 ## Article
 
