@@ -28,8 +28,8 @@
 - [x] 条件でAMPのスクリプトをロードさせる
 - [ ] サイトのDescriptionを `config.yml` に書く
 - [x] 各環境のconfigを作成
-- [ ] staging/masterのnetlifyの設定ファイルを作成
-- [ ] cssのminify設定
+- [x] staging/masterのnetlifyの設定ファイルを作成
+- [x] cssのminify設定
 
 ## Article
 
