@@ -27,8 +27,9 @@
 - [x] ページャーボタン修正
 - [x] 条件でAMPのスクリプトをロードさせる
 - [ ] サイトのDescriptionを `config.yml` に書く
-- [ ] 各環境のconfigを作成
+- [x] 各環境のconfigを作成
 - [ ] staging/masterのnetlifyの設定ファイルを作成
+- [ ] cssのminify設定
 
 ## Article
 
