@@ -2,13 +2,7 @@
 <html ⚡ lang="{{ .Lang }}">
   {{ partial "genparams.html" . -}}
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-    <title >{{ block "title" . }}
-      {{- if .IsHome }}
-      {{- .Site.Title }}
-      {{- else }}
-      {{- .Title }} - {{ .Site.Title }}
-      {{- end }}
-    {{- end }}</title>
+    <title >{{ .Scratch.Get "page_title" }}</title>
 
     {{ block "meta" . }}
       {{ partial "head/meta.html" . }}
