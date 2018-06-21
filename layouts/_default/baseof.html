@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ⚡ lang="{{ .Lang }}">
+  {{ partial "genparams.html" . -}}
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <title >{{ block "title" . }}
       {{- if .IsHome }}
@@ -13,13 +14,8 @@
       {{ partial "head/meta.html" . }}
     {{ end }}
 
-    {{ block "ogp_facebook" . }}
-      {{ partial "head/ogp/facebook/facebook.html" . }}
-    {{ end }}
-
-    {{ block "ogp_twitter" . }}
-      {{ partial "head/ogp/twitter/twitter.html" . }}
-    {{ end }}
+    {{ partial "head/ogp/facebook.html" . }}
+    {{ partial "head/ogp/twitter.html" . }}
 
     {{ block "link" . }}
       {{ partial "head/link/link.html" . }}

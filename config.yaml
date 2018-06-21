@@ -105,6 +105,7 @@ params:
   googleAnalytics: UA-71075507-1
   disqusIframeURL: https://disqus.cstoku.me/
   maxTaxonomyContents: 5
+  siteThumbnail: /images/blog-thumb.jpg
 
 #
 # Multilingual Settings
@@ -120,7 +121,7 @@ languages:
     summaryLength: 120
 
     params:
-      dateFormat: "January 2, 2006, 15:04 MST"
+      dateFormat: "Jan 2, 2006, 15:04 MST"
       description: "Desc"
 
   ja:

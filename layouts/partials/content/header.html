@@ -1,6 +1,6 @@
 <div class="main-header">
   <div class="header-thumbnail">
-    {{ with .Resources.GetMatch "thumbnail" }}
+    {{ with .Scratch.Get "page_thumb" }}
     <amp-img src="{{ .RelPermalink }}"
              width="{{ .Width }}"
              height="{{ .Height }}"
@@ -40,7 +40,7 @@
       <ul class="flex flex-column dateinfo-wrapper">
         <li class="flex publish-date">
           <i class="material-icons md-18 info-prefix">event_note</i>
-          {{ .PublishDate.Format .Site.Params.dateFormat }}
+          {{ .PublishDate.Format .Site.Params.dateFormat  }}
         </li>
         <li class="flex lastmod-date">
           <i class="material-icons md-18 info-prefix">create</i>
