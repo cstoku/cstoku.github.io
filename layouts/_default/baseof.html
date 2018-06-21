@@ -13,12 +13,10 @@
       {{ partial "head/meta.html" . }}
     {{ end }}
 
-    {{ partial "head/ogp/facebook/facebook.html" . }}
     {{ block "ogp_facebook" . }}
       {{ partial "head/ogp/facebook/facebook.html" . }}
     {{ end }}
 
-    {{ partial "head/ogp/twitter/twitter.html" . }}
     {{ block "ogp_twitter" . }}
       {{ partial "head/ogp/twitter/twitter.html" . }}
     {{ end }}
