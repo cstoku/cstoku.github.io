@@ -17,8 +17,8 @@
   - [x] SlideはTitleを使って `<meta name="nosnippets">` にする
   - [x] Topページだけ頑張って `config.yml` に書いて表示
 - [x] 自動生成のページでのmetaタグはnoindexを設定
-- [ ] ogタグの再確認
-- [ ] 文書以外のページのog:imageの扱い
+- [x] ogタグの再確認
+- [x] 文書以外のページのog:imageの扱い
 - [x] LinkのURLやLangに確認
 - [x] Footerの処理(特にかんがえなかったｗ)
 - [ ] Aboutページの作成
