@@ -123,6 +123,7 @@ languages:
     params:
       dateFormat: "Jan 2, 2006, 15:04 MST"
       description: "Desc"
+      locale: en_US
 
   ja:
     languageCode: ja
@@ -135,3 +136,4 @@ languages:
     params:
       dateFormat: "2006/01/02 15:04"
       description: "デスク"
+      locale: ja_JP
