@@ -6,8 +6,21 @@
 {{ with index .Site.Author "name" }}
   <meta name="author" content="{{ . }}">
 {{ end }}
-{{ with .Description }}
-  <meta name="description" content="{{ . }}">
+
+{{ if .IsHome }}
+<meta name="description" content="{{ .Site.Params.description }}">
+{{ else }}
+{{ if .IsPage }}
+{{ if eq .CurrentSection.Name "Slide" }}
+<meta name="description" content="{{ .Title }}">
+<meta name="robots" content="nosnippet">
+{{ else }}
+<meta name="description" content="{{ .Summary }}{{ if .Truncated }} ...{{ end }}">
 {{ end }}
+{{ else }}
+<meta name="robots" content="noindex">
+{{ end }}
+{{ end }}
+
 
 {{ .Hugo.Generator }}
