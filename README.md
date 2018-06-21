@@ -12,20 +12,21 @@
 - [x] Summaryの処理
 - [x] listのPagerの描画
 - [x] taxonomyページの描画
-- [ ] descriptionの生成
-  - PostはSummaryを使う？
-  - SlideはTitleを使って `<meta name="nosnippets">` にする
-  - Topページだけ頑張って `config.yml` に書いて表示
-- [ ] 自動生成のページでのmetaタグはnofollowを設定
-- [ ] pager.htmlの設定
+- [x] descriptionの生成
+  - [x] PostはSummaryを使う？
+  - [x] SlideはTitleを使って `<meta name="nosnippets">` にする
+  - [x] Topページだけ頑張って `config.yml` に書いて表示
+- [x] 自動生成のページでのmetaタグはnoindexを設定
 - [ ] ogタグの再確認
 - [ ] 文書以外のページのog:imageの扱い
+- [ ] LinkのURLやLangに確認
 - [x] Footerの処理(特にかんがえなかったｗ)
 - [ ] Aboutページの作成
 - [ ] Google Analyticsの設定
 - [ ] JSON-LDの対応
 - [x] ページャーボタン修正
 - [x] 条件でAMPのスクリプトをロードさせる
+- [ ] サイトのDescriptionを `config.yml` に書く
 
 ## Article
 
@@ -47,6 +48,7 @@
 
 - [ ] Tableの表示されない部分のScroll
 - [ ] ampコンポーネントのショートコード作成
+- [ ] pager.htmlの設定(リンクの設定とFooterへの追加)
 - [x] 画像をクリックしたときにズームする仕組み
 
 # Reference
