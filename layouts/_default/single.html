@@ -12,7 +12,9 @@
 
 {{ define "link" }}
 {{ partial "head/link/link.html" . }}
+{{ with .Params.pager }}
 {{ partial "head/link/pager.html" . }}
+{{ end }}
 {{ end }}
 
 
