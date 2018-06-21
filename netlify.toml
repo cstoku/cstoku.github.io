@@ -1,0 +1,25 @@
+[Settings]
+ID = "cstoku-blog"
+
+[build]
+publish = "public"
+command = """
+yarn &&
+yarn run webpack &&
+hugo --gc --config $HUGO_CONFIG"""
+
+[build.environment]
+GIT_LFS_ENABLED = "1"
+HUGO_VERSION = "0.42.1"
+
+[context.production.environment]
+HUGO_CONFIG = "config-prod.yaml"
+
+[context.staging.environment]
+HUGO_CONFIG = "config-stg.yaml"
+
+[context.disqus]
+command = "hugo"
+
+[context.disqus.environment]
+GIT_LFS_ENABLED = "0"
