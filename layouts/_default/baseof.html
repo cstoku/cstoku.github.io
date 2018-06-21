@@ -34,5 +34,8 @@
         {{ partial "footer.html" . }}
       {{ end }}
     </div>
+    {{- if .Site.Params.googleAnalytics }}
+    {{- partial "googleanalytics.html" . }}
+    {{- end }}
   </body>
 </html>
