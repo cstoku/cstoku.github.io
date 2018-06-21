@@ -12,6 +12,12 @@
 - [x] Summaryの処理
 - [x] listのPagerの描画
 - [x] taxonomyページの描画
+- [ ] descriptionの生成
+  - PostはSummaryを使う？
+  - SlideはTitleを使って `<meta name="nosnippets">` にする
+  - Topページだけ頑張って `config.yml` に書いて表示
+- [ ] 自動生成のページでのmetaタグはnofollowを設定
+- [ ] pager.htmlの設定
 - [ ] ogタグの再確認
 - [ ] 文書以外のページのog:imageの扱い
 - [x] Footerの処理(特にかんがえなかったｗ)
