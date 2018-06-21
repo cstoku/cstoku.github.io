@@ -41,5 +41,5 @@
 {{- end }}
 {{- end }}
 {{- with .Site.Params.robots }}
-{{- .Scratch.Set "page_robots"     . }}
+{{- $page.Scratch.Set "page_robots"     . }}
 {{- end }}
