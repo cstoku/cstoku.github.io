@@ -15,7 +15,6 @@ enableGitInfo: true
 enableRobotsTXT: false
 enableEmoji: true
 
-summaryLength: 70
 metaDataFormat: yaml
 
 paginate: 10
@@ -87,29 +86,6 @@ outputs:
   page: ["HTML", "AMP"]
 
 #
-# Multilingual Settings
-#
-languageCode: ja
-languages:
-  en:
-    languageCode: en
-    languageName: English
-    weight: 1
-    copyright: © 2016-{year} {name}
-
-    params:
-      dateFormat: "January 2, 2006, 15:04 MST"
-
-  ja:
-    languageCode: ja
-    languageName: Japanese
-    weight: 2
-    copyright: © 2016-{year} {name}
-
-    params:
-      dateFormat: "2006/01/02 15:04"
-
-#
 # Site Parameters
 #
 params:
@@ -126,10 +102,35 @@ params:
   youtube: ""
   flattr: ""
   searchConsole: "0000000000"
-
-  # Google Analytics.
   googleAnalytics: UA-71075507-1
-
   disqusIframeURL: https://disqus.cstoku.me/
-
   maxTaxonomyContents: 5
+
+#
+# Multilingual Settings
+#
+languageCode: ja
+languages:
+  en:
+    languageCode: en
+    languageName: English
+    weight: 1
+    copyright: © 2016-{year} {name}
+    hasCJKLanguage: false
+    summaryLength: 120
+
+    params:
+      dateFormat: "January 2, 2006, 15:04 MST"
+      description: "Desc"
+
+  ja:
+    languageCode: ja
+    languageName: Japanese
+    weight: 2
+    copyright: © 2016-{year} {name}
+    hasCJKLanguage: true
+    summaryLength: 120
+
+    params:
+      dateFormat: "2006/01/02 15:04"
+      description: "デスク"
