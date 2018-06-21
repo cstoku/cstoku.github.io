@@ -1,6 +1,6 @@
 <header class="site-header flex">
   <button class="menu-btn" on="tap:sidebar.toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-  <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+  <h1><a href="{{ absLangURL "" }}">{{ .Site.Title }}</a></h1>
   {{ if not .IsHome }}
   <ul class="breadcrumb flex">
     {{ if .IsPage }}

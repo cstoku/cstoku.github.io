@@ -19,7 +19,7 @@
 - [x] 自動生成のページでのmetaタグはnoindexを設定
 - [ ] ogタグの再確認
 - [ ] 文書以外のページのog:imageの扱い
-- [ ] LinkのURLやLangに確認
+- [x] LinkのURLやLangに確認
 - [x] Footerの処理(特にかんがえなかったｗ)
 - [ ] Aboutページの作成
 - [ ] Google Analyticsの設定

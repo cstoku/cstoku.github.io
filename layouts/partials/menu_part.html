@@ -2,7 +2,7 @@
 {{ range . }}
     <li>
         {{ if .URL }}
-            <a href="{{ .URL }}">{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
         {{ else }}
             <p>{{ .Name }}</p>
         {{ end }}
