@@ -3,12 +3,12 @@ import * as path from 'path';
 import * as RemoveAssetsPlugin from 'remove-assets-webpack-plugin';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 
+const env = process.env.NODE_ENV;
 const extractStyle = new ExtractTextPlugin('style.css');
 const extractHighlight = new ExtractTextPlugin('hybrid.css');
 
 module.exports = [
     {
-        mode: 'development',
         entry: {
             style: './src/pcss/style.amp.pcss',
         },
@@ -23,7 +23,13 @@ module.exports = [
                     use: extractStyle.extract({
                         fallback: 'style-loader',
                         use: [
-                            {loader: 'css-loader', options: {importLoaders: 1}},
+                            {   loader: 'css-loader',
+                                options: {
+                                    importLoaders: 1,
+                                    sourceMap: env !== 'production',
+                                    minimize: env === 'production'
+                                }
+                            },
                             {
                                 loader: 'postcss-loader',
                                 options: {
@@ -38,7 +44,8 @@ module.exports = [
                                         require("postcss-reporter")(),
                                         require("postcss-math")(),
                                         //require('stylelint')(),
-                                    ]
+                                    ],
+                                    sourceMap: env !== 'production' ? 'inline' : false
                                 }
                             }
                         ]
@@ -59,7 +66,6 @@ module.exports = [
         ]
     },
     {
-        mode: 'development',
         entry: {
             style: './src/css/hybrid.css',
         },
@@ -76,8 +82,8 @@ module.exports = [
                         use: {
                             loader: 'css-loader',
                             options: {
-                                minimize: true,
-                                sourceMap: false
+                                minimize: env === 'production',
+                                sourceMap: env !== 'production'
                             }
                         }
                     })
@@ -90,4 +96,3 @@ module.exports = [
         ]
     }
 ];
-
