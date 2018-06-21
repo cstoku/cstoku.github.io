@@ -1,12 +1,12 @@
 #
 # Hugo Parameters
 #
-baseURL: http://localhost
+baseURL: https://cstoku.me
 title: "Toku's Blog"
 
-buildDrafts: true
-buildFuture: true
-buildExpired: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
 
 defaultContentLanguage: ja
 defaultContentLanguageInSubdir: false

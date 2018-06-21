@@ -40,3 +40,6 @@
 {{- .Scratch.Set "page_robots"     "noindex" }}
 {{- end }}
 {{- end }}
+{{- with .Site.Params.robots }}
+{{- .Scratch.Set "page_robots"     . }}
+{{- end }}
