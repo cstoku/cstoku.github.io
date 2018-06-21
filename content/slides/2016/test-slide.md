@@ -9,6 +9,7 @@ categories:
   - Slide
 
 tags:
+- test
 
 style: simple
 highlight_style: monokai
