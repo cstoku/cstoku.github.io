@@ -2,14 +2,14 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="content-language" content="{{ .Lang }}">
-
-{{ with index .Site.Author "name" }}
-  <meta name="author" content="{{ . }}">
-{{ end }}
-
 <meta name="description" content="{{ .Scratch.Get "page_desc" }}">
-{{ with .Scratch.Get "page_robots" }}
+{{- with index .Site.Author "name" }}
+<meta name="author" content="{{ . }}">
+{{- end }}
+{{- with .Scratch.Get "page_robots" }}
 <meta name="robots" content="{{ . }}">
-{{ end }}
-
-{{ .Hugo.Generator }}
+{{- end }}
+{{- with .Site.Params.searchConsole }}
+<meta name="google-site-verification" content="{{ . }}" />
+{{- end }}
+{{- .Hugo.Generator }}
