@@ -83,7 +83,7 @@ blackfriday:
 #
 outputs:
   home: ["HTML", "RSS"]
-  page: ["HTML", "AMP"]
+  page: ["HTML"]
 
 #
 # Site Parameters

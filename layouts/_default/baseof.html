@@ -2,8 +2,12 @@
 <html ⚡ lang="{{ .Lang }}">
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <title >{{ block "title" . }}
-      {{ .Site.Title }}
-    {{ end }}</title>
+      {{- if .IsHome }}
+      {{- .Site.Title }}
+      {{- else }}
+      {{- .Title }} - {{ .Site.Title }}
+      {{- end }}
+    {{- end }}</title>
 
     {{ block "meta" . }}
       {{ partial "head/meta.html" . }}
