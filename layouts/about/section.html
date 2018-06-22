@@ -5,8 +5,8 @@
 
 {{ define "main" }}
 <div id="background-image">
-  <!--
   {{ range .Resources.Match "backpic-*" }}
+  <!--
   <amp-img
       src="{{ .RelPermalink }}"
       alt="background-image"
@@ -16,8 +16,9 @@
       {{ if false }}srcset="{{ .RelPermalink }} {{ .Width }}w{{ with .Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"{{ end }}
   >
   </amp-img>
-  {{ end }}
   -->
+  <div class="backpic {{ .Name }}"></div>
+  {{ end }}
 </div>
 <main id="about">
 {{ .Content }}
