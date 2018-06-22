@@ -26,8 +26,8 @@
 - [x] 各環境のconfigを作成
 - [x] staging/masterのnetlifyの設定ファイルを作成
 - [x] cssのminify設定
+- [x] Google Analyticsの設定
 - [ ] Aboutページの作成
-- [ ] Google Analyticsの設定
 - [ ] JSON-LDの対応
 - [ ] サイトのDescriptionを `config.yml` に書く
 
