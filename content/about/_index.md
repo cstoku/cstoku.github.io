@@ -10,6 +10,8 @@ resources:
   src: profile-img.jpg
 - name: backpic-:counter
   src: 'backpic-*.jpg'
+- name: cert-:counter
+  src: 'cert-*.png'
 
 ---
 

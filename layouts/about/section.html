@@ -4,7 +4,7 @@
 
 
 {{ define "main" }}
-<div id="background-image">
+<div class="background-image">
   {{ range .Resources.Match "backpic-*" }}
   <amp-img
       src="{{ .RelPermalink }}"
@@ -17,7 +17,48 @@
   </amp-img>
   {{ end }}
 </div>
+<div class="background-cover"></div>
 <main id="about">
-{{ .Content }}
+  <section class="profile flex flex-center flex-column">
+    <div class="profile-main">
+      {{ with .Resources.GetMatch "profile-img" }}
+      <amp-img
+          class="{{ .Name }}"
+          src="{{ .RelPermalink }}"
+          alt="profile-image"
+          layout="responsive"
+          width="{{ .Width }}"
+          height="{{ .Height }}">
+      </amp-img>
+      {{ end }}
+      <h1 class="name">{{ .Site.Author.name }}</h1>
+    </div>
+    <div class="sns flex flex-center">
+    <a class="twitter" href="#"><span></span></a>
+    <a class="facebook" href="#"><span></span></a>
+    <a class="gplus" href="#"><span></span></a>
+    <a class="linkedin" href="#"><span></span></a>
+    <a class="instagram" href="#"><span></span></a>
+    <a class="email" href="#"><span></span></a>
+  </div>
+  </section>
+  <section class="certified flex flex-center">
+    {{ range .Resources.Match "cert-*" }}
+    <amp-img
+        src="{{ .RelPermalink }}"
+        alt="cert-img"
+        layout="flex-item"
+        width="{{ .Width }}"
+        height="{{ .Height }}">
+    </amp-img>
+    {{ end }}
+  </section>
+  <section class="content">
+    {{/* .Content */}}
+  </section>
 </main>
+{{ end }}
+
+{{ define "footer" }}
+<footer></footer>
 {{ end }}

@@ -1,0 +1,89 @@
+.background-image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-color: black;
+
+  & amp-img {
+    position: fixed;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    max-width: 1000%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    & img {
+      max-width: 1000%;
+      width: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:not(:first-child) {
+      opacity: 0;
+    }
+  }
+}
+
+@supports ( object-fit: cover ) {
+  .background-image amp-img {
+    width: 100%;
+    height: 100%;
+    min-width: unset;
+    max-width: unset;
+    min-height: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+
+    & img {
+      object-fit: cover;
+      width: 100%;
+      max-width: unset;
+      left: unset;
+      transform: unset;
+    }
+  }
+}
+
+.background-image amp-img {
+  animation: fadeinout 60s infinite;
+
+  &:nth-of-type(1) {
+    animation-delay: 0s;
+  }
+  &:nth-of-type(2) {
+    animation-delay: 10s;
+  }
+  &:nth-of-type(3) {
+    animation-delay: 20s;
+  }
+  &:nth-of-type(4) {
+    animation-delay: 30s;
+  }
+  &:nth-of-type(5) {
+    animation-delay: 40s;
+  }
+  &:nth-of-type(6) {
+    animation-delay: 50s;
+  }
+}
+
+@keyframes fadeinout {
+  0%  { opacity: 0; }
+  5%  { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+}
+
+.background-cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
