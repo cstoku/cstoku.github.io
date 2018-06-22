@@ -5,6 +5,7 @@
 
 {{ define "main" }}
 <div id="background-image">
+  <!--
   {{ range .Resources.Match "backpic-*" }}
   <amp-img
       src="{{ .RelPermalink }}"
@@ -16,8 +17,9 @@
   >
   </amp-img>
   {{ end }}
+  -->
 </div>
-<main>
+<main id="about">
 {{ .Content }}
 </main>
 {{ end }}
