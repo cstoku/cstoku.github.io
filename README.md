@@ -28,6 +28,9 @@
 - [x] cssのminify設定
 - [x] Google Analyticsの設定
 - [ ] Aboutページの作成
+  - [ ] 資格の項目を出すShortcodeの作成
+  - [ ] markdownのある程度のスタイル
+  - [ ] 各画像のsrcsetの用意
 - [ ] JSON-LDの対応
 - [ ] サイトのDescriptionを `config.yml` に書く
 
