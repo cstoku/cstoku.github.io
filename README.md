@@ -35,6 +35,9 @@
   - [ ] Facebook用？のprofile用OGPを追加する
 - [ ] JSON-LDの対応
 - [ ] サイトのDescriptionを `config.yml` に書く
+- [ ] 404ページ作る
+- [ ] sitemap.xml
+- [ ] RSS
 
 ## Article
 
