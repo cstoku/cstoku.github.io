@@ -17,6 +17,7 @@ NODE_ENV = "production"
 
 [context.staging.environment]
 HUGO_CONFIG = "config-stg.yaml"
+NODE_ENV = "production"
 
 [context.disqus]
 command = "hugo"
