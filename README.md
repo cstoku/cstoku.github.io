@@ -36,6 +36,7 @@
 - [ ] JSON-LDの対応
 - [ ] サイトのDescriptionを `config.yml` に書く
 - [ ] 404ページ作る
+- [x] favicon.icoを作って設定
 - [ ] sitemap.xml
 - [ ] RSS
 

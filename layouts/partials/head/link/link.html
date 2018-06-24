@@ -1,16 +1,19 @@
-{{ with index .Site.Author "page" }}
-  <link rel="author" href="{{ absLangURL . }}">
-{{ end }}
+{{- with index .Site.Author "page" }}
+<link rel="author" href="{{ absLangURL . }}">
+{{- end }}
 
-{{ range .Translations}}
-  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}">
-{{ end }}
-{{ range .AlternativeOutputFormats }}
-  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
-{{ end }}
-{{ with .OutputFormats.Get "HTML" }}
-  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
-{{ end }}
+{{- range .Translations}}
+<link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}">
+{{- end }}
+{{- range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+{{- end }}
+{{- with .OutputFormats.Get "HTML" }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+{{- end }}
+{{ with .Site.Params.favicon }}
+<link rel="icon" href="{{ . }}">
+{{- end }}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

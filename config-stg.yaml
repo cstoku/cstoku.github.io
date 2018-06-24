@@ -104,6 +104,7 @@ params:
   disqusIframeURL: https://disqus.cstoku.me/
   maxTaxonomyContents: 5
   siteThumbnail: /images/blog-thumb.jpg
+  favicon: /images/favicon.ico
   robots: none
 
 #
