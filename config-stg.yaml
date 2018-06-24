@@ -53,6 +53,10 @@ menu:
     - name: "About"
       url: "/about/"
       weight: 4
+    - name: "RSS Feed"
+      url: "/index.xml"
+      weight: 10
+      identifier: feed
 
 #
 # Markdown Processer(Blackfriday) Options
