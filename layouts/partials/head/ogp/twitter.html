@@ -7,5 +7,5 @@
 <meta property="twitter:image" content="{{ .Permalink }}">
 {{ else -}}
 <meta property="twitter:image" content="{{ absURL .Site.Params.siteThumbnail }}">
-{{ end }}
+{{ end -}}
 <meta property="twitter:image:alt" content="{{ .Scratch.Get "page_thumb_alt" }}">
