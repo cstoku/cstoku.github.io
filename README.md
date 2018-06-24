@@ -32,6 +32,7 @@
   - [x] markdownのある程度のスタイル
   - [x] 各画像のsrcsetの用意
   - [x] SNSのリンク用意
+  - [ ] Facebook用？のprofile用OGPを追加する
 - [ ] JSON-LDの対応
 - [ ] サイトのDescriptionを `config.yml` に書く
 
