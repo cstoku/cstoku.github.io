@@ -27,16 +27,22 @@ h6 {
   min-height: 100vh;
 }
 
-.main-wrapper.list,
-.main-wrapper.terms {
-  & main {
-    align-items: center;
+.main-wrapper {
+  margin-top: 50px;
+
+  &.list,
+  &.terms {
+    & main {
+      align-items: center;
+    }
+
+    & footer {
+      width: 100%;
+    }
   }
 
-  & footer {
-    width: 100%;
-  }
 }
+
 
 section.posts {
   justify-content: space-evenly;
@@ -52,8 +58,4 @@ amp-image-lightbox {
   section.posts {
     margin: 50px;
   }
-}
-
-@media (--smartphone) {
-
 }
