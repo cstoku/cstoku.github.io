@@ -2,10 +2,12 @@
 <div class="main-wrapper list">
   <main class="flex flex-column">
     <section class="flex posts">
-      {{ $paginator := .Paginator }}
-      {{ range $paginator.Pages }}
-      {{ .Render "card" }}
-      {{ end }}
+      {{- $paginator := .Paginator }}
+      {{- range $paginator.Pages }}
+      {{- partial "genparams.html" . }}
+      {{- .Render "card" }}
+      {{- end }}
+      {{- partial "genparams.html" . }}
     </section>
     <footer class="flex">
       {{ partial "pagination.html" $paginator }}
