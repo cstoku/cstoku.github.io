@@ -74,7 +74,7 @@
           srcset="{{ .RelPermalink }} {{ .Width }}w{{ with $page.Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
       >
       </amp-img>
-      {{ end }}
+      {{- end }}
       <h1 class="name">{{ .Site.Author.name }}</h1>
     </div>
     <div class="sns flex flex-center">

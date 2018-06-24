@@ -1,14 +1,14 @@
-{{ .Get "name" | .Page.Resources.GetMatch | .Scratch.Set "buf" }}
-{{ $img := .Scratch.Get "buf" }}
-{{ if gt $img.Width 425 }}
-{{ $img.Resize "425x" | slice | .Scratch.Add "img_set" }}
-{{ end }}
-{{ if gt $img.Width 1024 }}
-{{ $img.Resize "1024x" | slice | .Scratch.Add "img_set" }}
-{{ end }}
-{{ if gt $img.Width 1440 }}
-{{ $img.Resize "1440x" | slice | .Scratch.Add "img_set" }}
-{{ end }}
+{{- .Get "name" | .Page.Resources.GetMatch | .Scratch.Set "buf" }}
+{{- $img := .Scratch.Get "buf" }}
+{{- if gt $img.Width 425 }}
+{{- $img.Resize "425x" | slice | .Scratch.Add "img_set" }}
+{{- end }}
+{{- if gt $img.Width 1024 }}
+{{- $img.Resize "1024x" | slice | .Scratch.Add "img_set" }}
+{{- end }}
+{{- if gt $img.Width 1440 }}
+{{- $img.Resize "1440x" | slice | .Scratch.Add "img_set" }}
+{{- end }}
 <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
   {{ with .Get "link"}}<a href="{{.}}">{{ end }}
     <div style="max-width: {{ $img.Width }}px;margin: auto;">

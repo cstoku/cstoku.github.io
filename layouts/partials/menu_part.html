@@ -1,14 +1,14 @@
 <ul class="{{ if (index . 0).Parent }}sub-menu{{ end }} ">
-{{ range . }}
+{{- range . }}
     <li>
-        {{ if .URL }}
+        {{- if .URL }}
             <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-        {{ else }}
+        {{- else }}
             <p>{{ .Name }}</p>
-        {{ end }}
-        {{ if .HasChildren }}
+        {{- end }}
+        {{- if .HasChildren }}
             {{ partial "menu_part.html" .Children }}
-        {{ end }}
+        {{- end }}
     </li>
-{{ end }}
+{{- end }}
 </ul>

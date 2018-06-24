@@ -1,6 +1,6 @@
 <div class="certified flex flex-center">
-  {{ range $.Page.Resources.Match (.Get 0) }}
-  {{ with .Resize "x200" }}
+  {{- range $.Page.Resources.Match (.Get 0) }}
+  {{- with .Resize "x200" }}
   <amp-img
       src="{{ .RelPermalink }}"
       alt="cert-img"
@@ -8,5 +8,5 @@
       width="{{ .Width }}"
       height="{{ .Height }}">
   </amp-img>
-  {{ end }}{{ end }}
+  {{- end }}{{ end }}
 </div>
