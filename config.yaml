@@ -30,7 +30,6 @@ rssLimit: 15
 
 disableKinds:
   - RSS
-  - sitemap
   - robotsTXT
 
 taxonomies:
@@ -40,6 +39,11 @@ author:
   name: Takuya Tokuda
   email: cs.toku.mail@gmail.com
   page: /about/
+
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
 
 menu:
   main:
