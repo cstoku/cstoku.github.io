@@ -28,15 +28,12 @@ ignoreFiles: [ "\\.un~$" ]
 
 rssLimit: 15
 
-disableKinds:
-  - RSS
-
 taxonomies:
   tag: tags
 
 author:
   name: Takuya Tokuda
-  email: cs.toku.mail@gmail.com
+  email: cs.toku.mail+blog@gmail.com
   page: /about/
 
 sitemap:
@@ -61,6 +58,10 @@ menu:
     - name: "About"
       url: "/about/"
       weight: 4
+    - name: "RSS Feed"
+      url: "/index.xml"
+      weight: 10
+      identifier: feed
 
 #
 # Markdown Processer(Blackfriday) Options

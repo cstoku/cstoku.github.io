@@ -28,9 +28,6 @@ ignoreFiles: [ "\\.un~$" ]
 
 rssLimit: 15
 
-disableKinds:
-  - RSS
-
 taxonomies:
   tag: tags
 
@@ -41,7 +38,7 @@ sitemap:
 
 author:
   name: Takuya Tokuda
-  email: cs.toku.mail@gmail.com
+  email: cs.toku.mail+blog@gmail.com
   page: /about/
 
 menu:
