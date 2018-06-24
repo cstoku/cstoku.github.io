@@ -6,10 +6,10 @@
 <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}">
 {{- end }}
 {{- range .AlternativeOutputFormats }}
-<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
 {{- end }}
 {{- with .OutputFormats.Get "HTML" }}
-<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
 {{- end }}
 {{ with .Site.Params.favicon }}
 <link rel="icon" href="{{ . }}">

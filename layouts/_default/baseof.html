@@ -20,7 +20,7 @@
   <body>
     <amp-sidebar id="sidebar" layout="nodisplay" side="left">
       <nav>
-        {{ partial "menu_part.html" .Site.Menus.main }}
+        {{ partial "menu_part.html" . }}
       </nav>
     </amp-sidebar>
     {{ block "amp-component" . }}

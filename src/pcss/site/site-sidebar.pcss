@@ -2,15 +2,53 @@
   background: linear-gradient(var(--colorBar) 80%, var(--colorPrimary) 105%);
 
   & ul {
-    margin: 50px 0;
+    margin-top: 30px;
+
+    & li {
+      &.feed {
+        margin-top: 40px;
+
+        & a {
+          font-size: 16px;
+          line-height: 24px;
+
+          &::before {
+            content: "\e0e5";
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-size: 24px;
+            margin: 0 0.2em 0 -1.2em;
+            vertical-align: middle;
+          }
+        }
+      }
+
+      &.translation a {
+        font-size: 16px;
+        line-height: 24px;
+
+        &::before {
+          content: "\e927";
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-size: 24px;
+          margin: 0 0.2em 0 -1.2em;
+          vertical-align: middle;
+        }
+      }
+
+      & span {
+        vertical-align: middle;
+      }
+    }
   }
 
   & a {
     display: block;
-    width: 100px;
-    padding: 25px 50px;
+    min-width: 120px;
+    padding: 20px 40px;
     color: white;
-    font-size: 26px;
+    font-size: 24px;
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.1);

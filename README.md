@@ -37,8 +37,9 @@
 - [ ] サイトのDescriptionを `config.yml` に書く
 - [x] 404ページ作る
 - [x] favicon.icoを作って設定
-- [ ] sitemap.xml
-- [ ] RSS
+- [x] sitemap.xml
+- [x] RSS
+- [x] 言語切替ボタン実装
 
 ## Article
 
