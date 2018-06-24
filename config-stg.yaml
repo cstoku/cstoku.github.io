@@ -38,6 +38,9 @@ sitemap:
 
 author:
   name: Takuya Tokuda
+  first_name: Takuya
+  last_name: Tokuda
+  gender: male
   email: cs.toku.mail+blog@gmail.com
   page: /about/
 

@@ -27,10 +27,17 @@
 {{ range .Params.tags -}}
 <meta property="article:tag" content="{{ . }}">
 {{ end -}}
+{{ else }}{{ if eq .CurrentSection.Name "About" -}}
+<meta property="og:type" content="profile">
+<meta property="og:updated_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}">
+<meta property="profile:first_name" content="{{ .Site.Author.first_name }}">
+<meta property="profile:last_name" content="{{ .Site.Author.last_name }}">
+<meta property="profile:gender" content="{{ .Site.Author.gender }}">
+<meta property="profile:username" content="{{ .Site.Params.facebook.id }}">
 {{ else -}}
 <meta property="og:type" content="website">
 <meta property="og:updated_time" content="{{ .Site.LastChange.Format "2006-01-02T15:04:05-07:00" }}">
-{{ end -}}
+{{ end }}{{ end -}}
 <meta property="fb:app_id" content="{{ .Site.Params.facebook.appid }}">
 <meta property="fb:admins" content="{{ .Site.Params.facebook.uid }}">
 <meta property="fb:profile_id" content="{{ .Site.Params.facebook.uid }}">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ⚡ lang="{{ .Lang }}">
   {{ partial "genparams.html" . -}}
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
     <title >{{ .Scratch.Get "page_title" }}</title>
 
     {{ block "meta" . }}
