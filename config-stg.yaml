@@ -32,7 +32,6 @@ disableKinds:
   - RSS
   - sitemap
   - robotsTXT
-  - 404
 
 taxonomies:
   tag: tags

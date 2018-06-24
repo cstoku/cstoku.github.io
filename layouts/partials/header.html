@@ -1,17 +1,17 @@
 <header class="site-header flex">
   <button class="menu-btn" on="tap:sidebar.toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   <h1><a href="{{ absLangURL "" }}">{{ .Site.Title }}</a></h1>
-  {{ if not .IsHome }}
+  {{- if eq .Kind "404" | or .IsHome | not }}
   <ul class="breadcrumb flex">
-    {{ if .IsPage }}
-    {{ $main_tag := index .Params.tags 0 }}
+    {{- if .IsPage }}
+    {{- $main_tag := index .Params.tags 0 }}
     <li><a href="{{ .CurrentSection.RelPermalink}}">{{ .CurrentSection.Name }}</a></li>
     <li class="capitalize"><a href="{{ $.Site.LanguagePrefix }}/tags/{{ $main_tag }}/">{{ $main_tag }}</a></li>
-    {{ else }}{{ if eq .Kind "taxonomy" }}
+    {{- else }}{{ if eq .Kind "taxonomy" }}
     <li class="capitalize"><a href="{{ $.Site.LanguagePrefix }}/{{ .Data.Plural }}/">{{ .Data.Plural }}</a></li>
-    {{ end }}
+    {{- end }}
     <li><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
-    {{ end }}
+    {{- end }}
   </ul>
-  {{ end }}
+  {{- end }}
 </header>
