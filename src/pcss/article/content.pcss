@@ -113,11 +113,18 @@
       background-color: color-mod(var(--colorPrimary) alpha(20%));
     }
   }
+  & figure amp-img {
+    margin: auto;
+  }
 }
 
 @media (--ge-smartphone) {
   .content {
     padding: 0 50px;
+
+    & figure amp-img {
+      max-width: 60%;
+    }
   }
 }
 
