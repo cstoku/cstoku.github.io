@@ -30,7 +30,6 @@ rssLimit: 15
 
 disableKinds:
   - RSS
-  - robotsTXT
 
 taxonomies:
   tag: tags

@@ -12,7 +12,7 @@ defaultContentLanguage: ja
 defaultContentLanguageInSubdir: false
 
 enableGitInfo: true
-enableRobotsTXT: false
+enableRobotsTXT: true
 enableEmoji: true
 
 metaDataFormat: yaml
@@ -30,7 +30,6 @@ rssLimit: 15
 
 disableKinds:
   - RSS
-  - robotsTXT
 
 taxonomies:
   tag: tags
