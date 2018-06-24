@@ -39,6 +39,7 @@
 - [x] favicon.icoを作って設定
 - [x] sitemap.xml
 - [x] RSS
+- [ ] Feedlyのサムネが表示されない不具合の修正
 - [x] 言語切替ボタン実装
 
 ## Article
