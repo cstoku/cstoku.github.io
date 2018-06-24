@@ -62,12 +62,12 @@
       <h1 class="name">{{ .Site.Author.name }}</h1>
     </div>
     <div class="sns flex flex-center">
-    <a class="twitter" href="#"><span></span></a>
-    <a class="facebook" href="#"><span></span></a>
-    <a class="gplus" href="#"><span></span></a>
-    <a class="linkedin" href="#"><span></span></a>
-    <a class="instagram" href="#"><span></span></a>
-    <a class="email" href="#"><span></span></a>
+    <a class="twitter" href="https://twitter.com/{{ .Site.Params.twitter.id }}"><span></span></a>
+    <a class="facebook" href="https://facebook.com/{{ .Site.Params.facebook.id }}"><span></span></a>
+    <a class="github" href="https://github.com/{{ .Site.Params.github }}"><span></span></a>
+    <a class="gplus" href="https://plus.google.com/{{ .Site.Params.googleplus }}"><span></span></a>
+    <a class="linkedin" href="https://www.linkedin.com/in/{{ .Site.Params.linkedin }}/"><span></span></a>
+    <a class="email" href="mailto:{{ .Site.Params.email }}"><span></span></a>
   </div>
   </section>
   <section class="about-content">
