@@ -27,10 +27,10 @@
 - [x] staging/masterのnetlifyの設定ファイルを作成
 - [x] cssのminify設定
 - [x] Google Analyticsの設定
-- [ ] Aboutページの作成
+- [x] Aboutページの作成
   - [x] 資格の項目を出すShortcodeの作成
   - [x] markdownのある程度のスタイル
-  - [ ] 各画像のsrcsetの用意
+  - [x] 各画像のsrcsetの用意
   - [x] SNSのリンク用意
 - [ ] JSON-LDの対応
 - [ ] サイトのDescriptionを `config.yml` に書く
