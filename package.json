@@ -1,5 +1,5 @@
 {
-  "devDependencies": {
+  "dependencies": {
     "@types/node": "10.1.2",
     "@types/webpack": "^4.4.0",
     "autoprefixer": "8.5.0",
