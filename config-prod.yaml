@@ -31,14 +31,6 @@ rssLimit: 15
 taxonomies:
   tag: tags
 
-author:
-  name: Takuya Tokuda
-  first_name: Takuya
-  last_name: Tokuda
-  gender: male
-  email: cs.toku.mail+blog@gmail.com
-  page: /about/
-
 sitemap:
   changefreq: monthly
   filename: sitemap.xml
@@ -123,6 +115,14 @@ languages:
     hasCJKLanguage: false
     summaryLength: 120
 
+    author:
+      name: Takuya Tokuda
+      first_name: Takuya
+      last_name: Tokuda
+      gender: male
+      email: cs.toku.mail+blog@gmail.com
+      page: /about/
+
     params:
       dateFormat: "Jan 2, 2006, 15:04 MST"
       description: "Desc"
@@ -135,6 +135,14 @@ languages:
     copyright: © 2016-{year} {name}
     hasCJKLanguage: true
     summaryLength: 120
+
+    author:
+      name: 德田 拓也
+      first_name: 拓也
+      last_name: 德田
+      gender: male
+      email: cs.toku.mail+blog@gmail.com
+      page: /about/
 
     params:
       dateFormat: "2006/01/02 15:04"
