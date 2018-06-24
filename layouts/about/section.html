@@ -22,17 +22,24 @@
 
 {{ define "main" }}
 <div class="background-image">
-  {{ range .Resources.Match "backpic-*" }}
+  {{- $page := . }}
+  {{- range .Resources.Match "backpic-*" }}
+  {{- $org_img := . }}
+  {{- $page.Scratch.Delete "img_set" }}
+  {{- range slice "640x q80" "1024x q80" "1440x q80" "1920x q80" "2560x q80" "3840x q80" }}
+  {{- $org_img.Resize . | slice | $page.Scratch.Add "img_set" }}
+  {{- end }}
+  {{- with $org_img }}
   <amp-img
       src="{{ .RelPermalink }}"
       alt="background-image"
       layout="responsive"
       width="{{ .Width }}"
       height="{{ .Height }}"
-      {{ if false }}srcset="{{ .RelPermalink }} {{ .Width }}w{{ with .Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"{{ end }}
+      srcset="{{ .RelPermalink }} {{ .Width }}w{{ with $page.Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
   >
   </amp-img>
-  {{ end }}
+  {{- end }}{{- end }}
 </div>
 <div class="background-cover"></div>
 <div class="navigation-cursor flex flex-center">
@@ -49,14 +56,23 @@
 <main id="about">
   <section class="profile flex flex-center flex-column">
     <div class="profile-main">
-      {{ with .Resources.GetMatch "profile-img" }}
+      {{- $page := . }}
+      {{- $org_img := .Resources.GetMatch "profile-img" }}
+      {{- .Scratch.Delete "img_set" }}
+      {{- range slice "100x q80" "200x q80" "500x q80" "1000x q80" "2000x q80" }}
+      {{- $org_img.Resize . | slice | $page.Scratch.Add "img_set" }}
+      {{- end }}
+      {{- with $org_img }}
       <amp-img
           class="{{ .Name }}"
           src="{{ .RelPermalink }}"
           alt="profile-image"
           layout="responsive"
           width="{{ .Width }}"
-          height="{{ .Height }}">
+          height="{{ .Height }}"
+          sizes="(min-width: 1024px) 25vw, 50vw"
+          srcset="{{ .RelPermalink }} {{ .Width }}w{{ with $page.Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
+      >
       </amp-img>
       {{ end }}
       <h1 class="name">{{ .Site.Author.name }}</h1>
