@@ -15,4 +15,6 @@ resources:
 
 ---
 
-About Page.
+# Licenses and Certifications
+
+{{< about-certs "cert-*" >}}
