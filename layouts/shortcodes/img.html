@@ -11,18 +11,17 @@
 {{- end }}
 <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
   {{ with .Get "link"}}<a href="{{.}}">{{ end }}
-    <div style="max-width: {{ $img.Width }}px;margin: auto;">
-      <amp-img
-        on="tap:lightbox"
-        src="{{ $img.RelPermalink }}"
-        {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }}
-        layout="responsive"
-        width="{{ $img.Width }}"
-        height="{{ $img.Height }}"
-        srcset="{{ $img.RelPermalink }} {{ $img.Width }}w{{ with .Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
-      >
-      </amp-img>
-    </div>
+    <amp-img
+      on="tap:lightbox"
+      role="button"
+      src="{{ $img.RelPermalink }}"
+      {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }}
+      layout="responsive"
+      width="{{ $img.Width }}"
+      height="{{ $img.Height }}"
+      srcset="{{ $img.RelPermalink }} {{ $img.Width }}w{{ with .Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
+      tabindex>
+    </amp-img>
   {{ if .Get "link"}}</a>{{ end }}
 {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
 <figcaption>{{ if isset .Params "title" }}
