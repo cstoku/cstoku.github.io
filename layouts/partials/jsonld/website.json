@@ -1,0 +1,34 @@
+{{ $mainLang := index .Site.Languages 0 -}}
+{{ $altLang := index .Translations 0 -}}
+{
+  "@context": "http://schema.org",
+  "@id": "{{ .Permalink }}#website",
+  "@type": ["WebSite", "ItemList"],
+  {{- $pages := first 10 .Pages }}
+  {{- $len := len $pages }}
+  "itemListElement": [
+    {{- range $i, $page := $pages }}
+    {{ $pos := add $i 1 }}
+    {
+      "@type": "ListItem",
+      "position": {{ $pos }},
+      "url": "{{ $page.Permalink }}"
+    }{{ if ne $pos $len }},{{ end }}
+    {{- end }}
+  ],
+  "author": {{ partial "jsonld/person.json" . -}},
+  "dateModified": "{{ .Site.LastChange.Format "2006-01-02T15:04:05-07:00" }}",
+  "inLanguage": "{{ .Site.Language.Lang }}",
+  "publisher": {{ partial "jsonld/organization.json" . }},
+  {{- if .IsTranslated }}
+  {{- if eq $mainLang.Lang .Site.Language.Lang }}
+  "workTranslation": {
+  {{- else }}
+  "translationOfWork": {
+  {{- end }}
+    "@id": "{{ $altLang.Permalink }}#website"
+  },
+  {{- end }}
+  "url": "{{ .Permalink }}",
+  "name": "{{ .Scratch.Get "page_title" }}"
+}
