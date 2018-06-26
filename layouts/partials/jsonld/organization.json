@@ -1,0 +1,22 @@
+{
+  "@context": "http://schema.org",
+  "@id": "{{ absURL "/" }}#organization",
+  "@type": "Organization",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ absURL "/images/favicon-1024.png" }}",
+    "width": 1024,
+    "height": 1024
+  },
+  "member": {
+    "@id": "{{ absURL "/" }}#person"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ absURL "/images/favicon-1024.png" }}",
+    "width": 1024,
+    "height": 1024
+  },
+  "url": "{{ absURL "/" }}",
+  "name": "{{ .Site.Title }}"
+}
