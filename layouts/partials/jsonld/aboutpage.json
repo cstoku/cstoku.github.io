@@ -1,0 +1,49 @@
+{{ $mainLang := index .Site.Languages 0 -}}
+{{ $altLang := index .Translations 0 -}}
+{
+  "@context": "http://schema.org",
+  "@id": "{{ .Permalink }}#aboutpage",
+  "@type": "AboutPage",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 0,
+        "item": {
+          "@id": "{{ absLangURL "/" }}#website",
+          "name": "{{ .Site.Title }}"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "{{ .Permalink }}#aboutpage",
+          "name": "{{ .Title }}"
+        }
+      }
+    ]
+  },
+  "author": {{ partial "jsonld/person.json" . -}},
+  "dateCreated": "{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }}",
+  "datePublished": "{{ .PublishDate.Format "2006-01-02" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}",
+  {{- if not .ExpiryDate.IsZero }}
+  "expires": "{{ .ExpiryDate.Format "2006-01-02" }}",
+  {{- end }}
+  "inLanguage": "{{ .Site.Language.Lang }}",
+  "publisher": {{ partial "jsonld/organization.json" . }},
+  {{- if .IsTranslated }}
+  {{- if eq $mainLang.Lang .Site.Language.Lang }}
+  "workTranslation": {
+  {{- else }}
+  "translationOfWork": {
+  {{- end }}
+    "@id": "{{ $altLang.Permalink }}#aboutpage"
+  },
+  {{- end }}
+  "mainEntityOfPage": "{{ absLangURL "/" }}",
+  "url": "{{ .Permalink }}",
+  "name": "{{ .Scratch.Get "page_title" }}"
+}
