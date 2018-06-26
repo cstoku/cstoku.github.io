@@ -57,5 +57,14 @@
     "width": 500,
     "height": 500
   },
+  "sameAs": [
+    "https://twitter.com/{{ .Site.Params.twitter.id }}",
+    "https://facebook.com/{{ .Site.Params.facebook.id }}",
+    "https://github.com/{{ .Site.Params.github }}",
+    "https://plus.google.com/{{ .Site.Params.googleplus }}",
+    "https://www.youtube.com/channel/{{ .Site.Params.youtube }}",
+    "https://www.linkedin.com/in/{{ .Site.Params.linkedin }}/"
+  ],
+  "url": "{{ absLangURL "/" }}",
   "name": "{{ .Site.Author.name }}"
 }
