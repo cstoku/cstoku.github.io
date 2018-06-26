@@ -97,7 +97,7 @@ params:
     card_type: summary
     id: CS_Toku
     uid: "131178169"
-  youtube: ""
+  youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
   flattr: ""
   disqusIframeURL: https://disqus.cstoku.me/
   maxTaxonomyContents: 5
@@ -110,31 +110,10 @@ params:
 #
 languageCode: ja
 languages:
-  en:
-    languageCode: en
-    languageName: English
-    weight: 1
-    copyright: © 2016-{year} {name}
-    hasCJKLanguage: false
-    summaryLength: 120
-
-    author:
-      name: Takuya Tokuda
-      first_name: Takuya
-      last_name: Tokuda
-      gender: male
-      email: cs.toku.mail+blog@gmail.com
-      page: /about/
-
-    params:
-      dateFormat: "Jan 2, 2006, 15:04 MST"
-      description: "Desc"
-      locale: en_US
-
   ja:
     languageCode: ja
     languageName: Japanese
-    weight: 2
+    weight: 1
     copyright: © 2016-{year} {name}
     hasCJKLanguage: true
     summaryLength: 120
@@ -151,3 +130,23 @@ languages:
       dateFormat: "2006/01/02 15:04"
       description: "デスク"
       locale: ja_JP
+  en:
+    languageCode: en
+    languageName: English
+    weight: 2
+    copyright: © 2016-{year} {name}
+    hasCJKLanguage: false
+    summaryLength: 120
+
+    author:
+      name: Takuya Tokuda
+      first_name: Takuya
+      last_name: Tokuda
+      gender: male
+      email: cs.toku.mail+blog@gmail.com
+      page: /about/
+
+    params:
+      dateFormat: "Jan 2, 2006, 15:04 MST"
+      description: "Desc"
+      locale: en_US
