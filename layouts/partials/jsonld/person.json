@@ -1,0 +1,61 @@
+{
+  "@context": "http://schema.org",
+  "@id": "{{ absURL "/" }}#person",
+  "@type": "Person",
+  "birthDate": "1994-01-22",
+  "birthPlace": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "{{ T "birthPlaceRegion" }}",
+        "addressLocality": "{{ T "birthPlaceLocality" }}",
+        "name": "{{ T "birthPlaceName" }}"
+      },
+      "latitude": 35.90779589999999,
+      "longitude": 139.33902639999997
+    }
+  },
+  "email": "{{ .Site.Author.email }}",
+  "familyName": "{{ .Site.Author.last_name }}",
+  "gender": "Male",
+  "givenName": "{{ .Site.Author.first_name }}",
+  "homeLocation": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "{{ T "homeLocationRegion" }}",
+        "name": "{{ T "homeLocationName" }}"
+      },
+      "latitude": 35.6894875,
+      "longitude": 139.69170639999993
+    }
+  },
+  "jobTitle": "Engineer",
+  "workLocation": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "{{ T "workLocationRegion" }}",
+        "name": "{{ T "workLocationName" }}"
+      },
+      "latitude": 35.6894875,
+      "longitude": 139.69170639999993
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ absURL "/images/profile.jpg" }}",
+    "width": 500,
+    "height": 500
+  },
+  "name": "{{ .Site.Author.name }}"
+}
