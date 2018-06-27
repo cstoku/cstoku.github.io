@@ -36,6 +36,10 @@ sitemap:
   filename: sitemap.xml
   priority: 0.5
 
+imaging:
+  resampleFilter: Lanczos
+  quality: 100
+
 menu:
   main:
     - name: "Home"
