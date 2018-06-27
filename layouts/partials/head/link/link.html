@@ -11,8 +11,9 @@
 {{- with .OutputFormats.Get "HTML" }}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
 {{- end }}
-{{ with .Site.Params.favicon }}
-<link rel="icon" href="{{ . }}">
+{{- $img := .Site.GetPage "section" "img" }}
+{{ with $img.Resources.GetMatch "favicon-ico" }}
+<link rel="shortcut icon" type="image/x-icon" href="{{ .Permalink }}">
 {{- end }}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
