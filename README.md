@@ -41,9 +41,9 @@
 - [x] RSS
 - [ ] Feedlyのサムネが表示されない不具合の修正
 - [x] 言語切替ボタン実装
-- [ ] 404はインデックスしない用にする
-- [ ] taxonomyTermのキャピタライズ(humanize)
-- [ ] tagがキャピタライズされているのを直す(.Data.Term)
+- [x] 404はインデックスしない用にする
+- [x] taxonomyTermのキャピタライズ(humanize)
+- [x] tagがキャピタライズされているのを直す(.Data.Term)
 - [x] 画像を極力pageresourceに
   - [x] blog-thumb.jpgの処理(siteThumbnail)
   - [x] default.jpgの処理(default header)
