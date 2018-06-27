@@ -1,6 +1,10 @@
-{{ $mainLang := index .Site.Languages 0 -}}
-{{ $altLang := index .Translations 0 -}}
-{{ $primaryTag := index .Params.tags 0 }}
+{{- $mainLang := index .Site.Languages 0 -}}
+{{- $altLang := index .Translations 0 -}}
+{{- $primaryTag := index .Params.tags 0 }}
+{{- $img := .Site.GetPage "section" "img" }}
+{{/*- 900x900 */}}
+{{/*- 1040x780 */}}
+{{/*- 1280x720 */}}
 {
   "@context": "http://schema.org",
   "@id": "{{ .Permalink }}#blogposting",
@@ -58,12 +62,14 @@
   "publisher": {
     "@id": "{{ absURL "/" }}#organization",
     "@type": "Organization",
+    {{- with $img.Resources.GetMatch "site-logo" }}
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ absURL "/images/site-log.png" }}",
-      "width": 600,
-      "height": 60
+      "url": "{{ .Permalink }}",
+      "width": {{ .Width }},
+      "height": {{ .Height }}
     },
+    {{- end }}
     "member": {
       "@id": "{{ absURL "/" }}#person"
     },
@@ -82,8 +88,7 @@
   "image": [
     {{- with .Scratch.Get "page_thumb" }}
     "{{ .Permalink }}"
-    {{- else }}
-
+    {{- end }}
   ]
   "mainEntityOfPage": "{{ absLangURL "/" }}",
   "url": "{{ .Permalink }}",

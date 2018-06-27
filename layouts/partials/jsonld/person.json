@@ -1,3 +1,4 @@
+{{- $about := .Site.GetPage "section" "about" }}
 {
   "@context": "http://schema.org",
   "@id": "{{ absURL "/" }}#person",
@@ -51,12 +52,14 @@
       "longitude": 139.69170639999993
     }
   },
+  {{- with $about.Resources.GetMatch "profile-img" }}
   "image": {
     "@type": "ImageObject",
-    "url": "{{ absURL "/images/profile.jpg" }}",
-    "width": 500,
-    "height": 500
+    "url": "{{ .Permalink }}",
+    "width": {{ .Width }},
+    "height": {{ .Height }}
   },
+  {{- end }}
   "sameAs": [
     "https://twitter.com/{{ .Site.Params.twitter.id }}",
     "https://facebook.com/{{ .Site.Params.facebook.id }}",
