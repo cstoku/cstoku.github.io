@@ -26,8 +26,8 @@
   {{- else }}
   "translationOfWork": {
   {{- end }}
-    "@id": "{{ $altLang.Permalink }}#website"
-    "@type": "Website"
+    "@id": "{{ $altLang.Permalink }}#website",
+    "@type": "Website",
     "url": "{{ $altLang.Permalink }}"
   },
   {{- end }}

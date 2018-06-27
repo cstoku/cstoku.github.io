@@ -84,8 +84,8 @@
   {{- else }}
   "translationOfWork": {
   {{- end }}
-    "@id": "{{ $altLang.Permalink }}#collectionpage"
-    "@type": "CollectionPage"
+    "@id": "{{ $altLang.Permalink }}#collectionpage",
+    "@type": "CollectionPage",
     "url": "{{ $altLang.Permalink }}"
   },
   {{- end }}

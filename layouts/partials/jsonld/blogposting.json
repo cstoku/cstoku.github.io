@@ -80,8 +80,8 @@
   {{- else }}
   "translationOfWork": {
   {{- end }}
-    "@id": "{{ $altLang.Permalink }}#aboutpage"
-    "@type": "BlogPosting"
+    "@id": "{{ $altLang.Permalink }}#aboutpage",
+    "@type": "BlogPosting",
     "url": "{{ $altLang.Permalink }}"
   },
   {{- end }}
