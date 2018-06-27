@@ -1,5 +1,6 @@
 {{- .Get "name" | .Page.Resources.GetMatch | .Scratch.Set "buf" }}
 {{- $img := .Scratch.Get "buf" }}
+{{- .Scratch.Delete "img_set" }}
 {{- if gt $img.Width 425 }}
 {{- $img.Resize "425x" | slice | .Scratch.Add "img_set" }}
 {{- end }}
