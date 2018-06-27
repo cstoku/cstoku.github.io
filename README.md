@@ -44,6 +44,18 @@
 - [ ] 404はインデックスしない用にする
 - [ ] taxonomyTermのキャピタライズ(humanize)
 - [ ] tagがキャピタライズされているのを直す(.Data.Term)
+- [x] 画像を極力pageresourceに
+  - [x] blog-thumb.jpgの処理(siteThumbnail)
+  - [x] default.jpgの処理(default header)
+  - [x] profile.jpgの処理
+  - [x] faviconの処理
+  - [x] site-logoの処理
+- [ ] 画像サイズの最適化
+  - [ ] ogpのサムネ
+  - [ ] JSON+LDの画像
+  - [ ] headerの画像
+  - [ ] profile画像
+  - [ ] favicon画像
 
 ## Article
 
