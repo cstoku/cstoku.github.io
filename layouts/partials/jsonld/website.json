@@ -8,7 +8,7 @@
   {{- $len := len $pages }}
   "itemListElement": [
     {{- range $i, $page := $pages }}
-    {{ $pos := add $i 1 }}
+    {{- $pos := add $i 1 }}
     {
       "@type": "ListItem",
       "position": {{ $pos }},
@@ -27,6 +27,8 @@
   "translationOfWork": {
   {{- end }}
     "@id": "{{ $altLang.Permalink }}#website"
+    "@type": "Website"
+    "url": "{{ $altLang.Permalink }}"
   },
   {{- end }}
   "url": "{{ .Permalink }}",

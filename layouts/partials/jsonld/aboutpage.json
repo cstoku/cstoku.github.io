@@ -41,6 +41,8 @@
   "translationOfWork": {
   {{- end }}
     "@id": "{{ $altLang.Permalink }}#aboutpage"
+    "@type": "AboutPage"
+    "url": "{{ $altLang.Permalink }}"
   },
   {{- end }}
   "mainEntityOfPage": "{{ absLangURL "/" }}",
