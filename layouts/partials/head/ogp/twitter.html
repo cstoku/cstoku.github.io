@@ -4,6 +4,7 @@
 <meta property="twitter:site:id" content="{{ .Site.Params.twitter.uid }}">
 <meta property="twitter:creator:id" content="{{ .Site.Params.twitter.uid }}">
 {{ with .Scratch.Get "page_thumb" -}}
+{{- .Resize "960x" }}
 <meta property="twitter:image" content="{{ .Permalink }}">
-{{ end -}}
+{{- end }}{{- end }}
 <meta property="twitter:image:alt" content="{{ .Scratch.Get "page_thumb_alt" }}">
