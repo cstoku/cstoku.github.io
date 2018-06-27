@@ -1,11 +1,19 @@
 <div class="main-header">
   <div class="header-thumbnail">
-    {{ with .Scratch.Get "page_header" }}
-    <amp-img src="{{ .RelPermalink }}"
-             width="{{ .Width }}"
-             height="{{ .Height }}"
+    {{- .Scratch.Delete "img_set" }}
+    {{- $page := . }}
+    {{- with .Scratch.Get "page_header" }}
+    {{- $header := .Resize "1200x" }}
+    {{- range slice "320x" "425x" "768x" "1024x"  }}
+    {{- $header.Resize . | slice | $page.Scratch.Add "img_set" }}
+    {{- end }}
+    <amp-img src="{{ $header.RelPermalink }}"
+             width="{{ $header.Width }}"
+             height="{{ $header.Height }}"
              layout="responsive"
-             class="thumbnail">
+             class="thumbnail"
+             srcset="{{ $header.RelPermalink }} {{ $header.Width }}w{{ with $page.Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
+    >
     </amp-img>
     {{ end }}
   </div>
