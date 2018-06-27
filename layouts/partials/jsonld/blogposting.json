@@ -2,42 +2,40 @@
 {{- $altLang := index .Translations 0 -}}
 {{- $primaryTag := index .Params.tags 0 }}
 {{- $img := .Site.GetPage "section" "img" }}
-{{/*- 900x900 */}}
-{{/*- 1040x780 */}}
-{{/*- 1280x720 */}}
+{{- $thumb :=  .Scratch.Get "page_thumb" }}
+{{- $thumb1x1 := $thumb.Fill "900x900 Center" }}
+{{- $thumb4x3 := $thumb.Fill "1040x780 Center" }}
+{{- $thumb16x9 := $thumb.Fill "1280x720 Center" }}
 {
   "@context": "http://schema.org",
   "@id": "{{ .Permalink }}#blogposting",
-  "@type": "BlogPosting",
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 0,
-        "item": {
-          "@id": "{{ absLangURL "/" }}#website",
-          "name": "{{ .Site.Title }}"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "{{ .CurrentSection.Permalink }}#collectionpage",
-          "name": "{{ .CurrentSection.Title }}"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@id": "{{ printf "/tags/%s" $primaryTag | absLangURL }}#collectionpage",
-          "name": "{{ $primaryTag }}"
-        }
+  "@type": ["BlogPosting", "BreadcrumbList"],
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 0,
+      "item": {
+        "@id": "{{ absLangURL "/" }}#website",
+        "name": "{{ .Site.Title }}"
       }
-    ]
-  },
+    },
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@id": "{{ .CurrentSection.Permalink }}#collectionpage",
+        "name": "{{ .CurrentSection.Title }}"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@id": "{{ printf "/tags/%s" $primaryTag | absLangURL }}#collectionpage",
+        "name": "{{ $primaryTag }}"
+      }
+    }
+  ],
   {{- $len := len .Pages }}
   "keywords": "
   {{- range $i, $page := .Pages }}
@@ -86,10 +84,10 @@
   },
   {{- end }}
   "image": [
-    {{- with .Scratch.Get "page_thumb" }}
-    "{{ .Permalink }}"
-    {{- end }}
-  ]
+    "{{ $thumb1x1.Permalink }}",
+    "{{ $thumb4x3.Permalink }}",
+    "{{ $thumb16x9.Permalink }}"
+  ],
   "mainEntityOfPage": "{{ absLangURL "/" }}",
   "url": "{{ .Permalink }}",
   "name": "{{ .Scratch.Get "page_title" }}"
