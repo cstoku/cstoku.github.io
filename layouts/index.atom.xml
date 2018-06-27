@@ -45,6 +45,7 @@
         </a>
       ]]>
     </content>
+    <thumbnail>{{ .Permalink }}</thumbnail>
     {{- end }}
   </entry>
   {{- end }}
