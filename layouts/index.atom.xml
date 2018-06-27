@@ -38,14 +38,6 @@
     <media:thumbnail url="{{ .Permalink }}" width="{{ .Width }}" height="{{ .Height }}"/>
     <g:image_link>{{ .Permalink }}</g:image_link>
     <link rel="enclosure" type="image/jpg" href="{{ .Permalink }}"/>
-    <content type="html">
-      <![CDATA[
-        <a href="{{ $page.Permalink }}">
-          <img alt="$page.Title" src="{{ .Permalink }}" />
-        </a>
-      ]]>
-    </content>
-    <thumbnail>{{ .Permalink }}</thumbnail>
     {{- end }}
   </entry>
   {{- end }}
