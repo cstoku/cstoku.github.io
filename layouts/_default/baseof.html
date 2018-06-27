@@ -13,10 +13,6 @@
     {{- end }}
     {{ partial "head/amp/style.html" . }}
     {{ partial "head/amp/scripts.html" . }}
-    <script type="application/ld+json">
-      {{- block "json+ld" . }}
-      {{- end }}
-    </script>
   </head>
   <body>
     <amp-sidebar id="sidebar" layout="nodisplay" side="left">
@@ -39,5 +35,9 @@
     {{- if .Site.Params.googleAnalytics }}
     {{ partial "googleanalytics.html" . }}
     {{- end }}
+    <script type="application/ld+json">
+      {{- block "json+ld" . }}
+      {{- end }}
+    </script>
   </body>
 </html>
