@@ -101,7 +101,7 @@ params:
   flattr: ""
   disqusIframeURL: https://disqus.cstoku.me/
   maxTaxonomyContents: 5
-  robots: none
+  #robots: none
 
 #
 # Multilingual Settings
