@@ -5,10 +5,10 @@ date: 2016-12-03T23:03:12+09:00
 draft: false
 
 tags:
+- gcsfuse
 - gke
 - kubernetes
 - gcs
-- gcsfuse
 - docker
 
 resources:
