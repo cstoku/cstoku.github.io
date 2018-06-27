@@ -6,7 +6,7 @@ draft: true
 
 tags: ["docker", "kubernetes"]
 
-thumbnail: thumb.png
+thumbnail: thumb.jpg
 
 ---
 
