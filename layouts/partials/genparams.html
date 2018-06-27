@@ -1,6 +1,13 @@
 {{- $page := . }}
 {{- $img := .Site.GetPage "section" "img" }}
 {{- $pageTitle := printf "%s - %s" .Title .Site.Title }}
+{{/* Initialize */}}
+{{- .Scratch.Delete "page_title" }}
+{{- .Scratch.Delete "page_desc" }}
+{{- .Scratch.Delete "page_thumb_alt" }}
+{{- .Scratch.Delete "page_thumb" }}
+{{- .Scratch.Delete "page_header" }}
+{{- .Scratch.Delete "page_robots" }}
 {{- if .IsHome }}
 {{/* Home Page */}}
 {{- .Scratch.Set "page_title"      .Site.Title }}
