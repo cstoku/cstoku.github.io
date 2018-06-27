@@ -56,6 +56,7 @@
   - [ ] headerの画像
   - [ ] profile画像
   - [ ] favicon画像
+  - [ ] jpgにする？？ `find . -name '*.png' | xargs -I{} echo {} -quality 100 {} | sed s/png$/jpg/ | xargs -I{} sh -c "convert {}"`
 
 ## Article
 
