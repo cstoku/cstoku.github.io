@@ -16,7 +16,6 @@ resources:
 
 この記事は[Docker Advent Calandar 2016](https://qiita.com/advent-calendar/2016/docker)の22日目の記事です。(大遅刻)
 
-
 # 前置き的な
 
 Dockerも結構安定してきた(気がする)ので、そろそろVMで頑張っている人もDockerに乗り換えてみたらどうでしょう？
