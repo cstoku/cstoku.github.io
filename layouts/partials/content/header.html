@@ -1,16 +1,9 @@
 <div class="main-header">
   <div class="header-thumbnail">
-    {{ with .Scratch.Get "page_thumb" }}
+    {{ with .Scratch.Get "page_header" }}
     <amp-img src="{{ .RelPermalink }}"
              width="{{ .Width }}"
              height="{{ .Height }}"
-             layout="responsive"
-             class="thumbnail">
-    </amp-img>
-    {{ else }}
-    <amp-img src="/images/default.jpg"
-             width="960"
-             height="540"
              layout="responsive"
              class="thumbnail">
     </amp-img>
