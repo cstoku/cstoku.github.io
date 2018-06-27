@@ -50,7 +50,6 @@
 {{- $img.Resources.GetMatch "header"    | $page.Scratch.Set "page_header" }}
 {{- end }}
 {{- .Scratch.Set "page_thumb_alt"  $pageTitle }}
-{{- .Scratch.Set "page_robots"     "noindex" }}
 {{- end }}
 {{- end }}
 {{- with .Site.Params.robots }}
