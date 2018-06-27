@@ -26,8 +26,6 @@ pygmentsUseClasses: true
 
 ignoreFiles: [ "\\.un~$" ]
 
-rssLimit: 15
-
 taxonomies:
   tag: tags
 
@@ -118,6 +116,7 @@ params:
   googleAnalytics: UA-71075507-1
   disqusIframeURL: https://disqus.cstoku.me/
   maxTaxonomyContents: 5
+  atomLimit: 15
 
 #
 # Multilingual Settings

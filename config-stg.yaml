@@ -116,6 +116,7 @@ params:
   flattr: ""
   disqusIframeURL: https://disqus.cstoku.me/
   maxTaxonomyContents: 5
+  atomLimit: 15
   #robots: none
 
 #
