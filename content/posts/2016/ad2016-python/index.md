@@ -10,7 +10,7 @@ tags:
 
 resources:
 - name: thumbnail
-  src: header.png
+  src: header.jpg
 ---
 
 この記事は[Python Advent Calandar 2016](https://qiita.com/advent-calendar/2016/python)の23日目の記事です。(大遅刻その2)

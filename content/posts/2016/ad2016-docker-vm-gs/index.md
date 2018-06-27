@@ -10,7 +10,7 @@ tags:
 
 resources:
 - name: thumbnail
-  src: header.png
+  src: header.jpg
 
 ---
 

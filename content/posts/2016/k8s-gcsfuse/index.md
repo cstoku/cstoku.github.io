@@ -13,11 +13,11 @@ tags:
 
 resources:
 - name: thumbnail
-  src: header.png
+  src: header.jpg
 - name: rps
-  src: req_per_sec.png
+  src: req_per_sec.jpg
 - name: tpr
-  src: time_per_req.png
+  src: time_per_req.jpg
 
 ---
 

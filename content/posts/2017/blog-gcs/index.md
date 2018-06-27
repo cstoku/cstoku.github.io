@@ -13,9 +13,9 @@ tags:
 
 resources:
 - name: thumbnail
-  src: header.png
+  src: header.jpg
 - name: arch
-  src: blog-arch.png
+  src: blog-arch.jpg
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 resources:
 - name: header
-  src: header.png
+  src: header.jpg
 - name: thumbnail
-  src: thumbnail.png
+  src: thumbnail.jpg
 - name: favicon-ico
   src: favicon.ico
 - name: favicon
