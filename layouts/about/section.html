@@ -1,3 +1,7 @@
+{{ define "json+ld" }}
+{{ partial "jsonld/aboutpage.json" . | safeHTML }}
+{{ end }}
+
 {{ define "amp-component" }}
 <amp-animation id="nav-cur-anim" layout="nodisplay">
   <script type="application/json">

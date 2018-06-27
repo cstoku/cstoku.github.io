@@ -1,8 +1,12 @@
 {{ define "link" }}
 {{ partial "head/link/link.html" . }}
-{{ with .Params.pager }}
+{{- with .Params.pager }}
 {{ partial "head/link/pager.html" . }}
+{{- end }}
 {{ end }}
+
+{{ define "json+ld" }}
+{{ partial "jsonld/blogposting.json" . | safeHTML }}
 {{ end }}
 
 {{ define "amp-component" }}

@@ -3,19 +3,20 @@
   {{ partial "genparams.html" . -}}
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
     <title >{{ .Scratch.Get "page_title" }}</title>
-
-    {{ block "meta" . }}
-      {{ partial "head/meta.html" . }}
-    {{ end }}
+    {{- block "meta" . }}
+    {{ partial "head/meta.html" . }}
+    {{- end }}
     {{ partial "head/ogp/facebook.html" . }}
     {{ partial "head/ogp/twitter.html" . }}
-
-    {{ block "link" . }}
-      {{ partial "head/link/link.html" . }}
-    {{ end }}
-
+    {{- block "link" . }}
+    {{ partial "head/link/link.html" . }}
+    {{- end }}
     {{ partial "head/amp/style.html" . }}
     {{ partial "head/amp/scripts.html" . }}
+    <script type="application/ld+json">
+      {{- block "json+ld" . }}
+      {{- end }}
+    </script>
   </head>
   <body>
     <amp-sidebar id="sidebar" layout="nodisplay" side="left">
@@ -23,20 +24,20 @@
         {{ partial "menu_part.html" . }}
       </nav>
     </amp-sidebar>
-    {{ block "amp-component" . }}
-    {{ end }}
+    {{- block "amp-component" . }}
+    {{- end }}
     <div id="body-container" class="flex flex-column">
-      {{ block "header" . }}
-        {{ partial "header.html" . }}
-      {{ end }}
-      {{ block "main" . }}
-      {{ end }}
-      {{ block "footer" . }}
-        {{ partial "footer.html" . }}
-      {{ end }}
+      {{- block "header" . }}
+      {{ partial "header.html" . }}
+      {{- end }}
+      {{- block "main" . }}
+      {{- end }}
+      {{- block "footer" . }}
+      {{ partial "footer.html" . }}
+      {{- end }}
     </div>
     {{- if .Site.Params.googleAnalytics }}
-    {{- partial "googleanalytics.html" . }}
+    {{ partial "googleanalytics.html" . }}
     {{- end }}
   </body>
 </html>

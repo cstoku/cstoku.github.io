@@ -1,3 +1,7 @@
+{{ define "json+ld" }}
+{{ partial "jsonld/collectionpage.json" . | safeHTML }}
+{{ end }}
+
 {{ define "main" }}
 <div class="main-wrapper terms">
   <main>

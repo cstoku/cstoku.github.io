@@ -1,3 +1,11 @@
+{{ define "json+ld" }}
+{{- if .IsHome }}
+{{ partial "jsonld/website.json" . | safeHTML }}
+{{- else }}
+{{ partial "jsonld/collectionpage.json" . | safeHTML }}
+{{- end }}
+{{ end }}
+
 {{ define "main" }}
 <div class="main-wrapper list">
   <main class="flex flex-column">
