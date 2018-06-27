@@ -26,8 +26,6 @@ pygmentsUseClasses: true
 
 ignoreFiles: [ "\\.un~$" ]
 
-rssLimit: 15
-
 taxonomies:
   tag: tags
 
@@ -77,9 +75,24 @@ blackfriday:
 #
 # Output Formats
 #
+mediaTypes:
+  application/atom:
+    suffix: xml
+
+outputFormats:
+  ATOM:
+    name: atom
+    mediaType: application/atom
+    isHTML: false
+    isPlainText: true
+    noUgly: true
+
 outputs:
-  home: ["HTML", "RSS"]
+  home: ["HTML", "ATOM"]
   page: ["HTML"]
+  section: ["HTML"]
+  taxonomyTerm: ["HTML"]
+  taxonomy: ["HTML"]
 
 #
 # Site Parameters
@@ -101,6 +114,7 @@ params:
   flattr: ""
   disqusIframeURL: https://disqus.cstoku.me/
   maxTaxonomyContents: 5
+  atomLimit: 15
 
 #
 # Multilingual Settings
