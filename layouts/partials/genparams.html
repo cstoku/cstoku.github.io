@@ -1,5 +1,6 @@
-{{ $page := . }}
-{{ $pageTitle := printf "%s - %s" .Title .Site.Title }}
+{{- $page := . }}
+{{- $img := .Site.GetPage "section" "img" }}
+{{- $pageTitle := printf "%s - %s" .Title .Site.Title }}
 {{- if .IsHome }}
 {{/* Home Page */}}
 {{- .Scratch.Set "page_title"      .Site.Title }}
@@ -13,6 +14,10 @@
 {{- .Scratch.Set "page_desc"       .Title }}
 {{- with .Resources.GetMatch "thumbnail" }}
 {{- $page.Scratch.Set "page_thumb" . }}
+{{- $page.Scratch.Set "page_header" . }}
+{{- else }}
+{{- $img.Resources.GetMatch "thumbnail" | $page.Scratch.Set "page_thumb" }}
+{{- $img.Resources.GetMatch "header"    | $page.Scratch.Set "page_header" }}
 {{- end }}
 {{- .Scratch.Set "page_thumb_alt"  .Title }}
 {{- .Scratch.Set "page_robots"     "nosnippet" }}
@@ -26,6 +31,10 @@
 {{- end }}
 {{- with .Resources.GetMatch "thumbnail" }}
 {{- $page.Scratch.Set "page_thumb" . }}
+{{- $page.Scratch.Set "page_header" . }}
+{{- else }}
+{{- $img.Resources.GetMatch "thumbnail" | $page.Scratch.Set "page_thumb" }}
+{{- $img.Resources.GetMatch "header"    | $page.Scratch.Set "page_header" }}
 {{- end }}
 {{- .Scratch.Set "page_thumb_alt"  .Title }}
 {{- end }}
@@ -35,6 +44,10 @@
 {{- .Scratch.Set "page_desc"       .Site.Params.description }}
 {{- with .Resources.GetMatch "thumbnail" }}
 {{- $page.Scratch.Set "page_thumb" . }}
+{{- $page.Scratch.Set "page_header" . }}
+{{- else }}
+{{- $img.Resources.GetMatch "thumbnail" | $page.Scratch.Set "page_thumb" }}
+{{- $img.Resources.GetMatch "header"    | $page.Scratch.Set "page_header" }}
 {{- end }}
 {{- .Scratch.Set "page_thumb_alt"  $pageTitle }}
 {{- .Scratch.Set "page_robots"     "noindex" }}
