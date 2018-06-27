@@ -2,7 +2,7 @@
 {{ $baseID := printf "%s.%s" .Lang (urls.Parse .Site.BaseURL).Host -}}
 <?xml version='1.0' encoding='UTF-8'?>
 <feed xmlns='http://www.w3.org/2005/Atom' xml:lang='{{ .Lang }}'>
-  <id>tag:{{ $baseID }}:feed</id>
+  <id>tag:{{ $baseID }},2016:feed</id>
   <title>{{ .Site.Title }}</title>
   <author>
     <name>{{ .Site.Author.name }}</name>
@@ -22,7 +22,7 @@
   <rights>{{ replace (replace .Site.Copyright "{year}" now.Year) "{name}" .Site.Author.name }}</rights>
   {{- range first .Site.Params.atomLimit .Pages }}
   <entry>
-    <id>tag:{{ $baseID }}:{{ .RelPermalink }}</id>
+    <id>tag:{{ $baseID }},{{ .PublishDate.Format "2006" }}:{{ .RelPermalink }}</id>
     <title>{{ .Title }}</title>
     <link rel='alternate' type='text/html' href='{{ .Permalink }}' />
     <category term="{{ .CurrentSection.Name }}" />
