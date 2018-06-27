@@ -5,8 +5,8 @@ date: 2017-01-02T17:22:14+09:00
 draft: false
 
 tags:
-- python
 - ansible
+- python
 
 resources:
 - name: thumbnail
