@@ -53,13 +53,14 @@
     }
   },
   {{- with $about.Resources.GetMatch "profile-img" }}
+  {{- with .Resize "512x" }}
   "image": {
     "@type": "ImageObject",
     "url": "{{ .Permalink }}",
     "width": {{ .Width }},
     "height": {{ .Height }}
   },
-  {{- end }}
+  {{- end }}{{- end }}
   "sameAs": [
     "https://twitter.com/{{ .Site.Params.twitter.id }}",
     "https://facebook.com/{{ .Site.Params.facebook.id }}",
