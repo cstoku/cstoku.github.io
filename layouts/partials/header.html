@@ -6,12 +6,13 @@
     {{- if .IsPage }}
     {{- $main_tag := index .Params.tags 0 }}
     <li><a href="{{ .CurrentSection.RelPermalink}}">{{ .CurrentSection.Name }}</a></li>
-    <li class="capitalize"><a href="{{ printf "/tags/%s/" $main_tag | absLangURL }}">{{ $main_tag }}</a></li>
+    <li><a href="{{ printf "/tags/%s/" $main_tag | absLangURL }}">{{ $main_tag }}</a></li>
     {{- else }}{{ if eq .Kind "taxonomy" }}
     <li class="capitalize"><a href="{{ printf "/%s/" .Data.Plural | absLangURL }}">{{ .Data.Plural }}</a></li>
-    {{- end }}
+    <li><a href="{{ .RelPermalink }}">{{ .Data.Term }}</a></li>
+    {{- else }}
     <li><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
-    {{- end }}
+    {{- end }}{{- end }}
   </ul>
   {{- end }}
 </header>
