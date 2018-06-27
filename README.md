@@ -33,7 +33,7 @@
   - [x] 各画像のsrcsetの用意
   - [x] SNSのリンク用意
   - [x] Facebook用？のprofile用OGPを追加する
-- [ ] JSON-LDの対応
+- [x] JSON-LDの対応
 - [ ] サイトのDescriptionを `config.yml` に書く
 - [x] 404ページ作る
 - [x] favicon.icoを作って設定
@@ -50,13 +50,13 @@
   - [x] profile.jpgの処理
   - [x] faviconの処理
   - [x] site-logoの処理
-- [ ] 画像サイズの最適化
-  - [ ] ogpのサムネ
-  - [ ] JSON+LDの画像
-  - [ ] headerの画像
-  - [ ] profile画像
-  - [ ] favicon画像
-  - [ ] jpgにする？？ `find . -name '*.png' | xargs -I{} echo {} -quality 100 {} | sed s/png$/jpg/ | xargs -I{} sh -c "convert {}"`
+- [x] 画像サイズの最適化
+  - [x] ogpのサムネ
+  - [x] JSON+LDの画像
+  - [x] headerの画像
+  - [x] profile画像
+  - [x] favicon画像
+  - [x] jpgにする？？ `find . -name '*.png' | xargs -I{} echo {} -quality 100 {} | sed s/png$/jpg/ | xargs -I{} sh -c "convert {}"`
 
 ## Article
 
