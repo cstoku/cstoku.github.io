@@ -1,5 +1,5 @@
-{{ $mainLang := index .Site.Languages 0 -}}
-{{ $altLang := index .Translations 0 -}}
+{{- $mainLang := index .Site.Languages 0 -}}
+{{- $altLang := index .Translations 0 -}}
 {
   "@context": "http://schema.org",
   "@id": "{{ .Permalink }}#aboutpage",
