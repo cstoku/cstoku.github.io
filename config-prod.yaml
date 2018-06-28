@@ -12,7 +12,7 @@ defaultContentLanguage: ja
 defaultContentLanguageInSubdir: false
 
 enableGitInfo: true
-enableRobotsTXT: false
+enableRobotsTXT: true
 enableEmoji: true
 
 metaDataFormat: yaml
@@ -139,7 +139,7 @@ languages:
         uid: "131178169"
       youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
       flattr: ""
-      searchConsole: "0000000000"
+      searchConsole: "zQny9DWB2aOiSbSDUHq0cY4xMwaB5ccSyzdvYvU446c"
       googleAnalytics: UA-71075507-1
       disqusIframeURL: https://disqus.cstoku.me/
       maxTaxonomyContents: 5
@@ -179,7 +179,7 @@ languages:
         uid: "131178169"
       youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
       flattr: ""
-      searchConsole: "0000000000"
+      searchConsole: "zQny9DWB2aOiSbSDUHq0cY4xMwaB5ccSyzdvYvU446c"
       googleAnalytics: UA-71075507-1
       disqusIframeURL: https://disqus.cstoku.me/
       maxTaxonomyContents: 5
