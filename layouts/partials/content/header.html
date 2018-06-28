@@ -9,6 +9,7 @@
              width="{{ $header.Width }}"
              height="{{ $header.Height }}"
              layout="responsive"
+             alt="{{ .Title }}"
              class="thumbnail"
              srcset="{{ $header.RelPermalink }} {{ $header.Width }}w{{ range $sizes }}{{ with $header.Resize . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
     >
