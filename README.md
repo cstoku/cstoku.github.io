@@ -39,7 +39,7 @@
 - [x] favicon.icoを作って設定
 - [x] sitemap.xml
 - [x] RSS
-- [ ] Feedlyのサムネが表示されない不具合の修正
+- [x] Feedlyのサムネが表示されない不具合の修正(諦め)
 - [x] 言語切替ボタン実装
 - [x] 404はインデックスしない用にする
 - [x] taxonomyTermのキャピタライズ(humanize)
