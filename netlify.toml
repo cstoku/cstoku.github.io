@@ -21,3 +21,19 @@ NODE_ENV = "production"
 
 [context.disqus]
 command = "hugo"
+
+[[redirects]]
+from = "https://sce-toku.jp/*"
+to = "https://cstoku.me/:splat"
+status = 301
+
+[[redirects]]
+from = "https://www.sce-toku.jp/*"
+to = "https://cstoku.me/:splat"
+status = 301
+
+[[redirects]]
+from = "https://cstoku-blog.netlify.com/*"
+to = "https://cstoku.me/:splat"
+status = 301
+
