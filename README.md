@@ -57,6 +57,7 @@
   - [x] profile画像
   - [x] favicon画像
   - [x] jpgにする？？ `find . -name '*.png' | xargs -I{} echo {} -quality 100 {} | sed s/png$/jpg/ | xargs -I{} sh -c "convert {}"`
+  - [ ] 以前のドメインからのリダイレクト設定
 
 ## Article
 
@@ -85,6 +86,7 @@
 - [ ] ampコンポーネントのショートコード作成
 - [ ] pager.htmlの設定(リンクの設定とFooterへの追加)
 - [x] 画像をクリックしたときにズームする仕組み
+- [ ] Aboutページの中身ふやす・・・
 
 # Reference
 
