@@ -3,6 +3,7 @@
 {
   "name": "{{ .Site.Title }}",
   "short_name": "{{ .Site.Title }}",
+  "lang": "{{ .Lang }}",
   {{- with $favicon }}
   "icons": [
   {{- $sizes := slice "72" "96" "128" "144" "152" "192" "384" "512"}}
@@ -24,6 +25,6 @@
   {{- with .Site.Params.backgroundColor }}
   "background_color": "{{ . }}",
   {{- end }}
-  "start_url": "/?homescreen",
+  "start_url": "{{ relLangURL "/" }}?homescreen",
   "display": "standalone"
 }
