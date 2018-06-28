@@ -102,25 +102,6 @@ outputs:
 # Site Parameters
 #
 params:
-  github: cstoku
-  linkedin: takuya-tokuda-20969795
-  googleplus: "114783483415550877902"
-  email: cs.toku.mail+blog@gmail.com
-  facebook:
-    id: takuya.tokuda.0122
-    uid: "100003789482934"
-    appid: "1168458043296329"
-  twitter:
-    card_type: summary
-    id: CS_Toku
-    uid: "131178169"
-  youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
-  flattr: ""
-  searchConsole: "0000000000"
-  googleAnalytics: UA-71075507-1
-  disqusIframeURL: https://disqus.cstoku.me/
-  maxTaxonomyContents: 5
-  atomLimit: 15
 
 #
 # Multilingual Settings
@@ -144,6 +125,25 @@ languages:
       page: /about/
 
     params:
+      github: cstoku
+      linkedin: takuya-tokuda-20969795
+      googleplus: "114783483415550877902"
+      email: cs.toku.mail+blog@gmail.com
+      facebook:
+        id: takuya.tokuda.0122
+        uid: "100003789482934"
+        appid: "1168458043296329"
+      twitter:
+        card_type: summary
+        id: CS_Toku
+        uid: "131178169"
+      youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
+      flattr: ""
+      searchConsole: "0000000000"
+      googleAnalytics: UA-71075507-1
+      disqusIframeURL: https://disqus.cstoku.me/
+      maxTaxonomyContents: 5
+      atomLimit: 15
       dateFormat: "2006/01/02 15:04"
       description: "日々の学びや思ったことなどなど、書いていきます。"
       locale: ja_JP
@@ -165,6 +165,25 @@ languages:
       page: /about/
 
     params:
+      github: cstoku
+      linkedin: takuya-tokuda-20969795
+      googleplus: "114783483415550877902"
+      email: cs.toku.mail+blog@gmail.com
+      facebook:
+        id: takuya.tokuda.0122
+        uid: "100003789482934"
+        appid: "1168458043296329"
+      twitter:
+        card_type: summary
+        id: CS_Toku
+        uid: "131178169"
+      youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
+      flattr: ""
+      searchConsole: "0000000000"
+      googleAnalytics: UA-71075507-1
+      disqusIframeURL: https://disqus.cstoku.me/
+      maxTaxonomyContents: 5
+      atomLimit: 15
       dateFormat: "Jan 2, 2006, 15:04 MST"
       description: "Write about daily learning, what I thought, etc..."
       locale: en_US
