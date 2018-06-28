@@ -47,7 +47,12 @@
 {{- end }}
 {{- else }}
 {{/* Etc... */}}
+{{- if eq .Kind "taxonomy" }}
+{{- $pageTitle := printf "%s - %s" .Data.Term .Site.Title }}
 {{- .Scratch.Set "page_title"      $pageTitle }}
+{{- else }}
+{{- .Scratch.Set "page_title"      $pageTitle }}
+{{- end }}
 {{- .Scratch.Set "page_desc"       .Site.Params.description }}
 {{- with .Resources.GetMatch "thumbnail" }}
 {{- $page.Scratch.Set "page_thumb" . }}
@@ -60,6 +65,9 @@
 {{- end }}
 {{- end }}
 {{- with .Site.Params.robots }}
+{{- $page.Scratch.Set "page_robots"     . }}
+{{- end }}
+{{- with .Params.robots }}
 {{- $page.Scratch.Set "page_robots"     . }}
 {{- end }}
 {{- if eq .Kind "404" }}

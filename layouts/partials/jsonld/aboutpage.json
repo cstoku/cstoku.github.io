@@ -9,14 +9,6 @@
     "itemListElement": [
       {
         "@type": "ListItem",
-        "position": 0,
-        "item": {
-          "@id": "{{ absLangURL "/" }}#website",
-          "name": "{{ .Site.Title }}"
-        }
-      },
-      {
-        "@type": "ListItem",
         "position": 1,
         "item": {
           "@id": "{{ .Permalink }}#aboutpage",
@@ -47,5 +39,5 @@
   {{- end }}
   "mainEntityOfPage": "{{ absLangURL "/" }}",
   "url": "{{ .Permalink }}",
-  "name": "{{ .Scratch.Get "page_title" }}"
+  "name": "{{ .Title }}"
 }

@@ -13,14 +13,6 @@
   "itemListElement": [
     {
       "@type": "ListItem",
-      "position": 0,
-      "item": {
-        "@id": "{{ absLangURL "/" }}#website",
-        "name": "{{ .Site.Title }}"
-      }
-    },
-    {
-      "@type": "ListItem",
       "position": 1,
       "item": {
         "@id": "{{ .CurrentSection.Permalink }}#collectionpage",
