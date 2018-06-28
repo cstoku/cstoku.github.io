@@ -42,4 +42,3 @@
   </entry>
   {{- end }}
 </feed>
-{{ hoge . }}
