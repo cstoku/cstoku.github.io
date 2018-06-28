@@ -17,6 +17,7 @@
       role="button"
       src="{{ $img.RelPermalink }}"
       alt="{{ if or (.Get "alt") (.Get "caption") }}{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}{{ else }}{{ $img.Name }}{{ end }}"
+      aria-label="{{ if or (.Get "alt") (.Get "caption") }}{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}{{ else }}{{ $img.Name }}{{ end }}"
       layout="responsive"
       width="{{ $img.Width }}"
       height="{{ $img.Height }}"
