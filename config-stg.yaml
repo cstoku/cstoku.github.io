@@ -38,7 +38,7 @@ sitemap:
 
 imaging:
   resampleFilter: Lanczos
-  quality: 100
+  quality: 85
 
 menu:
   main:
