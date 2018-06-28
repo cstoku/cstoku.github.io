@@ -73,7 +73,7 @@
   - articleのサイズやcard,singleでの扱い
 - [x] 最小画面の設定(min-width)
 - [x] ページャーボタンの配置(狭いとき)
-- [ ] なぜかsrcsetsに大量のURLが入ってしまうバグ
+- [x] なぜかsrcsetsに大量のURLが入ってしまうバグ
 
 ### 優先度低め
 
