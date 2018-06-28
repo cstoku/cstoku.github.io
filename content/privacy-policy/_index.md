@@ -2,6 +2,9 @@
 title: Privacy Policy
 date: 2016-12-03T23:03:12+09:00
 draft: false
+
+robots: noindex
+
 ---
 
 # 個人情報の利用目的

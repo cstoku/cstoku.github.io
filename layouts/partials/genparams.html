@@ -62,6 +62,9 @@
 {{- with .Site.Params.robots }}
 {{- $page.Scratch.Set "page_robots"     . }}
 {{- end }}
+{{- with .Params.robots }}
+{{- $page.Scratch.Set "page_robots"     . }}
+{{- end }}
 {{- if eq .Kind "404" }}
 {{- $page.Scratch.Set "page_robots"     "noindex" }}
 {{- end }}
