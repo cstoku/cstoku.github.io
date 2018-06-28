@@ -1,6 +1,10 @@
 {{- $page := . }}
 {{- $img := .Site.GetPage "section" "img" }}
+{{- if eq .Kind "taxonomy" }}
+{{- $pageTitle := printf "%s - %s" .Data.Term .Site.Title }}
+{{- else }}
 {{- $pageTitle := printf "%s - %s" .Title .Site.Title }}
+{{- end }}
 {{/* Initialize */}}
 {{- .Scratch.Delete "page_title" }}
 {{- .Scratch.Delete "page_desc" }}
