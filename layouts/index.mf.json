@@ -1,0 +1,30 @@
+{{ $img := .Site.GetPage "section" "img" -}}
+{{ $favicon := $img.Resources.GetMatch "favicon" -}}
+{
+  "name": "{{ .Site.Title }}",
+  "short_name": "{{ .Site.Title }}",
+  "lang": "{{ .Lang }}",
+  {{- with $favicon }}
+  "icons": [
+  {{- $sizes := slice "72" "96" "128" "144" "152" "192" "384" "512"}}
+  {{- $len := len $sizes }}
+  {{- range $i, $size := $sizes }}
+    {{- $pos := add $i 1 }}
+    {{- with printf "%sx%s" $size $size | $favicon.Resize }}
+    {
+      "src": "{{ .RelPermalink }}",
+      "type": "image/png",
+      "sizes": "{{ .Width }}x{{ .Height }}"
+    }{{ if ne $pos $len }},{{ end }}
+    {{- end }}{{- end }}
+  ],
+  {{- end }}
+  {{- with .Site.Params.themeColor }}
+  "theme_color": "{{ . }}",
+  {{- end }}
+  {{- with .Site.Params.backgroundColor }}
+  "background_color": "{{ . }}",
+  {{- end }}
+  "start_url": "{{ relLangURL "/" }}?homescreen",
+  "display": "standalone"
+}

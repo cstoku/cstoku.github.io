@@ -92,9 +92,17 @@ outputFormats:
     isHTML: false
     isPlainText: true
     noUgly: true
+  MF:
+    name: mf
+    baseName: manifest
+    rel: manifest
+    mediaType: application/json
+    isHTML: false
+    isPlainText: true
+    noUgly: true
 
 outputs:
-  home: ["HTML", "ATOM"]
+  home: ["HTML", "ATOM", "MF"]
   page: ["HTML"]
   section: ["HTML"]
   taxonomyTerm: ["HTML"]
@@ -143,6 +151,8 @@ languages:
       dateFormat: "2006/01/02 15:04"
       description: "日々の学びや思ったことなどなど、書いていきます。"
       locale: ja_JP
+      themeColor: "#2ea9df"
+      backgroundColor: "#ffffff"
 
   en:
     languageCode: en
@@ -182,3 +192,5 @@ languages:
       dateFormat: "Jan 2, 2006, 15:04 MST"
       description: "Write about daily learning, what I thought, etc..."
       locale: en_US
+      themeColor: "#2ea9df"
+      backgroundColor: "#ffffff"

@@ -1,31 +1,34 @@
 <ul class="social-share floating">
   <li>
-    <amp-social-share type="twitter" width="36" height="36"></amp-social-share>
+    <amp-social-share type="twitter" aria-label="Twitter" width="36" height="36"></amp-social-share>
   </li>
   <li>
     <amp-social-share
         type="facebook"
+        aria-label="Facebook"
         width="36" height="36"
         data-param-app_id="{{ .Site.Params.facebook.appid }}">
     </amp-social-share>
   </li>
   <li>
-    <amp-social-share type="gplus" width="36" height="36"></amp-social-share>
+    <amp-social-share type="gplus" aria-label="Google+" width="36" height="36"></amp-social-share>
   </li>
   <li>
   {{ $canonical_page := default . (.OutputFormats.Get "HTML") }}
     <amp-social-share
         type="hatena"
+        aria-label="Hatena Bookmark"
         width="36" height="36"
         data-share-endpoint="http://b.hatena.ne.jp/entry/{{ $canonical_page.Permalink }}">
     </amp-social-share>
   </li>
   <li>
-    <amp-social-share type="pinterest" width="36" height="36"></amp-social-share>
+    <amp-social-share type="pinterest" aria-label="Pinterest" width="36" height="36"></amp-social-share>
   </li>
   <li>
     <amp-social-share
         type="pocket"
+        aria-label="Pocket"
         width="36" height="36"
         data-share-endpoint="http://getpocket.com/edit?url=SOURCE_URL">
     </amp-social-share>
@@ -33,6 +36,7 @@
   <li>
     <amp-social-share
         type="feedly"
+        aria-label="Feedly"
         width="36" height="36"
         data-share-endpoint="https://feedly.com/i/subscription/feed/{{ absLangURL "/index.xml" }}">
     </amp-social-share>
