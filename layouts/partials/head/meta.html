@@ -5,6 +5,9 @@
 {{- with index .Site.Author "name" }}
 <meta name="author" content="{{ . }}">
 {{- end }}
+{{- with .Site.Params.themeColor }}
+<meta name="theme-color" content="{{ . }}">
+{{- end }}
 {{- with .Scratch.Get "page_robots" }}
 <meta name="robots" content="{{ . }}">
 {{- end }}
