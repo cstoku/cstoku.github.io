@@ -146,8 +146,9 @@ languages:
 
     params:
       dateFormat: "2006/01/02 15:04"
-      description: "デスク"
+      description: "日々の学びや思ったことなどなど、書いていきます。"
       locale: ja_JP
+
   en:
     languageCode: en
     languageName: English
@@ -166,5 +167,5 @@ languages:
 
     params:
       dateFormat: "Jan 2, 2006, 15:04 MST"
-      description: "Desc"
+      description: "Write about daily learning, what I thought, etc..."
       locale: en_US

@@ -34,7 +34,7 @@
   - [x] SNSのリンク用意
   - [x] Facebook用？のprofile用OGPを追加する
 - [x] JSON-LDの対応
-- [ ] サイトのDescriptionを `config.yml` に書く
+- [x] サイトのDescriptionを `config.yml` に書く
 - [x] 404ページ作る
 - [x] favicon.icoを作って設定
 - [x] sitemap.xml
