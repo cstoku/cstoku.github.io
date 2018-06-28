@@ -10,4 +10,4 @@ https://cstoku-blog.netlify.com/*   https://cstoku.me/:splat 301!
 /en/* /en/404.html 404
 
 # Redirect for old articles
-/blog/:year/:month/:date/:slug      /posts/:year/:slug
+/blog/:year/:month/:date/:slug/      /posts/:year/:slug/     301!
