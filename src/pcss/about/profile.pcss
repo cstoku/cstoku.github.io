@@ -1,0 +1,142 @@
+#about .profile {
+  height: 100vh;
+  margin-bottom: 10vh;
+
+  & .profile-main {
+    margin: 0 30px;
+    filter: drop-shadow(0 0 3px var(--colorPrimary));
+
+    & .profile-img {
+      margin: 20px auto;
+      border-radius: 50%;
+      border: solid 3px white;
+
+      & img {
+        border-radius: 50%;
+      }
+    }
+
+    & .name {
+      margin: 25px 0;
+      text-align: center;
+      font-weight: bold;
+      color: var(--colorText);
+    }
+  }
+
+  & .sns {
+    flex-wrap: wrap;
+    margin: 20px;
+
+    & a {
+      display: block;
+      margin: 10px 15px;
+      width: 50px;
+      height: 50px;
+      box-sizing: border-box;
+      filter: drop-shadow(0 0 3px var(--colorPrimary));
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        filter: drop-shadow(0 0 6px var(--colorAccent));
+      }
+
+      & span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      &.twitter {
+        padding: 4px;
+
+        & span {
+          background-image: url('../../img/twitter.svg');
+        }
+      }
+      &.facebook {
+        padding: 6px;
+
+        & span {
+          background-image: url('../../img/facebook.svg');
+        }
+      }
+      &.github {
+        padding: 4px;
+
+        & span {
+          background-image: url('../../img/github.svg');
+        }
+      }
+      &.gplus {
+        padding: 0px;
+
+        & span {
+          background-image: url('../../img/gplus.svg');
+        }
+      }
+      &.linkedin {
+        padding: 6px;
+
+        & span {
+          background-image: url('../../img/linkedin.svg');
+        }
+      }
+      &.email {
+        padding: 3px;
+
+        & span {
+          background-image: url('../../img/email.svg');
+        }
+      }
+    }
+  }
+}
+@media (--ge-smartphone) {
+  #about .profile .profile-main {
+    & .profile-img {
+      max-width: 250px;
+      max-height: 250px;
+    }
+
+    & .name {
+      font-size: 48px;
+      line-height: 1.3em;
+    }
+  }
+}
+
+@media (--smartphone) {
+  #about {
+    & .profile {
+      & .profile-main {
+        & .profile-img {
+          max-width: 150px;
+          max-height: 150px;
+        }
+
+        & .name {
+          font-size: 32px;
+          line-height: 1.2em;
+        }
+      }
+
+      & .sns a {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media (height < 600px) {
+  #about {
+    & .profile {
+      height: 500px;
+      margin-top: 50px;
+    }
+  }
+}

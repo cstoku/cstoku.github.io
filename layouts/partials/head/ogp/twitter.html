@@ -1,0 +1,10 @@
+<meta property="twitter:card" content="{{ .Site.Params.twitter.card_type }}">
+<meta property="twitter:title" content="{{ .Scratch.Get "page_title" }}">
+<meta property="twitter:description" content="{{ .Scratch.Get "page_desc" }}">
+<meta property="twitter:site:id" content="{{ .Site.Params.twitter.uid }}">
+<meta property="twitter:creator:id" content="{{ .Site.Params.twitter.uid }}">
+{{- with .Scratch.Get "page_thumb" }}
+{{- with .Resize "960x" }}
+<meta property="twitter:image" content="{{ .Permalink }}">
+{{- end }}{{- end }}
+<meta property="twitter:image:alt" content="{{ .Scratch.Get "page_thumb_alt" }}">

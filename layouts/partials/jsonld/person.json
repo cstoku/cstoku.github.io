@@ -1,0 +1,74 @@
+{{- $about := .Site.GetPage "section" "about" }}
+{
+  "@context": "http://schema.org",
+  "@id": "{{ absURL "/" }}#person",
+  "@type": "Person",
+  "birthDate": "1994-01-22",
+  "birthPlace": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "{{ T "birthPlaceRegion" }}",
+        "addressLocality": "{{ T "birthPlaceLocality" }}",
+        "name": "{{ T "birthPlaceName" }}"
+      },
+      "latitude": 35.90779589999999,
+      "longitude": 139.33902639999997
+    }
+  },
+  "email": "{{ .Site.Author.email }}",
+  "familyName": "{{ .Site.Author.last_name }}",
+  "gender": "Male",
+  "givenName": "{{ .Site.Author.first_name }}",
+  "homeLocation": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "{{ T "homeLocationRegion" }}",
+        "name": "{{ T "homeLocationName" }}"
+      },
+      "latitude": 35.6894875,
+      "longitude": 139.69170639999993
+    }
+  },
+  "jobTitle": "Engineer",
+  "workLocation": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "{{ T "workLocationRegion" }}",
+        "name": "{{ T "workLocationName" }}"
+      },
+      "latitude": 35.6894875,
+      "longitude": 139.69170639999993
+    }
+  },
+  {{- with $about.Resources.GetMatch "profile-img" }}
+  {{- with .Resize "512x" }}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ .Permalink }}",
+    "width": {{ .Width }},
+    "height": {{ .Height }}
+  },
+  {{- end }}{{- end }}
+  "sameAs": [
+    "https://twitter.com/{{ .Site.Params.twitter.id }}",
+    "https://facebook.com/{{ .Site.Params.facebook.id }}",
+    "https://github.com/{{ .Site.Params.github }}",
+    "https://plus.google.com/{{ .Site.Params.googleplus }}",
+    "https://www.youtube.com/channel/{{ .Site.Params.youtube }}",
+    "https://www.linkedin.com/in/{{ .Site.Params.linkedin }}/"
+  ],
+  "url": "{{ absLangURL "/" }}",
+  "name": "{{ .Site.Author.name }}"
+}

@@ -1,0 +1,79 @@
+amp-social-share {
+  border-radius: 5px;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
+
+  &[type=hatena] {
+    background-color: #00a4de;
+    background-image: url('../img/hatena.svg');
+    background-size: 50%;
+  }
+
+  &[type=pocket] {
+    background-color: #ef3e55;
+    background-image: url('../img/pocket.svg');
+  }
+
+  &[type=feedly] {
+    background-color: #87c040;
+    background-image: url('../img/feedly.svg');
+  }
+}
+
+.social-share {
+  list-style-type: none;
+
+  &.mobile {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 20px 0;
+
+    & amp-social-share {
+      margin: 0 20px;
+    }
+  }
+
+  &.floating {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 999;
+    display: block;
+
+    & li {
+      margin: 5px 0;
+    }
+
+    & amp-social-share {
+      border-radius: 50%;
+      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
+
+      &[type=hatena] {
+        background-size: 65%;
+        background-position-y: 8px;
+      }
+
+      &[type=pocket] {
+        background-size: 90%;
+        background-position-y: 3px;
+      }
+
+      &[type=feedly] {
+        background-size: 87%;
+        background-position: 3px 2px;
+      }
+    }
+  }
+}
+
+@media (--desktop) {
+  .social-share.mobile {
+    display: none;
+  }
+}
+
+@media (--lt-desktop) {
+  .social-share.floating {
+    display: none;
+  }
+}

@@ -1,0 +1,189 @@
+#
+# Hugo Parameters
+#
+baseURL: https://cstoku.me
+title: "Toku's Blog"
+
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+defaultContentLanguage: ja
+defaultContentLanguageInSubdir: false
+
+enableGitInfo: true
+enableRobotsTXT: true
+enableEmoji: true
+
+metaDataFormat: yaml
+
+paginate: 10
+paginatePath: "page"
+
+pygmentsOptions: "linenos=table"
+pygmentsCodefences: true
+pygmentsUseClasses: true
+
+ignoreFiles: [ "\\.un~$" ]
+
+taxonomies:
+  tag: tags
+
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
+
+imaging:
+  resampleFilter: Lanczos
+  quality: 85
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Post"
+      url: "/posts/"
+      weight: 2
+    - name: "Slide"
+      url: "/slides/"
+      weight: 3
+    - name: "Tags"
+      url: "/tags/"
+      weight: 3
+    - name: "About"
+      url: "/about/"
+      weight: 4
+    - name: "RSS Feed"
+      url: "/index.xml"
+      weight: 10
+      identifier: feed
+
+#
+# Markdown Processer(Blackfriday) Options
+#
+blackfriday:
+  taskList: true
+  smartypants: true
+  smartypantsQuotesNBSP: false
+  angledQuotes: true
+  fractions: false
+  smartDashes: true
+  latexDashes: true
+  hrefTargetBlank: false
+  plainIDAnchors: true
+  extensions: []
+  extensionmask: []
+
+#
+# Output Formats
+#
+mediaTypes:
+  application/atom:
+    suffix: xml
+
+outputFormats:
+  ATOM:
+    name: atom
+    mediaType: application/atom
+    isHTML: false
+    isPlainText: true
+    noUgly: true
+
+outputs:
+  home: ["HTML", "ATOM"]
+  page: ["HTML"]
+  section: ["HTML"]
+  taxonomyTerm: ["HTML"]
+  taxonomy: ["HTML"]
+
+#
+# Site Parameters
+#
+params:
+
+#
+# Multilingual Settings
+#
+languageCode: ja
+languages:
+  ja:
+    languageCode: ja
+    languageName: Japanese
+    weight: 1
+    copyright: © 2016-{year} {name}
+    hasCJKLanguage: true
+    summaryLength: 120
+
+    author:
+      name: 德田 拓也
+      first_name: 拓也
+      last_name: 德田
+      gender: male
+      email: cs.toku.mail+blog@gmail.com
+      page: /about/
+
+    params:
+      github: cstoku
+      linkedin: takuya-tokuda-20969795
+      googleplus: "114783483415550877902"
+      email: cs.toku.mail+blog@gmail.com
+      facebook:
+        id: takuya.tokuda.0122
+        uid: "100003789482934"
+        appid: "1168458043296329"
+      twitter:
+        card_type: summary
+        id: CS_Toku
+        uid: "131178169"
+      youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
+      flattr: ""
+      searchConsole: "zQny9DWB2aOiSbSDUHq0cY4xMwaB5ccSyzdvYvU446c"
+      googleAnalytics: UA-71075507-1
+      disqusIframeURL: https://disqus.cstoku.me/
+      maxTaxonomyContents: 5
+      atomLimit: 15
+      dateFormat: "2006/01/02 15:04"
+      description: "日々の学びや思ったことなどなど、書いていきます。"
+      locale: ja_JP
+
+  en:
+    languageCode: en
+    languageName: English
+    weight: 2
+    copyright: © 2016-{year} {name}
+    hasCJKLanguage: false
+    summaryLength: 120
+
+    author:
+      name: Takuya Tokuda
+      first_name: Takuya
+      last_name: Tokuda
+      gender: male
+      email: cs.toku.mail+blog@gmail.com
+      page: /about/
+
+    params:
+      github: cstoku
+      linkedin: takuya-tokuda-20969795
+      googleplus: "114783483415550877902"
+      email: cs.toku.mail+blog@gmail.com
+      facebook:
+        id: takuya.tokuda.0122
+        uid: "100003789482934"
+        appid: "1168458043296329"
+      twitter:
+        card_type: summary
+        id: CS_Toku
+        uid: "131178169"
+      youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
+      flattr: ""
+      searchConsole: "zQny9DWB2aOiSbSDUHq0cY4xMwaB5ccSyzdvYvU446c"
+      googleAnalytics: UA-71075507-1
+      disqusIframeURL: https://disqus.cstoku.me/
+      maxTaxonomyContents: 5
+      atomLimit: 15
+      dateFormat: "Jan 2, 2006, 15:04 MST"
+      description: "Write about daily learning, what I thought, etc..."
+      locale: en_US

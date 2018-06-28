@@ -1,13 +1,14 @@
-+++
-draft = true
-description = ""
-tags = [
-    "",
-]
-categories = "Slide"
-markup = "raw"
+---
+title: {{ replace .TranslationBaseName "-" " " | title }}
+description: ""
 
-style = "simple"
-highlight_style = "monokai"
-+++
+date: {{ .Date }}
+draft: true
+
+tags: []
+
+style: simple
+highlight_style: monokai
+
+---
 

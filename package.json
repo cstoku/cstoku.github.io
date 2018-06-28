@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@types/node": "10.1.2",
+    "@types/webpack": "^4.4.0",
+    "autoprefixer": "8.5.0",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "1.1.11",
+    "postcss-browser-reporter": "^0.5.0",
+    "postcss-import": "11.1.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-math": "0.0.10",
+    "postcss-preset-env": "^5.1.0",
+    "postcss-reporter": "5.0.0",
+    "postcss-url": "^7.0.0",
+    "remove-assets-webpack-plugin": "^1.1.0",
+    "style-loader": "0.21.0",
+    "stylelint": "^9.2.1",
+    "stylelint-config-standard": "18.2.0",
+    "stylelint-scss": "3.1.0",
+    "stylelint-webpack-plugin": "0.10.5",
+    "sugarss": "^1.0.1",
+    "ts-loader": "^4.3.0",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.4.1",
+    "url-loader": "^1.0.1",
+    "webpack": "4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}

@@ -1,0 +1,39 @@
+<ul class="flex social-share mobile">
+  <li>
+    <amp-social-share type="twitter"></amp-social-share>
+  </li>
+  <li>
+    <amp-social-share
+        type="facebook"
+        data-param-app_id="{{ .Site.Params.facebook.appid }}">
+    </amp-social-share>
+  </li>
+  <li>
+    <amp-social-share type="gplus"></amp-social-share>
+  </li>
+  <li>
+  {{ $canonical_page := default . (.OutputFormats.Get "HTML") }}
+    <amp-social-share
+        type="hatena"
+        data-share-endpoint="http://b.hatena.ne.jp/entry/{{ $canonical_page.Permalink }}">
+    </amp-social-share>
+  </li>
+  <li>
+    <amp-social-share type="pinterest"></amp-social-share>
+  </li>
+  <li>
+    <amp-social-share
+        type="pocket"
+        data-share-endpoint="https://getpocket.com/edit?url=SOURCE_URL">
+    </amp-social-share>
+  </li>
+  <li>
+    <amp-social-share
+        type="feedly"
+        data-share-endpoint="https://feedly.com/i/subscription/feed/{{ absLangURL "/index.xml" }}">
+    </amp-social-share>
+  </li>
+  <li class="hide">
+    <amp-social-share type="system"></amp-social-share>
+  </li>
+</ul>

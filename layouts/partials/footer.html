@@ -1,0 +1,4 @@
+<footer class="site-footer">
+  <p class="privacy-policy"><a href="{{ absURL "/privacy-policy/" }}">Privacy Policy</a></p>
+  <p class="copyright">{{ replace (replace .Site.Copyright "{year}" now.Year) "{name}" .Site.Author.name }}</p>
+</footer>

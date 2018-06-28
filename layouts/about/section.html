@@ -1,0 +1,101 @@
+{{ define "json+ld" }}
+{{ partial "jsonld/aboutpage.json" . | safeHTML }}
+{{ end }}
+
+{{ define "amp-component" }}
+<amp-animation id="nav-cur-anim" layout="nodisplay">
+  <script type="application/json">
+    {
+      "duration": "200",
+      "fill": "both",
+      "easing": "ease-in-out",
+      "direction": "alternate",
+      "animations": [
+        {
+          "selector": ".navigation-cursor",
+          "keyframes": {
+            "transform": ["translateY(-80%)", "translateY(0)"],
+            "opacity": [0, 1]
+          }
+        }
+      ]
+    }
+  </script>
+</amp-animation>
+{{ end }}
+
+{{ define "main" }}
+<div class="background-image">
+  {{- $page := . }}
+  {{- range .Resources.Match "backpic-*" }}
+  {{- $org_img := . }}
+  {{- $page.Scratch.Delete "img_set" }}
+  {{- range slice "640x" "1024x" "1440x" "1920x" "2560x" "3840x" }}
+  {{- $org_img.Resize . | slice | $page.Scratch.Add "img_set" }}
+  {{- end }}
+  {{- with $org_img }}
+  <amp-img
+      src="{{ .RelPermalink }}"
+      alt="background-image"
+      layout="responsive"
+      width="{{ .Width }}"
+      height="{{ .Height }}"
+      srcset="{{ .RelPermalink }} {{ .Width }}w{{ with $page.Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
+  >
+  </amp-img>
+  {{- end }}{{- end }}
+</div>
+<div class="background-cover"></div>
+<div class="navigation-cursor flex flex-center">
+  <span class="lbar"></span>
+  <span class="rbar"></span>
+</div>
+<div class="pos-observe">
+  <amp-position-observer
+      intersection-ratios="1"
+      on="enter:nav-cur-anim.start;exit:nav-cur-anim.start,nav-cur-anim.reverse"
+      layout="nodisplay">
+  </amp-position-observer>
+</div>
+<main id="about">
+  <section class="profile flex flex-center flex-column">
+    <div class="profile-main">
+      {{- $page := . }}
+      {{- $org_img := .Resources.GetMatch "profile-img" }}
+      {{- .Scratch.Delete "img_set" }}
+      {{- range slice "100x" "200x" "500x" "1000x" "2000x" }}
+      {{- $org_img.Resize . | slice | $page.Scratch.Add "img_set" }}
+      {{- end }}
+      {{- with $org_img }}
+      <amp-img
+          class="{{ .Name }}"
+          src="{{ .RelPermalink }}"
+          alt="profile-image"
+          layout="responsive"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          sizes="(min-width: 1024px) 25vw, 50vw"
+          srcset="{{ .RelPermalink }} {{ .Width }}w{{ with $page.Scratch.Get "img_set" }}{{ range . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
+      >
+      </amp-img>
+      {{- end }}
+      <h1 class="name">{{ .Site.Author.name }}</h1>
+    </div>
+    <div class="sns flex flex-center">
+    <a class="twitter" href="https://twitter.com/{{ .Site.Params.twitter.id }}"><span></span></a>
+    <a class="facebook" href="https://facebook.com/{{ .Site.Params.facebook.id }}"><span></span></a>
+    <a class="github" href="https://github.com/{{ .Site.Params.github }}"><span></span></a>
+    <a class="gplus" href="https://plus.google.com/{{ .Site.Params.googleplus }}"><span></span></a>
+    <a class="linkedin" href="https://www.linkedin.com/in/{{ .Site.Params.linkedin }}/"><span></span></a>
+    <a class="email" href="mailto:{{ .Site.Params.email }}"><span></span></a>
+  </div>
+  </section>
+  <section class="about-content">
+    {{ .Content }}
+  </section>
+</main>
+{{ end }}
+
+{{ define "footer" }}
+<footer></footer>
+{{ end }}

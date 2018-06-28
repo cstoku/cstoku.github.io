@@ -1,0 +1,33 @@
+
+#TableOfContents {
+  margin-top: 20px;
+
+  & ul {
+    padding-left: 20px;
+
+    & li {
+      margin: 10px 0;
+      line-height: 1.2em;
+    }
+  }
+}
+
+@media (--desktop) {
+  aside.toc {
+    min-width: 180px;
+    margin-left: 20px;
+  }
+
+  #TableOfContents {
+    position: sticky;
+    top: 0;
+    padding-top: 20px;
+  }
+}
+
+@media (--lt-desktop) {
+  aside.toc {
+    border-top: solid 1px var(--colorDivider);
+    margin: 20px 0;
+  }
+}

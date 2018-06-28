@@ -1,0 +1,20 @@
+{{- $page := . }}
+{{- with .Site.Menus.main }}
+<ul class="{{ if (index . 0).Parent }}sub-menu{{ end }} ">
+  {{- range . }}
+  <li{{ with .Identifier }} class="{{ . }}"{{ end }}>
+    {{- if .URL }}
+  <a href="{{ .URL | relLangURL }}"><span>{{ .Pre }}{{ .Name }}</span></a>
+    {{- else }}
+    <p><span>{{ .Pre }}{{ .Name }}</span></p>
+    {{- end }}
+    {{- if .HasChildren }}
+    {{ partial "menu_part.html" .Children }}
+    {{- end }}
+  </li>
+  {{- end }}
+  {{- with index $page.Translations 0 }}
+  <li class="translation"><a href="{{ .Permalink }}"><span>Switch to {{ .Language.LanguageName }}</span></a></li>
+  {{- end }}
+</ul>
+{{- end }}

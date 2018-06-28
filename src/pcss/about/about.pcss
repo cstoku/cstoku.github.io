@@ -1,0 +1,37 @@
+#about {
+  width: 100%;
+  min-width: 320px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: var(--colorText);
+  z-index: 5;
+
+  &  .certified{
+    flex-wrap: wrap;
+
+    & amp-img {
+      flex-grow: 0;
+      margin: 20px;
+    }
+  }
+}
+
+.about-content {
+  height: 60vh;
+  margin: 100px 50px;
+
+  & h1 {
+    color: var(--colorText);
+    font-size: var(--fontArticleH1Size);
+    margin: var(--marginArticleH1Size);
+    border-left: solid 5px var(--colorText);
+    border-bottom: solid 1px var(--colorText);
+    padding: 10px 15px;
+  }
+}
+
+@media (--smartphone) {
+  .about-content {
+    margin: 100px 20px;
+  }
+}

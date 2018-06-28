@@ -1,0 +1,67 @@
+{{- $page := . }}
+{{- $img := .Site.GetPage "section" "img" }}
+{{- $pageTitle := printf "%s - %s" .Title .Site.Title }}
+{{/* Initialize */}}
+{{- .Scratch.Delete "page_title" }}
+{{- .Scratch.Delete "page_desc" }}
+{{- .Scratch.Delete "page_thumb_alt" }}
+{{- .Scratch.Delete "page_thumb" }}
+{{- .Scratch.Delete "page_header" }}
+{{- .Scratch.Delete "page_robots" }}
+{{- if .IsHome }}
+{{/* Home Page */}}
+{{- .Scratch.Set "page_title"      .Site.Title }}
+{{- .Scratch.Set "page_desc"       .Site.Params.description }}
+{{- .Scratch.Set "page_thumb_alt"  .Site.Title }}
+{{- else }}
+{{- if .IsPage }}
+{{- if eq .CurrentSection.Name "Slide" }}
+{{/* Slide Page */}}
+{{- .Scratch.Set "page_title"      $pageTitle }}
+{{- .Scratch.Set "page_desc"       .Title }}
+{{- with .Resources.GetMatch "thumbnail" }}
+{{- $page.Scratch.Set "page_thumb" . }}
+{{- $page.Scratch.Set "page_header" . }}
+{{- else }}
+{{- $img.Resources.GetMatch "thumbnail" | $page.Scratch.Set "page_thumb" }}
+{{- $img.Resources.GetMatch "header"    | $page.Scratch.Set "page_header" }}
+{{- end }}
+{{- .Scratch.Set "page_thumb_alt"  .Title }}
+{{- .Scratch.Set "page_robots"     "nosnippet" }}
+{{- else }}
+{{/* Post and About Page */}}
+{{- .Scratch.Set "page_title"      $pageTitle }}
+{{- if .Truncated }}
+{{- .Scratch.Set "page_desc"       (printf "%s ..." .Summary) }}
+{{- else }}
+{{- .Scratch.Set "page_desc"       .Summary }}
+{{- end }}
+{{- with .Resources.GetMatch "thumbnail" }}
+{{- $page.Scratch.Set "page_thumb" . }}
+{{- $page.Scratch.Set "page_header" . }}
+{{- else }}
+{{- $img.Resources.GetMatch "thumbnail" | $page.Scratch.Set "page_thumb" }}
+{{- $img.Resources.GetMatch "header"    | $page.Scratch.Set "page_header" }}
+{{- end }}
+{{- .Scratch.Set "page_thumb_alt"  .Title }}
+{{- end }}
+{{- else }}
+{{/* Etc... */}}
+{{- .Scratch.Set "page_title"      $pageTitle }}
+{{- .Scratch.Set "page_desc"       .Site.Params.description }}
+{{- with .Resources.GetMatch "thumbnail" }}
+{{- $page.Scratch.Set "page_thumb" . }}
+{{- $page.Scratch.Set "page_header" . }}
+{{- else }}
+{{- $img.Resources.GetMatch "thumbnail" | $page.Scratch.Set "page_thumb" }}
+{{- $img.Resources.GetMatch "header"    | $page.Scratch.Set "page_header" }}
+{{- end }}
+{{- .Scratch.Set "page_thumb_alt"  $pageTitle }}
+{{- end }}
+{{- end }}
+{{- with .Site.Params.robots }}
+{{- $page.Scratch.Set "page_robots"     . }}
+{{- end }}
+{{- if eq .Kind "404" }}
+{{- $page.Scratch.Set "page_robots"     "noindex" }}
+{{- end }}

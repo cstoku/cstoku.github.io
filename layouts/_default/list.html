@@ -1,28 +1,25 @@
-<div class="list">
-  {{ partial "default_head.html" . }}
-  <div class="row">
-    <div class="col-sm-9">
+{{ define "json+ld" }}
+{{- if .IsHome }}
+{{ partial "jsonld/website.json" . | safeHTML }}
+{{- else }}
+{{ partial "jsonld/collectionpage.json" . | safeHTML }}
+{{- end }}
+{{ end }}
 
-      <header class="title"><h1>{{ .Title }}</h1></header>
-
-      <div class="articles">
-        <div class="row">
-          {{ range (.Paginate .Data.Pages).Pages }}
-          <div class="col-sm-4">
-            {{ .Render "li" }}
-          </div>
-          {{ end }}
-        </div>
-      </div>
-
-      {{ partial "pagination.html" . }}
-
-    </div>
-
-    <div class="col-sm-3">
-      {{ partial "sidebar.html" . }}
-    </div>
-
-  </div>
-  {{ partial "default_foot.html" . }}
+{{ define "main" }}
+<div class="main-wrapper list">
+  <main class="flex flex-column">
+    <section class="flex posts">
+      {{- $paginator := .Paginator }}
+      {{- range $paginator.Pages }}
+      {{- partial "genparams.html" . }}
+      {{- .Render "card" }}
+      {{- end }}
+      {{- partial "genparams.html" . }}
+    </section>
+    <footer class="flex">
+      {{ partial "pagination.html" $paginator }}
+    </footer>
+  </main>
 </div>
+{{ end }}

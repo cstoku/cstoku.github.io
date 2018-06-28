@@ -1,18 +1,7 @@
-{{ partial "default_head.html" . }}
-  <div class="row">
-    <div class="col-sm-9">
-
-      <div class="articles">
-        <div class="row">
-          <p>ページが見つかりません！</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-3">
-      {{ partial "sidebar.html" . }}
-    </div>
-
-  </div>
-{{ partial "default_foot.html" . }}
-
+{{ define "main" }}
+<div class="main-wrapper page404">
+  <main class="flex flex-column">
+    <h1>Page Not Found...</h1>
+  </main>
+</div>
+{{ end }}

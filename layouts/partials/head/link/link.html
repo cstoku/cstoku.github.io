@@ -1,0 +1,28 @@
+{{- with index .Site.Author "page" }}
+<link rel="author" href="{{ absLangURL . }}">
+{{- end }}
+
+{{- range .Translations}}
+<link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}">
+{{- end }}
+{{- range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+{{- end }}
+{{- with .OutputFormats.Get "HTML" }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+{{- end }}
+{{- $img := .Site.GetPage "section" "img" }}
+{{ with $img.Resources.GetMatch "favicon-ico" }}
+<link rel="shortcut icon" type="image/x-icon" href="{{ .Permalink }}">
+{{- end }}
+{{- $favicon := $img.Resources.GetMatch "favicon" }}
+{{- with $favicon }}
+<link rel="icon" type="image/png" href="{{ .RelPermalink }}" sizes="{{ .Width }}x{{ .Height }}">
+{{- end }}
+{{- range slice "16" "32" "64" "128" "256" "512" }}
+{{- with printf "%sx%s" . . | $favicon.Resize }}
+<link rel="icon" type="image/png" href="{{ .RelPermalink }}" sizes="{{ .Width }}x{{ .Height }}">
+{{- end }}{{- end }}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

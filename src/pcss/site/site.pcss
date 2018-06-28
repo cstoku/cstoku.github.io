@@ -1,0 +1,69 @@
+/* Site Default */
+body {
+  color: var(--colorPrimaryText);
+}
+
+a {
+  text-decoration: none;
+  color: var(--colorPrimary);
+
+  &:hover {
+    color: var(--colorAccent);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  color: color-mod(var(--colorPrimaryText) alpha(-0.1));
+}
+
+/* Styles */
+#body-container {
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+.main-wrapper {
+  margin-top: 50px;
+
+  &.list,
+  &.terms {
+    & main {
+      align-items: center;
+    }
+
+    & footer {
+      width: 100%;
+    }
+  }
+
+  &.page404 {
+    & h1 {
+      margin: 30px;
+      font-size: 32px;
+      line-height: 1.2em;
+    }
+  }
+}
+
+
+section.posts {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 1650px;
+}
+
+amp-image-lightbox {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (--ge-smartphone) {
+  section.posts {
+    margin: 50px;
+  }
+}

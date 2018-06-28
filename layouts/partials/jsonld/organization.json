@@ -1,0 +1,29 @@
+{{- $img := .Site.GetPage "section" "img" }}
+{
+  "@context": "http://schema.org",
+  "@id": "{{ absURL "/" }}#organization",
+  "@type": "Organization",
+  {{- with $img.Resources.GetMatch "favicon" }}
+  {{- with .Resize "512x" }}
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ .Permalink }}",
+    "width": {{ .Width }},
+    "height": {{ .Height }}
+  },
+  {{- end }}{{- end }}
+  "member": {
+    "@id": "{{ absURL "/" }}#person"
+  },
+  {{- with $img.Resources.GetMatch "favicon" }}
+  {{- with .Resize "512x" }}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ .Permalink }}",
+    "width": {{ .Width }},
+    "height": {{ .Height }}
+  },
+  {{- end }}{{- end }}
+  "url": "{{ absURL "/" }}",
+  "name": "{{ .Site.Title }}"
+}

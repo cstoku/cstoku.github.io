@@ -1,0 +1,51 @@
+<div class="main-header">
+  <div class="header-thumbnail">
+    {{- .Scratch.Delete "img_set" }}
+    {{- $page := . }}
+    {{- with .Scratch.Get "page_header" }}
+    {{- $header := .Resize "1200x" }}
+    {{- $sizes := slice "320x" "425x" "768x" "1024x" }}
+    <amp-img src="{{ $header.RelPermalink }}"
+             width="{{ $header.Width }}"
+             height="{{ $header.Height }}"
+             layout="responsive"
+             class="thumbnail"
+             srcset="{{ $header.RelPermalink }} {{ $header.Width }}w{{ range $sizes }}{{ with $header.Resize . }},{{ .RelPermalink }} {{ .Width }}w{{ end }}{{ end }}"
+    >
+    </amp-img>
+    {{ end }}
+  </div>
+  <div class="header-info flex flex-column">
+    <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+    <aside class="flex">
+      <div class="flex flex-column">
+        <div class="flex taxonomy-wrapper">
+          <i class="material-icons md-18 info-prefix">folder</i>
+          <ul class="flex taxonomy category">
+            <li class="{{ .CurrentSection.Params.category_color_class }}"><a href="{{ .CurrentSection.Permalink }}">{{ .CurrentSection.Title }}</a></li>
+          </ul>
+        </div>
+        <div class="flex taxonomy-wrapper">
+          {{ with .Params.tags }}
+          <i class="material-icons md-18 info-prefix">local_offer</i>
+          <ul class="flex taxonomy tag">
+            {{ range . }}
+            <li><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}/">{{ . }}</a></li>
+            {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      <ul class="flex flex-column dateinfo-wrapper">
+        <li class="flex publish-date">
+          <i class="material-icons md-18 info-prefix">event_note</i>
+          {{ .PublishDate.Format .Site.Params.dateFormat  }}
+        </li>
+        <li class="flex lastmod-date">
+          <i class="material-icons md-18 info-prefix">create</i>
+          {{ .Lastmod.Format .Site.Params.dateFormat }}
+        </li>
+      </ul>
+    </aside>
+  </div>
+</div>
