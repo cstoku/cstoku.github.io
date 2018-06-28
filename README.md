@@ -57,8 +57,8 @@
   - [x] profile画像
   - [x] favicon画像
   - [x] jpgにする？？ `find . -name '*.png' | xargs -I{} echo {} -quality 100 {} | sed s/png$/jpg/ | xargs -I{} sh -c "convert {}"`
-- [ ] 以前のドメインからのリダイレクト設定
-- [ ] wwwのドメインをメインのドメインへ飛ばすようにリダイレクト設定
+- [x] 以前のドメインからのリダイレクト設定
+- [x] wwwのドメインをメインのドメインへ飛ばすようにリダイレクト設定
 
 ## Article
 
