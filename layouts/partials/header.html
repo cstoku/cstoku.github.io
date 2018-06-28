@@ -1,5 +1,5 @@
 <header class="site-header flex">
-  <button class="menu-btn" on="tap:sidebar.toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+  <button class="menu-btn" on="tap:sidebar.toggle" aria-label="Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   <h1><a href="{{ absLangURL "" }}">{{ .Site.Title }}</a></h1>
   {{- if eq .Kind "404" | or .IsHome | not }}
   <ul class="breadcrumb flex">
