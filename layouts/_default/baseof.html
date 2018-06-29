@@ -17,13 +17,6 @@
     {{ partial "head/amp/components.html" . }}
   </head>
   <body>
-    <amp-sidebar id="sidebar" layout="nodisplay" side="left">
-      <nav>
-        {{ partial "menu_part.html" . }}
-      </nav>
-    </amp-sidebar>
-    {{- block "amp-component" . }}
-    {{- end }}
     <div id="body-container" class="flex flex-column">
       {{- block "header" . }}
       {{ partial "header.html" . }}
@@ -34,6 +27,13 @@
       {{ partial "footer.html" . }}
       {{- end }}
     </div>
+    <amp-sidebar id="sidebar" layout="nodisplay" side="left">
+      <nav>
+      {{ partial "menu_part.html" . }}
+      </nav>
+    </amp-sidebar>
+    {{- block "amp-component" . }}
+    {{- end }}
     {{- if .Site.Params.googleAnalytics }}
     {{ partial "googleanalytics.html" . }}
     {{- end }}
