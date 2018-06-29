@@ -6,7 +6,8 @@ publish = "public"
 command = """
 yarn &&
 yarn run webpack &&
-hugo --gc --config $HUGO_CONFIG"""
+hugo --gc --config $HUGO_CONFIG &&
+yarn run workbox generateSW workbox-config.js"""
 
 [build.environment]
 HUGO_VERSION = "0.42.1"
