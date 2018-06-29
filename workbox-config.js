@@ -28,7 +28,7 @@ module.exports = {
       }
     },
     {
-      urlPattern: new RegExp('\.(woff|ttf|eot|otf)'),
+      urlPattern: new RegExp('\.(json|woff|ttf|eot|otf)'),
       handler: 'cacheFirst',
       options: {
         cacheName: 'assets',
