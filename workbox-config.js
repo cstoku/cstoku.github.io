@@ -3,7 +3,7 @@ module.exports = {
   "globPatterns": [
     "**/*.{ttf,html}"
   ],
-  "swDest": "public/js/sw.js",
+  "swDest": "public/sw.js",
   "runtimeCaching": [{
     urlPattern: new RegExp('^https://cdn.ampproject.org'),
     handler: 'staleWhileRevalidate',
