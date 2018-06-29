@@ -37,6 +37,11 @@
     {{- if .Site.Params.googleAnalytics }}
     {{ partial "googleanalytics.html" . }}
     {{- end }}
+    <amp-install-serviceworker
+        src="{{ absURL "/js/sw.js" }}"
+        data-iframe-src="{{ absURL "/isw.html" }}"
+        layout="nodisplay">
+    </amp-install-serviceworker>
     <script type="application/ld+json">
       {{- block "json+ld" . }}
       {{- end }}
