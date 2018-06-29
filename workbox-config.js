@@ -4,10 +4,7 @@ module.exports = {
     "**/*.{ttf,html}",
     "**/{thumbnail,header}.jpg"
   ],
-  "swDest": "public/js/sw.js",
-  "modifyUrlPrefix": {
-    '/js': ''
-  },
+  "swDest": "public/sw.js",
   "maximumFileSizeToCacheInBytes": 5 * 1024 * 1024,
   "runtimeCaching": [
     {
