@@ -1,10 +1,10 @@
 module.exports = {
   "globDirectory": "public/",
   "globPatterns": [
-    "**/*.{ttf,html}",
+    "**/*.{html}",
     "**/{thumbnail,header}.jpg"
   ],
-  "swDest": "public/sw.js",
+  "swDest": "static/sw.js",
   "maximumFileSizeToCacheInBytes": 5 * 1024 * 1024,
   "runtimeCaching": [
     {
@@ -27,16 +27,26 @@ module.exports = {
         }
       }
     },
-    {
-      urlPattern: new RegExp('\.(json|woff|ttf|eot|otf)'),
-      handler: 'cacheFirst',
-      options: {
-        cacheName: 'assets',
-        expiration: {
-            maxAgeSeconds: 60 * 60 * 24 * 14
-        }
-      }
-    },
+      {
+          urlPattern: new RegExp('\.(json|woff|woff2|ttf|eot|otf)'),
+          handler: 'cacheFirst',
+          options: {
+              cacheName: 'assets',
+              expiration: {
+                  maxAgeSeconds: 60 * 60 * 24 * 14
+              }
+          }
+      },
+      {
+          urlPattern: new RegExp('favicon.png'),
+          handler: 'cacheFirst',
+          options: {
+              cacheName: 'assets2',
+              expiration: {
+                  maxAgeSeconds: 60 * 60 * 24 * 14
+              }
+          }
+      },
     {
       urlPattern: new RegExp('.*\/(thumbnail|header)[^\/]*\.(jpg|png)'),
       handler: 'cacheFirst',
@@ -57,6 +67,7 @@ module.exports = {
             maxAgeSeconds: 60 * 60 * 24 * 7
         }
       }
+
     }
   ]
 };
