@@ -1,7 +1,7 @@
 module.exports = {
   "globDirectory": "public/",
   "globPatterns": [
-    "**/*.{ttf,html}"
+    "**/*.{ttf,html,jpg,png}"
   ],
   "swDest": "public/sw.js",
   "runtimeCaching": [{
