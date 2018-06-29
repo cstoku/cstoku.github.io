@@ -28,7 +28,7 @@ module.exports = {
       }
     },
     {
-      urlPattern: /\.(woff|ttf|eot|otf)/,
+      urlPattern: new RegExp('\.(woff|ttf|eot|otf)'),
       handler: 'cacheFirst',
       options: {
         cacheName: 'assets',
@@ -38,7 +38,7 @@ module.exports = {
       }
     },
     {
-      urlPattern: /.*\/(thumbnail|header)[^\/]*\.(jpg|png)/,
+      urlPattern: new RegExp('.*\/(thumbnail|header)[^\/]*\.(jpg|png)'),
       handler: 'cacheFirst',
       options: {
         cacheName: 'img-thumbnail',
@@ -48,7 +48,7 @@ module.exports = {
       }
     },
     {
-      urlPattern: /\.(jpg|png)/,
+      urlPattern: new RegExp('\.(jpg|png)'),
       handler: 'cacheFirst',
       options: {
         cacheName: 'img',
