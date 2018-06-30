@@ -1,10 +1,10 @@
 module.exports = {
-  "globDirectory": "public/",
+  "globDirectory": "public/ja",
   "globPatterns": [
     "**/*.{ttf,html}",
     "**/{thumbnail,header}.jpg"
   ],
-  "swDest": process.env.NODE_ENV === "production" ? "public/sw.js" : "static/sw.js",
+  "swDest": process.env.NODE_ENV === "production" ? "public/ja/sw.js" : "static/ja/sw.js",
   "clientsClaim": true,
   "skipWaiting": true,
   "maximumFileSizeToCacheInBytes": 5 * 1024 * 1024,
