@@ -28,10 +28,19 @@
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
      */
-    var disqus_config = function () {
+    var disqus_config = function () {6
+        var arg = new Object;
+        var pair=location.search.substring(1).split('&');
+        for(var i=0;pair[i];i++) {
+            var kv = pair[i].split('=');
+            arg[kv[0]]=kv[1];
+        }
+
         this.page.url = window.location;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = window.location.hash; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = arg['identifier']; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.language = arg['lang'];
     };
+
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
 
