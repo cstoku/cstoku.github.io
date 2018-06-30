@@ -21,6 +21,7 @@ services:
       - server
       - --navigateToChanged
       - --disableFastRender
+      - --noHTTPCache
       - --bind
       - 0.0.0.0
     volumes:
