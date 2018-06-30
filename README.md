@@ -91,13 +91,13 @@
 - [ ] DisqusがOfflineのときのfallback
 - [ ] Fontを自ドメインから配信・最適化
 - [ ] 多言語化用マルチドメインを考えてみる
-  - [ ] Netlifyで2つホストする
-  - [ ] staticフォルダの扱い
-  - [ ] GoogleAnalyticsのコードを作成
-  - [ ] SearchConsole・SiteGuru・GoogleAnalyticsでロケーションの設定
-  - [ ] Privacy-Policyの翻訳
-  - [ ] enサイトの準備中表示・・・
+  - [x] Netlifyで2つホストする
+  - [x] staticフォルダの扱い
+  - [x] GoogleAnalyticsのコードを作成
+  - [x] enサイトの準備中表示・・・
   - [ ] disqusの扱いを確認
+  - [ ] SearchConsole・SiteGuru・GoogleAnalyticsでロケーションの設定
+  - [ ] Privacy-Policyの翻訳(あとで・・・)
   
 # Reference
 
