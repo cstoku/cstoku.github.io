@@ -1,7 +1,6 @@
 #
 # Hugo Parameters
 #
-baseURL: http://localhost:1313
 title: "Toku's Blog"
 
 buildDrafts: true
@@ -25,6 +24,8 @@ pygmentsCodefences: true
 pygmentsUseClasses: true
 
 ignoreFiles: [ "\\.un~$" ]
+
+staticDir: static/global
 
 taxonomies:
   tag: tags
@@ -115,9 +116,11 @@ languages:
     languageCode: ja
     languageName: Japanese
     weight: 1
+    baseURL: http://localhost:1313
     copyright: © 2016-{year} {name}
     hasCJKLanguage: true
     summaryLength: 120
+    staticDir2: static/ja
 
     author:
       name: 德田 拓也
@@ -155,9 +158,12 @@ languages:
     languageCode: en
     languageName: English
     weight: 2
+    baseURL: http://localhost:1314
     copyright: © 2016-{year} {name}
     hasCJKLanguage: false
     summaryLength: 120
+    staticDir:
+    staticDir2: static/en
 
     author:
       name: Takuya Tokuda
