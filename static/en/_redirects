@@ -1,2 +1,2 @@
-# Redirect rules
-
+# Redirect default Netlify subdomain to primary domain
+https://cstoku-blog-en.netlify.com/* https://en.cstoku.me/:splat 301!
