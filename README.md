@@ -88,6 +88,9 @@
 - [ ] pager.htmlの設定(リンクの設定とFooterへの追加)
 - [x] 画像をクリックしたときにズームする仕組み
 - [ ] Aboutページの中身ふやす・・・
+- [ ] DisqusがOfflineのときのfallback
+- [ ] Fontを自ドメインから配信・最適化
+- [ ] 多言語化用マルチドメインを考えてみる
 
 # Reference
 
