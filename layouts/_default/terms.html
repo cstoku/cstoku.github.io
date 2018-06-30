@@ -5,10 +5,14 @@
 {{ define "main" }}
 <div class="main-wrapper terms">
   <main>
-    {{ $paginator := .Paginator }}
-    {{ range $paginator.Pages }}
+    {{- $paginator := .Paginator }}
+    {{- range $paginator.Pages }}
     {{ partial "term.html" . }}
-    {{ end }}
+    {{- else }}
+    <section class="flex flex-column flex-center">
+      <p>{{- T "noContentMsg" }}</p>
+    </section>
+    {{- end }}
     <footer>
       {{ partial "pagination.html" $paginator }}
     </footer>
