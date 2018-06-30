@@ -97,7 +97,7 @@
   - [x] enサイトの準備中表示・・・
   - [x] disqusの扱いを確認
   - [ ] SearchConsole・SiteGuru・GoogleAnalyticsでロケーションの設定
-  
+
 # Reference
 
 - [Introduction | Search | Google Developers](https://developers.google.com/search/docs/guides/)
