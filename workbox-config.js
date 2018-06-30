@@ -1,10 +1,12 @@
 module.exports = {
   "globDirectory": "public/",
   "globPatterns": [
-    "**/*.{html}",
+    "**/*.{ttf,html}",
     "**/{thumbnail,header}.jpg"
   ],
-  "swDest": "static/sw.js",
+  "swDest": process.env.NODE_ENV === "production" ? "public/sw.js" : "static/sw.js",
+  "clientsClaim": true,
+  "skipWaiting": true,
   "maximumFileSizeToCacheInBytes": 5 * 1024 * 1024,
   "runtimeCaching": [
     {
@@ -18,7 +20,7 @@ module.exports = {
       }
     },
     {
-      urlPattern: '/',
+      urlPattern: new RegExp('/(.+.html)?$'),
       handler: 'networkFirst',
       options: {
         cacheName: 'page',
@@ -27,34 +29,14 @@ module.exports = {
         }
       }
     },
-      {
-          urlPattern: new RegExp('\.(json|woff|woff2|ttf|eot|otf)'),
-          handler: 'cacheFirst',
-          options: {
-              cacheName: 'assets',
-              expiration: {
-                  maxAgeSeconds: 60 * 60 * 24 * 14
-              }
-          }
-      },
-      {
-          urlPattern: new RegExp('favicon.png'),
-          handler: 'cacheFirst',
-          options: {
-              cacheName: 'assets2',
-              expiration: {
-                  maxAgeSeconds: 60 * 60 * 24 * 14
-              }
-          }
-      },
     {
-      urlPattern: new RegExp('.*\/(thumbnail|header)[^\/]*\.(jpg|png)'),
+      urlPattern: new RegExp('\.(json|woff2?|ttf|eot|otf)'),
       handler: 'cacheFirst',
       options: {
-        cacheName: 'img-thumbnail',
-        expiration: {
-            maxAgeSeconds: 60 * 60 * 24 * 7
-        }
+          cacheName: 'assets',
+          expiration: {
+              maxAgeSeconds: 60 * 60 * 24 * 14
+          }
       }
     },
     {
@@ -67,7 +49,6 @@ module.exports = {
             maxAgeSeconds: 60 * 60 * 24 * 7
         }
       }
-
     }
   ]
 };
