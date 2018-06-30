@@ -1,7 +1,6 @@
 #
 # Hugo Parameters
 #
-baseURL: https://staging.cstoku.me
 title: "Toku's Blog"
 
 buildDrafts: false
@@ -9,7 +8,6 @@ buildFuture: false
 buildExpired: false
 
 defaultContentLanguage: ja
-defaultContentLanguageInSubdir: false
 
 enableGitInfo: true
 enableRobotsTXT: true
@@ -25,6 +23,8 @@ pygmentsCodefences: true
 pygmentsUseClasses: true
 
 ignoreFiles: [ "\\.un~$" ]
+
+staticDir: static/global
 
 rssLimit: 15
 
@@ -117,9 +117,11 @@ languages:
     languageCode: ja
     languageName: Japanese
     weight: 1
+    baseURL: https://staging.cstoku.me
     copyright: © 2016-{year} {name}
     hasCJKLanguage: true
     summaryLength: 120
+    staticDir2: static/ja
 
     author:
       name: 德田 拓也
@@ -158,9 +160,11 @@ languages:
     languageCode: en
     languageName: English
     weight: 2
+    baseURL: https://staging.en.cstoku.me
     copyright: © 2016-{year} {name}
     hasCJKLanguage: false
     summaryLength: 120
+    staticDir2: static/en
 
     author:
       name: Takuya Tokuda

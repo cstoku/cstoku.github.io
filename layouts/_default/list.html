@@ -14,6 +14,8 @@
       {{- range $paginator.Pages }}
       {{- partial "genparams.html" . }}
       {{- .Render "card" }}
+      {{- else }}
+      {{- T "noContentMsg" }}
       {{- end }}
       {{- partial "genparams.html" . }}
     </section>

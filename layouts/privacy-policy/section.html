@@ -1,14 +1,16 @@
 {{ define "main" }}
 <main>
-  <div class="flex article-wrapper">
-    <article class="flex flex-column single">
-      <header class="flex flex-column simple-header">
-        <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-      </header>
-      <div class="content">
-        {{ .Content }}
-      </div>
-    </article>
+  <div class="main-wrapper">
+    <div class="flex article-wrapper">
+      <article class="flex flex-column single">
+        <header class="flex flex-column simple-header">
+          <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        </header>
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </article>
+    </div>
   </div>
 </main>
 {{ end }}

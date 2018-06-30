@@ -3,6 +3,6 @@
             sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
             resizable
             class="disqus"
-            src="{{ .Site.Params.disqusIframeURL }}#{{ .RelPermalink | htmlEscape }}">
+            src="{{ .Site.Params.disqusIframeURL }}?identifier={{ .RelPermalink | htmlEscape }}&lang={{ .Lang }}">
   <div overflow></div>
 </amp-iframe>

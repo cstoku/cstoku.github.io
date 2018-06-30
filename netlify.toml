@@ -2,11 +2,13 @@
 ID = "cstoku-blog"
 
 [build]
-publish = "public"
 command = """
 yarn &&
 yarn run webpack &&
-hugo --gc --config $HUGO_CONFIG"""
+hugo --gc --config $HUGO_CONFIG &&
+yarn run workbox generateSW workbox-config.ja.js
+yarn run workbox generateSW workbox-config.en.js
+"""
 
 [build.environment]
 HUGO_VERSION = "0.42.1"
@@ -18,6 +20,3 @@ NODE_ENV = "production"
 [context.staging.environment]
 HUGO_CONFIG = "config-stg.yaml"
 NODE_ENV = "production"
-
-[context.disqus]
-command = "hugo"

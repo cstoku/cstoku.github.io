@@ -88,6 +88,15 @@
 - [ ] pager.htmlの設定(リンクの設定とFooterへの追加)
 - [x] 画像をクリックしたときにズームする仕組み
 - [ ] Aboutページの中身ふやす・・・
+- [ ] Fontを自ドメインから配信・最適化
+- [ ] Privacy-Policyの翻訳
+- [ ] 多言語化用マルチドメインを考えてみる
+  - [x] Netlifyで2つホストする
+  - [x] staticフォルダの扱い
+  - [x] GoogleAnalyticsのコードを作成
+  - [x] enサイトの準備中表示・・・
+  - [x] disqusの扱いを確認
+  - [ ] SearchConsole・SiteGuru・GoogleAnalyticsでロケーションの設定
 
 # Reference
 
@@ -95,3 +104,4 @@
 - [構造化データ テストツール](https://search.google.com/structured-data/testing-tool/u/0/)
 - [JSON-LD 1.1](https://json-ld.org/spec/latest/json-ld/)
 - [AMP ページにアナリティクスを追加する](https://developers.google.com/analytics/devguides/collection/amp-analytics/?hl=ja)
+- [Workbox | Google Developers](https://developers.google.com/web/tools/workbox/)
