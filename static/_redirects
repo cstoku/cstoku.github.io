@@ -1,4 +1,5 @@
 # Redirect domain aliases to primary domain
+https://ja.cstoku.me/*              https://cstoku.me/:splat 301!
 https://www.sce-toku.jp/*           https://cstoku.me/:splat 301!
 https://blog.sce-toku.jp/*          https://cstoku.me/:splat 301!
 https://sce-toku.jp/*               https://cstoku.me/:splat 301!
