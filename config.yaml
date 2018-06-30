@@ -8,7 +8,6 @@ buildFuture: true
 buildExpired: true
 
 defaultContentLanguage: ja
-defaultContentLanguageInSubdir: false
 
 enableGitInfo: true
 enableRobotsTXT: true
@@ -162,7 +161,6 @@ languages:
     copyright: © 2016-{year} {name}
     hasCJKLanguage: false
     summaryLength: 120
-    staticDir:
     staticDir2: static/en
 
     author:
