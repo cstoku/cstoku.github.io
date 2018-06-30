@@ -88,16 +88,15 @@
 - [ ] pager.htmlの設定(リンクの設定とFooterへの追加)
 - [x] 画像をクリックしたときにズームする仕組み
 - [ ] Aboutページの中身ふやす・・・
-- [ ] DisqusがOfflineのときのfallback
 - [ ] Fontを自ドメインから配信・最適化
+- [ ] Privacy-Policyの翻訳
 - [ ] 多言語化用マルチドメインを考えてみる
   - [x] Netlifyで2つホストする
   - [x] staticフォルダの扱い
   - [x] GoogleAnalyticsのコードを作成
   - [x] enサイトの準備中表示・・・
-  - [ ] disqusの扱いを確認
+  - [x] disqusの扱いを確認
   - [ ] SearchConsole・SiteGuru・GoogleAnalyticsでロケーションの設定
-  - [ ] Privacy-Policyの翻訳(あとで・・・)
   
 # Reference
 
