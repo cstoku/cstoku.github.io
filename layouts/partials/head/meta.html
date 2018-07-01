@@ -2,6 +2,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="content-language" content="{{ .Lang }}">
 <meta name="description" content="{{ .Scratch.Get "page_desc" }}">
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 {{- with index .Site.Author "name" }}
 <meta name="author" content="{{ . }}">
 {{- end }}

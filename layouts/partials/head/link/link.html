@@ -23,6 +23,7 @@
 {{- $favicon := $img.Resources.GetMatch "favicon" }}
 {{- with $favicon }}
 <link rel="icon" type="image/png" href="{{ .RelPermalink }}" sizes="{{ .Width }}x{{ .Height }}">
+<link rel="apple-touch-icon-precomposed" href="{{ .RelPermalink }}">
 {{- end }}
 {{- range slice "16" "32" "64" "128" "256" "512" }}
 {{- with printf "%sx%s" . . | $favicon.Resize }}
