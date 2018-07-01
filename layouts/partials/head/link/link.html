@@ -28,6 +28,3 @@
 {{- with printf "%sx%s" . . | $favicon.Resize }}
 <link rel="icon" type="image/png" href="{{ .RelPermalink }}" sizes="{{ .Width }}x{{ .Height }}">
 {{- end }}{{- end }}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
