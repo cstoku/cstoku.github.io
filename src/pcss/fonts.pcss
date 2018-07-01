@@ -1,19 +1,120 @@
 @font-face {
-  font-family: 'Ricty Diminished';
+  font-family: 'Inconsolata';
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/rictydiminished-regular.ttf') format('truetype');
+  src: url('/fonts/Inconsolata/Inconsolata-Regular.eot');
+  src: local('Inconsolata Regular'),
+       local('Inconsolata-Regular'),
+       url('/fonts/Inconsolata/Inconsolata-Regular.woff2') format('woff2'),
+       url('/fonts/Inconsolata/Inconsolata-Regular.woff') format('woff'),
+       url('/fonts/Inconsolata/Inconsolata-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/Inconsolata/Inconsolata-Bold.eot');
+  src: local('Inconsolata Bold'),
+       local('Inconsolata-Bold'),
+       url('/fonts/Inconsolata/Inconsolata-Bold.woff2') format('woff2'),
+       url('/fonts/Inconsolata/Inconsolata-Bold.woff') format('woff'),
+       url('/fonts/Inconsolata/Inconsolata-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Roboto/Roboto-Regular.eot');
+  src: local('Robot Regular'),
+       local('Robot-Regular'),
+       url('/fonts/Roboto/Roboto-Regular.woff2') format('woff2'),
+       url('/fonts/Roboto/Roboto-Regular.woff') format('woff'),
+       url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/Roboto/Roboto-Bold.eot');
+  src: local('Robot Bold'),
+       local('Robot-Bold'),
+       url('/fonts/Roboto/Roboto-Bold.woff2') format('woff2'),
+       url('/fonts/Roboto/Roboto-Bold.woff') format('woff'),
+       url('/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/Roboto/Roboto-Italic.eot');
+  src: local('Robot Italic'),
+       local('Robot-Italic'),
+       url('/fonts/Roboto/Roboto-Italic.woff2') format('woff2'),
+       url('/fonts/Roboto/Roboto-Italic.woff') format('woff'),
+       url('/fonts/Roboto/Roboto-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/Roboto/Roboto-BoldItalic.eot');
+  src: local('Robot Bold Italic'),
+       local('Robot-BoldItalic'),
+       url('/fonts/Roboto/Roboto-BoldItalic.woff2') format('woff2'),
+       url('/fonts/Roboto/Roboto-BoldItalic.woff') format('woff'),
+       url('/fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK JP';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/NotoSansCJKjp/NotoSansCJKjp-Regular.eot');
+  src: local('Noto Sans CJK JP Regular'),
+       local('NotoSansCJKJP-Regular'),
+       url('/fonts/NotoSansCJKjp/NotoSansCJKjp-Regular.woff2') format('woff2'),
+       url('/fonts/NotoSansCJKjp/NotoSansCJKjp-Regular.woff') format('woff'),
+       url('/fonts/NotoSansCJKjp/NotoSansCJKjp-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK JP';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/NotoSansCJKjp/NotoSansCJKjp-Bold.eot');
+  src: local('Noto Sans CJK JP Bold'),
+       local('NotoSansCJKJP-Bold'),
+       url('/fonts/NotoSansCJKjp/NotoSansCJKjp-Bold.woff2') format('woff2'),
+       url('/fonts/NotoSansCJKjp/NotoSansCJKjp-Bold.woff') format('woff'),
+       url('/fonts/NotoSansCJKjp/NotoSansCJKjp-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/MaterialIcons/MaterialIcons-Regular.eot');
+  src: local('Material Icons Regular'),
+       local('MaterialIcons-Regular'),
+       url('/fonts/MaterialIcons/MaterialIcons-Regular.woff2') format('woff2'),
+       url('/fonts/MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
+       url('/fonts/MaterialIcons/MaterialIcons-Regular.ttf') format('truetype');
 }
 
 body {
-  font-family: 'Roboto', 'Noto Sans JP', system-ui;
+  font-family: 'Roboto', 'Noto Sans CJK JP', system-ui;
   font-weight: 400;
   font-size: var(--fontBaseSize);
 }
 
 .material-icons {
   font-family: 'Material Icons';
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-size: 24px;
   display: inline-block;
