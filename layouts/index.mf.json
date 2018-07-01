@@ -6,13 +6,13 @@
   "lang": "{{ .Lang }}",
   {{- with $favicon }}
   "icons": [
-  {{- $sizes := slice "72" "96" "128" "144" "152" "192" "384" "512"}}
+  {{- $sizes := slice "48" "72" "96" "144" "168" "192" "256" "384" "512"}}
   {{- $len := len $sizes }}
   {{- range $i, $size := $sizes }}
     {{- $pos := add $i 1 }}
     {{- with printf "%sx%s" $size $size | $favicon.Resize }}
     {
-      "src": "{{ .RelPermalink }}",
+      "src": "{{ .RelPermalink | strings.TrimPrefix "/" }}",
       "type": "image/png",
       "sizes": "{{ .Width }}x{{ .Height }}"
     }{{ if ne $pos $len }},{{ end }}
