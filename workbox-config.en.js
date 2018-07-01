@@ -49,6 +49,16 @@ module.exports = {
             maxAgeSeconds: 60 * 60 * 24 * 7
         }
       }
+    },
+    {
+      urlPattern: new RegExp('^https://[a-z0-9]+\.cloudfront\.net'),
+      handler: 'cacheFirst',
+      options: {
+        cacheName: 'cdn-contents',
+        expiration: {
+          maxAgeSeconds: 60 * 60 * 24 * 7
+        }
+      }
     }
   ]
 };
