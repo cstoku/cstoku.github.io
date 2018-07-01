@@ -1,7 +1,7 @@
 module.exports = {
   "globDirectory": "public/ja",
   "globPatterns": [
-    "**/*.{ttf,html}",
+    "**/*.{html,woff2}",
     "**/{thumbnail,header}.jpg"
   ],
   "swDest": process.env.NODE_ENV === "production" ? "public/ja/sw.js" : "static/ja/sw.js",

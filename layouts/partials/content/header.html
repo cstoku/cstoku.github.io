@@ -21,14 +21,14 @@
     <aside class="flex">
       <div class="flex flex-column">
         <div class="flex taxonomy-wrapper">
-          <i class="material-icons md-18 info-prefix">folder</i>
+          <i class="material-icons md-18 info-prefix">&#xe2c7;</i>
           <ul class="flex taxonomy category">
             <li class="{{ .CurrentSection.Params.category_color_class }}"><a href="{{ .CurrentSection.Permalink }}">{{ .CurrentSection.Title }}</a></li>
           </ul>
         </div>
         <div class="flex taxonomy-wrapper">
           {{ with .Params.tags }}
-          <i class="material-icons md-18 info-prefix">local_offer</i>
+          <i class="material-icons md-18 info-prefix">&#xe54e;</i>
           <ul class="flex taxonomy tag">
             {{ range . }}
             <li><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}/">{{ . }}</a></li>
@@ -39,11 +39,11 @@
       </div>
       <ul class="flex flex-column dateinfo-wrapper">
         <li class="flex publish-date">
-          <i class="material-icons md-18 info-prefix">event_note</i>
+          <i class="material-icons md-18 info-prefix">&#xe616;</i>
           {{ .PublishDate.Format .Site.Params.dateFormat  }}
         </li>
         <li class="flex lastmod-date">
-          <i class="material-icons md-18 info-prefix">create</i>
+          <i class="material-icons md-18 info-prefix">&#xe150;</i>
           {{ .Lastmod.Format .Site.Params.dateFormat }}
         </li>
       </ul>
