@@ -33,10 +33,10 @@ module.exports = {
       urlPattern: new RegExp('\.(json|woff2?|ttf|eot|otf)'),
       handler: 'cacheFirst',
       options: {
-          cacheName: 'assets',
-          expiration: {
-              maxAgeSeconds: 60 * 60 * 24 * 14
-          }
+        cacheName: 'assets',
+        expiration: {
+          maxAgeSeconds: 60 * 60 * 24 * 14
+        }
       }
     },
     {
@@ -45,8 +45,8 @@ module.exports = {
       options: {
         cacheName: 'img',
         expiration: {
-            maxEntries: 100,
-            maxAgeSeconds: 60 * 60 * 24 * 7
+          maxEntries: 100,
+          maxAgeSeconds: 60 * 60 * 24 * 7
         }
       }
     },
