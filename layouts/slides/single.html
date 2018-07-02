@@ -1,12 +1,50 @@
-{{ define "main" }}
-    <textarea id="source">
-      {{ .RawContent }}
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+{{ partial "genparams.html" . -}}
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+  <meta charset="utf-8">
+  <title >{{ .Scratch.Get "page_title" }}</title>
+  {{- block "meta" . }}
+  {{ partial "head/meta.html" . }}
+  {{- end }}
+  {{ partial "head/ogp/facebook.html" . }}
+  {{ partial "head/ogp/twitter.html" . }}
+  {{- block "link" . }}
+  {{ partial "head/link/link.html" . }}
+  {{- end }}
+</head>
+<body>
+  <textarea id="source">
+    {{- .RawContent -}}
+  </textarea>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+  <script>
+    var slideshow = remark.create({
+      ratio: '16:9',
+      navigation: {
+        scroll: true,
+        touch: true,
+        click: false
+      },
+      slideNumberFormat: function (current, total) {
+          return current + ' / ' + total;
+      },
+      countIncrementalSlides: true,
+      highlightLanguage: 'no-highlight',
+      highlightStyle: 'hybrid',
+      highlightLines: false,
+      highlightSpans: false
+    });
 
-    </textarea>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js">
-</script>
-<script>
-  var slideshow = remark.create();
-</script>
-{{ end }}
+    // Setup MathJax
+    MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+    });
 
+    MathJax.Hub.Configured();
+  </script>
+</body>
+</html>
