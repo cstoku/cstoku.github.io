@@ -25,6 +25,6 @@
   {{- with .Site.Params.backgroundColor }}
   "background_color": "{{ . }}",
   {{- end }}
-  "start_url": "{{ relLangURL "/" }}?homescreen",
+  "start_url": "{{ relLangURL "/" }}?utm_source=homescreen",
   "display": "standalone"
 }
