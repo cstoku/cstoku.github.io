@@ -5,9 +5,6 @@ description: remark.js slide testing!
 date: 2016-12-02T00:46:50+09:00
 draft: true
 
-categories:
-  - Slide
-
 tags:
 - test
 
@@ -27,6 +24,10 @@ $$e^{i\pi} + 1 = 0$$
 class: right, bottom
 background-image: url(https://anisosa.net/wp-content/uploads/2016/03/ff7c007e1d5c207e4c4859d50238b804.jpg)
 background-size: 100%
+
+# Test Image...
+
+Good...
 
 ---
 
