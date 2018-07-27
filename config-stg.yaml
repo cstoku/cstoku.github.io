@@ -117,7 +117,7 @@ languages:
     languageCode: ja
     languageName: Japanese
     weight: 1
-    baseURL: https://staging.cstoku.me
+    baseURL: https://staging.cstoku.io
     copyright: © 2016-{year} {name}
     hasCJKLanguage: true
     summaryLength: 120
@@ -146,7 +146,7 @@ languages:
         uid: "131178169"
       youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
       flattr: ""
-      disqusIframeURL: https://disqus.cstoku.me/
+      disqusIframeURL: https://disqus.cstoku.io/
       maxTaxonomyContents: 5
       atomLimit: 15
       robots: none
@@ -160,7 +160,7 @@ languages:
     languageCode: en
     languageName: English
     weight: 2
-    baseURL: https://staging.en.cstoku.me
+    baseURL: https://staging.en.cstoku.io
     copyright: © 2016-{year} {name}
     hasCJKLanguage: false
     summaryLength: 120
@@ -189,7 +189,7 @@ languages:
         uid: "131178169"
       youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
       flattr: ""
-      disqusIframeURL: https://disqus.cstoku.me/
+      disqusIframeURL: https://disqus.cstoku.io/
       maxTaxonomyContents: 5
       atomLimit: 15
       robots: none

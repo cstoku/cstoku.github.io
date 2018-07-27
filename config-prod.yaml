@@ -115,7 +115,7 @@ languages:
     languageCode: ja
     languageName: Japanese
     weight: 1
-    baseURL: https://cstoku.me
+    baseURL: https://cstoku.io
     copyright: © 2016-{year} {name}
     hasCJKLanguage: true
     summaryLength: 120
@@ -146,7 +146,7 @@ languages:
       flattr: ""
       searchConsole: "zQny9DWB2aOiSbSDUHq0cY4xMwaB5ccSyzdvYvU446c"
       googleAnalytics: UA-71075507-1
-      disqusIframeURL: https://disqus.cstoku.me/
+      disqusIframeURL: https://disqus.cstoku.io/
       maxTaxonomyContents: 5
       atomLimit: 15
       dateFormat: "2006/01/02 15:04"
@@ -159,7 +159,7 @@ languages:
     languageCode: en
     languageName: English
     weight: 2
-    baseURL: https://en.cstoku.me
+    baseURL: https://en.cstoku.io
     copyright: © 2016-{year} {name}
     hasCJKLanguage: false
     summaryLength: 120
@@ -190,7 +190,7 @@ languages:
       flattr: ""
       searchConsole: "zQny9DWB2aOiSbSDUHq0cY4xMwaB5ccSyzdvYvU446c"
       googleAnalytics: UA-71075507-1
-      disqusIframeURL: https://disqus.cstoku.me/
+      disqusIframeURL: https://disqus.cstoku.io/
       maxTaxonomyContents: 5
       atomLimit: 15
       dateFormat: "Jan 2, 2006, 15:04 MST"
