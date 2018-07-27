@@ -144,7 +144,7 @@ languages:
         uid: "131178169"
       youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
       flattr: ""
-      disqusIframeURL: https://disqus.cstoku.me/
+      disqusIframeURL: https://disqus.cstoku.io/
       maxTaxonomyContents: 5
       atomLimit: 15
       dateFormat: "2006/01/02 15:04"
@@ -186,7 +186,7 @@ languages:
         uid: "131178169"
       youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
       flattr: ""
-      disqusIframeURL: https://disqus.cstoku.me/
+      disqusIframeURL: https://disqus.cstoku.io/
       maxTaxonomyContents: 5
       atomLimit: 15
       dateFormat: "Jan 2, 2006, 15:04 MST"

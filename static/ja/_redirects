@@ -1,11 +1,13 @@
 # Redirect domain aliases to primary domain
-https://ja.cstoku.me/*              https://cstoku.me/:splat 301!
-https://www.sce-toku.jp/*           https://cstoku.me/:splat 301!
-https://blog.sce-toku.jp/*          https://cstoku.me/:splat 301!
-https://sce-toku.jp/*               https://cstoku.me/:splat 301!
+https://ja.cstoku.io/*              https://cstoku.io/:splat 301!
+https://cstoku.me/*                 https://cstoku.io/:splat 301!
+https://ja.cstoku.me/*              https://cstoku.io/:splat 301!
+https://www.sce-toku.jp/*           https://cstoku.io/:splat 301!
+https://blog.sce-toku.jp/*          https://cstoku.io/:splat 301!
+https://sce-toku.jp/*               https://cstoku.io/:splat 301!
 
 # Optional: Redirect default Netlify subdomain to primary domain
-https://cstoku-blog.netlify.com/*   https://cstoku.me/:splat 301!
+https://cstoku-blog.netlify.com/*   https://cstoku.io/:splat 301!
 
 # Redirect for old articles
 /blog/:year/:month/:date/:slug/      /posts/:year/:slug/     301!
