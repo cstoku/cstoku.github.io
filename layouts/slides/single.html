@@ -18,8 +18,39 @@
     {{- .RawContent -}}
   </textarea>
   <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.2.0/trianglify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
   <script>
+    //リサイズ時の処理を定義
+    (function () {
+      var timer = 0;
+
+      window.onresize = function () {
+        if (timer > 0) {
+          clearTimeout(timer);
+        }
+
+        timer = setTimeout(function () {
+          refreshBG();
+        }, 200);
+      };
+    }());
+
+    function refreshBG() {
+      var titlepage = document.getElementsByClassName('remark-slide-content')[0];
+      var pagesize = titlepage.getBoundingClientRect();
+      var background = Trianglify({
+        width: Math.ceil(pagesize.width),
+        height: Math.ceil(pagesize.height),
+        cell_size: 30,
+        x_colors: ['#326de6', '#6cc7dc'],
+      });
+      var svg = background.svg();
+      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+      titlepage.style.backgroundImage = "url('data:image/svg+xml;utf8," + svg.outerHTML + "')";
+      titlepage.style.backgroundSize = "cover";
+    }
+
     var slideshow = remark.create({
       ratio: '16:9',
       navigation: {
@@ -35,6 +66,8 @@
       highlightStyle: 'hybrid',
       highlightLines: true,
       highlightSpans: false
+    }, function(slide){
+      refreshBG();
     });
 
     // Setup MathJax
