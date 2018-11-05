@@ -9,6 +9,12 @@ tags:
 - advent-calendar-2018
 - kubernetes-dojo
 
+resources:
+- name: thumbnail
+  src: header.jpg
+- name: k8s-arch
+  src: k8s-arch.jpg
+
 ---
 
 Kubernetes道場 1日目の記事です。
@@ -74,7 +80,7 @@ Kubernetesを扱う上で絶対抑えること、というわけでもないが�
 
 Kubernetesは主に2つの役割に分かれている。
 
-![k8s-arch](k8s-arch.png)
+{{< img name="k8s-arch" >}}
 
 **Master**
 
