@@ -8,3 +8,13 @@ tags: []
 
 ---
 
+Kubernetes道場 2日目の記事です。
+
+今回はkubernetesのローカル環境とそのうちの1つの手段であるminikubeについて。
+
+# Kubernetesのローカル環境
+
+
+# minikube
+
+
