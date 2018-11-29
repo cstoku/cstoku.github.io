@@ -81,7 +81,7 @@ blackfriday:
 #
 mediaTypes:
   application/atom:
-    suffix: xml
+    suffixes: xml
 
 outputFormats:
   ATOM:
