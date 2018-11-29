@@ -11,6 +11,7 @@ yarn run workbox generateSW workbox-config.en.js
 """
 
 [build.environment]
+HUGO_CONFIG = "config.yaml"
 HUGO_VERSION = "0.42.1"
 
 [context.production.environment]
