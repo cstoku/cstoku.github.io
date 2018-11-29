@@ -80,13 +80,13 @@ blackfriday:
 # Output Formats
 #
 mediaTypes:
-  application/atom:
-    suffix: xml
+  application/atom+xml:
+    suffixes: ["xml"]
 
 outputFormats:
   ATOM:
     name: atom
-    mediaType: application/atom
+    mediaType: application/atom+xml
     isHTML: false
     isPlainText: true
     noUgly: true
