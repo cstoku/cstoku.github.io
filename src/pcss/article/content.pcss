@@ -115,6 +115,8 @@
   }
   & figure amp-img {
     margin: auto;
+    max-width: 90%;
+
   }
 }
 
@@ -123,7 +125,15 @@
     padding: 0 50px;
 
     & figure amp-img {
-      max-width: 60%;
+      &.img-large {
+        max-width: 90%;
+      }
+      &.img-medium {
+        max-width: 50%;
+      }
+      &.img-small {
+        max-width: 30%;
+      }
     }
   }
 }
