@@ -22,7 +22,7 @@ resources:
 
 ---
 
-Kubernetes道場 2日目の記事です。
+この記事は [Kubernetes道場 Advent Calendar 2018](https://qiita.com/advent-calendar/2018/k8s-dojo) 2日目の記事です。
 
 今回はKubernetesのローカル環境を構築する。
 
