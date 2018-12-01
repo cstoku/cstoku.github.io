@@ -1,10 +1,12 @@
 ---
-title: K8sdojo 02
+title: Kubernetes道場 2日目 - Kubernetesのローカル環境について
 
-date: 2018-11-05T01:50:05+09:00
-draft: true
+date: 2018-12-02T00:00:00+09:00
 
-tags: []
+tags:
+- kubernetes
+- advent-calendar-2018
+- kubernetes-dojo
 
 resources:
 - name: thumbnail
