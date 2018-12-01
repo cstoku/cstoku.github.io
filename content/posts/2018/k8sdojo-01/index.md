@@ -1,8 +1,7 @@
 ---
 title: Kubernetes道場 1日目 - Kubernetesの概要
 
-date: 2018-11-05T01:50:03+09:00
-draft: true
+date: 2018-12-01T00:00:00+09:00
 
 tags:
 - kubernetes
