@@ -16,7 +16,7 @@ resources:
 
 ---
 
-Kubernetes道場 1日目の記事です。
+この記事は [Kubernetes道場 Advent Calendar 2018](https://qiita.com/advent-calendar/2018/k8s-dojo) 1日目の記事です。
 
 今回はKubernetes道場についてと、1回目の内容でKubernetesの概要について。
 
