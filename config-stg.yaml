@@ -124,9 +124,9 @@ languages:
     staticDir2: static/ja
 
     author:
-      name: 德田 拓也
-      first_name: 拓也
-      last_name: 德田
+      name: Takuya Tokuda
+      first_name: Takuya
+      last_name: Tokuda
       gender: male
       email: cs.toku.mail+blog@gmail.com
       page: /about/
