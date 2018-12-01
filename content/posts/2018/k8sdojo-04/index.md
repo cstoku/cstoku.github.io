@@ -15,7 +15,7 @@ resources:
 
 ---
 
-Kubernetes道場 4日目の記事です。
+この記事は [Kubernetes道場 Advent Calendar 2018](https://qiita.com/advent-calendar/2018/k8s-dojo) 4日目の記事です。
 
 今回はPodの `containers` フィールドで指定されるContainer Objectについて簡単に解説する。
 
