@@ -1,7 +1,7 @@
 ---
 title: Kubernetes道場 3日目 - Podについてとkubectlの簡単な使い方
 
-date: 2018-11-05T01:50:05+09:00
+date: 2018-12-03T00:00:00+09:00
 draft: true
 
 tags:
