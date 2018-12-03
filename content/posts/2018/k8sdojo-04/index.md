@@ -1,8 +1,7 @@
 ---
 title: Kubernetes道場 4日目 - Container Objectのフィールドについて
 
-date: 2018-11-05T01:50:10+09:00
-draft: true
+date: 2018-12-04T00:00:00+09:00
 
 tags:
 - kubernetes
