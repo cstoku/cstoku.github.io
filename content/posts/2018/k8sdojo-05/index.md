@@ -18,7 +18,7 @@ resources:
 
 この記事は [Kubernetes道場 Advent Calendar 2018](https://qiita.com/advent-calendar/2018/k8s-dojo) 5日目の記事です。
 
-今回はPodで使用できるVolumeと、Init Container、コンテナのLifecycleについて。
+今回はPodで使用できるVolumeについて。
 
 # Volumeについて
 
