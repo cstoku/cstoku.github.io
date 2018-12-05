@@ -2,7 +2,6 @@
 title: Kubernetes道場 6日目 - Init Container /  Lifecycleについて
 
 date: 2018-12-06T00:00:00+09:00
-draft: true
 
 tags:
 - kubernetes
