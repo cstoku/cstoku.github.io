@@ -1,5 +1,5 @@
 ---
-title: Kubernetes道場 5日目 - Volume について
+title: Kubernetes道場 5日目 - Volumeについて
 
 date: 2018-12-05T00:00:00+09:00
 
@@ -310,7 +310,7 @@ Tue Dec  4 17:02:50 UTC 2018
 
 というわけで今回はここまで。
 
-次回は `init_container` と `lifecycle` について見ていこう。
+次回は Init Container と Lifecycle について見ていこう。
 
 それでは。
 
