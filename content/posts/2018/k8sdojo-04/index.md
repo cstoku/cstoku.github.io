@@ -259,7 +259,7 @@ $ kubectl exec nginx readlink /proc/1/cwd
 
 というわけで今回はここまで。
 
-次回はContainer Objectで指定できる `livenessProve` と `readinessProve` について見ていこう。
+次回はPodで使用することが出来るVolumeについて見ていこう。
 
 それでは。
 
