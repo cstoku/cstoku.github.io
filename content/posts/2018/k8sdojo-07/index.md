@@ -2,7 +2,6 @@
 title: Kubernetes道場 7日目 - Resource Requirements / Security Contextについて
 
 date: 2018-12-07T00:00:00+09:00
-draft: true
 
 tags:
 - kubernetes
@@ -199,70 +198,188 @@ Security ContextはPodやコンテナに対して権限やアクセス制御の�
 
 ## PodのSecurity Context
 
-### fsGroup
+### runAsUser
 
-integer A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume.
+コンテナのプロセスのUIDを指定する。指定されていない場合はコンテナイメージに指定されているものを使う。
 
 ### runAsGroup
 
-integer The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.boolean    Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root)
-
-### runAsNonRoot
-
-boolean Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-
-### runAsUser
-
-integer The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
-
-### seLinuxOptions
-
-SELinuxOptions  The SELinux context to be applied to all containers. If unspecified, the container runtime will allocate a random SELinux context for each container. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
+コンテナのプロセスのGIDを指定する。指定されていない場合は実行時のデフォルトが使用される。
 
 ### supplementalGroups
 
-integer array   A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container.
+コンテナのプロセスのGIDに加えて追加したいgroupsをリストで指定する。
+
+### runAsNonRoot
+
+Trueを指定した場合、コンテナのプロセスがRootで動いてるかをチェックする。Rootで動作した場合、起動に失敗する。
+
+### fsGroup
+
+特殊なグループを追加し、Pod内の全てのコンテナに適用する。
+このフィールドを指定した場合、KubernetesはPodに対して以下の設定をする。
+
+1. VolumeのGIDに `fsGroup` で指定されたものをセット
+2. setgidビットをセット
+3. パーミッションの設定を `rw-rw----` (0660)でORを取りセット
+
+指定されなかった場合、KubernetesはVolumeのオーナーやパーミッションを変更しない。
+
+これについては例を出しておこう。 以下のManifestでPodを作成してみる。
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fsgroup-test
+spec:
+  containers:
+  - image: alpine
+    name: alpine
+    command: ["tail", "-f", "/dev/null"]
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  volumes:
+  - name: data
+    emptyDir:
+  terminationGracePeriodSeconds: 0
+```
+
+作成してVolumeをマウントしたパスの権限とプロセスのグループを確認しよう。
+
+```plain
+$ kubectl apply -f fsgroup-test.yaml
+pod "fsgroup-test" created
+$ kubectl exec -it fsgroup-test -- ls -l / | grep data
+drwxrwxrwx    2 root     root          4096 Dec  7 17:37 data
+$ kubectl exec -it fsgroup-test -- id -G
+0 1 2 3 4 6 10 11 20 26 27
+```
+
+rootでマウントされている事がわかる。
+
+さて、 `fsGroup` を使ったManifestに変更して再作成してみる。
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fsgroup-test
+spec:
+  containers:
+  - image: alpine
+    name: alpine
+    command: ["tail", "-f", "/dev/null"]
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  securityContext:
+    fsGroup: 1000
+  volumes:
+  - name: data
+    emptyDir:
+  terminationGracePeriodSeconds: 0
+```
+
+再度、Volumeをマウントしたパスの権限とプロセスのグループを確認しよう。
+
+```plain
+$ kubectl replace --force -f pod.yaml
+pod "fsgroup-test" deleted
+pod "fsgroup-test" replaced
+$ kubectl exec -it fsgroup-test -- ls -l / | grep data
+drwxrwsrwx    2 root     1000          4096 Dec  7 17:52 data
+$ kubectl exec -it fsgroup-test -- id -G
+0 1 2 3 4 6 10 11 20 26 27 1000
+```
+
+上記の通り、 `fsGroup` で指定した1000のGIDでマウントされ、ユーザーのGroupに追加されている。
+
+emptyDirだと `0777` の権限でマウントされているので特に有り難みが薄いが、別のVolumeを使用した際などには便利に使えるフィールドだ。
+
+
+### seLinuxOptions
+
+SELinuxのコンテキストを指定する。指定されなかった場合はランダムなコンテキストが割り当てられる。
 
 ### sysctls
 
-Sysctl array    Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch.
+sysctlのパラメータをリストで指定する。コンテナランタイムがサポートしてない場合は起動に失敗する。
 
 
-## ContainerのSecurity Context
+## コンテナのSecurity Context
 
 ### allowPrivilegeEscalation
 
-boolean AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
+親プロセスよりも多くの権限を取得できるようになるかを指定する。
+特権モードで実行されていて `CAP_SYS_ADMIN` のCapabilityをもつ場合、このパラメータは常にTrueになる。
 
 ### capabilities
 
-Capabilities    The capabilities to add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime.
+Capabilityの追加や削除を指定できる。デフォルトはコンテナランタイムから指定されているものが設定される。
+
+`add` と `drop` というフィールドにリストで指定する。以下が例だ。
+
+```yaml
+capabilities:
+  add:
+  - CAP_SETUID
+  - CAP_SETGID
+  drop:
+  - CAP_SYS_ADMIN
+```
 
 ### privileged
 
-boolean Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
+コンテナを特権モードで動作させるかを指定する。特権モードのコンテナのプロセスは基本的にホスト上のrootと同等の権限を持つ。
 
 ### procMount
 
-string  procMount denotes the type of proc mount to use for the containers. The default is DefaultProcMount which uses the container runtime defaults for readonly paths and masked paths. This requires the ProcMountType feature flag to be enabled.
+コンテナのprocマウントのタイプを指定する。デフォルトはDefaultProcMountが使用される。指定できるのは現状は以下の2つだ。
+
+- `Default` : DefaultProcMountは/procをマスクし、ReadOnlyにする。
+- `Unmasked` : UnmaskedProcMountは/procのマスク処理をバイパスする。
+
+通常はDefaultProcMountで問題ないはずだ。
 
 ### readOnlyRootFilesystem
 
-Whether this container has a read-only root filesystem. Default is false.
+コンテナのルートファイルシステムを読み込み専用にするかを指定する。デフォルトはFalse。
 
-### PodのSecurity Contextにもある項目
+### PodのSecurity Contextにもある項目について
 
+コンテナのSecurity ContextにはPodと同様のフィールドが指定できる。
+
+- runAsUser
 - runAsGroup
 - runAsNonRoot
-- runAsUser
 - seLinuxOptions
 
+これらのフィールドをコンテナのSecurity Contextに指定した場合はコンテナのSecurity Contextが優先されて使用される。
 
 ## Security Contextを使った例
 
+Security Contextを使ったManifestの例をいかに示しておく。
 
-
-
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sc-test
+spec:
+  containers:
+  - image: memcached
+    name: memcached
+    securityContext:
+      runAsUser: 11211
+      runAsNonRoot: true
+      readOnlyRootFilesystem: true
+      capabilities:
+        drop:
+        - SYS_ADMIN
+        - NET_ADMIN
+```
 
 
 --------------------------------------------------
