@@ -5,7 +5,7 @@ ID = "cstoku-blog"
 command = """
 yarn &&
 yarn run webpack &&
-hugo --gc --config $HUGO_CONFIG &&
+hugo --gc --config $HUGO_CONFIG -b $ &&
 yarn run workbox generateSW workbox-config.ja.js
 yarn run workbox generateSW workbox-config.en.js
 """
@@ -18,6 +18,16 @@ HUGO_VERSION = "0.52"
 HUGO_CONFIG = "config-prod.yaml"
 NODE_ENV = "production"
 
+[context.deploy-preview]
+command = """
+yarn &&
+yarn run webpack &&
+hugo --gc --config $HUGO_CONFIG -b $DEPLOY_PRIME_URL &&
+yarn run workbox generateSW workbox-config.ja.js
+yarn run workbox generateSW workbox-config.en.js
+"""
+
 [context.staging.environment]
 HUGO_CONFIG = "config-stg.yaml"
 NODE_ENV = "production"
+
