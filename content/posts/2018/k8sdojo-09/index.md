@@ -2,7 +2,6 @@
 title: Kubernetes道場 9日目 - Serviceについて
 
 date: 2018-12-09T00:00:00+09:00
-draft: true
 
 tags:
 - kubernetes
