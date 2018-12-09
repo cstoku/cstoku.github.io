@@ -1,10 +1,64 @@
 ---
-title: K8sdojo 09
+title: Kubernetes道場 9日目 - Serviceについて
 
-date: 2018-11-05T01:50:22+09:00
+date: 2018-12-09T00:00:00+09:00
 draft: true
 
-tags: []
+tags:
+- kubernetes
+- advent-calendar-2018
+- kubernetes-dojo
+
+resources:
+- name: thumbnail
+  src: header.jpg
 
 ---
+
+
+この記事は [Kubernetes道場 Advent Calendar 2018](https://qiita.com/advent-calendar/2018/k8s-dojo) 9日目の記事です。
+
+今回はServiceについて。
+
+# Serviceについて
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------
+
+
+というわけで今回はかなり長くなってしまったがここまで。
+
+次回はLivenessProve / ReadinessProveについて見ていこう。
+
+それでは。
 
