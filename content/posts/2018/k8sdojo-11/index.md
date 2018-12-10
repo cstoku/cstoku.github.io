@@ -2,7 +2,6 @@
 title: Kubernetes道場 11日目 - ConfigMap / Secretについて
 
 date: 2018-12-11T00:00:00+09:00
-draft: true
 
 tags:
 - kubernetes
