@@ -536,7 +536,7 @@ Address: 172.17.0.6
 
 というわけで今回はここまで。
 
-次回はLivenessProve / ReadinessProveについて見ていこう。
+次回はLivenessProbe / ReadinessProbeについて見ていこう。
 
 それでは。
 
