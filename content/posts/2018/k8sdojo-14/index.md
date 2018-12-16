@@ -367,7 +367,7 @@ CronJobを元に作成されたJobが確認できる。また、AGEから1分毎
 
 というわけで今回はここまで。
 
-次回は Namespace / ResourceQuota / LimitRange / Resource QoS について見ていこう。
+次回は Namespace / Resource QoS / ResourceQuota / LimitRange について見ていこう。
 
 それでは。
 
