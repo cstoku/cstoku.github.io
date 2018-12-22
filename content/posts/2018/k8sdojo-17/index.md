@@ -254,6 +254,14 @@ node-selector   1/1     Running   0          16m
 
 スケジュールされて実行されたようだ。
 
+ローカル環境だと有り難みが薄いが、実際に複数のNodeがあるクラスタなどでは活用できる機能だ。例えば
+
+- SSDが搭載されているNode
+- GPUが搭載されているNode
+- 所定のNode群へのDeploy
+
+などなど。実際にマネージドサービスなどで複数Nodeのクラスタを立ち上げて動作を確認すると理解が進むと思う。
+
 # Annotation
 
 Annotationはオブジェクトに対してKey/Valueの形式でMetadataを登録できる仕組みだ。
