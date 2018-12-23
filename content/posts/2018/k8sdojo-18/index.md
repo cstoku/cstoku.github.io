@@ -474,14 +474,260 @@ Events:
 
 #  Taint / Toleration
 
+TaintはNode Affinityと逆の機能でNodeへPodをスケジュールさせないための機能だ。
+
+Taintの方からまず見ていこう。
+
+## Taint
+
+Taintは直訳だと汚点やよごれ、などの意味を持つ。
+NodeにTaintをつけることでその条件が受け入れられないPodはそのNodeにスケジュールされない。
+
+Taintは `kubectl taint` コマンドで追加する。
+
+表記については以下の通りだ。
+
+```plain
+<Key>=<Value>:<Effect>
+```
+
+`Key` と `Value` についてはLabelと同様に任意の値をつける。
+
+`Effect` については以下の3つの値を指定できる。
+
+- `NoSchedule` : このTaintが許容できない場合はそのNodeにスケジュールできない
+- `PreferNoSchedule` : このTaintが許容できない場合はそのNode以外にスケジュールを試みる
+- `NoExecute` : このTaintが許容できない場合はそのNode以外にスケジュールされ、実行されているPodも追い出される。
+
+### Taintの作成
+
+作成する際は以下の2種類がある。
+
+- `key=value:NoSchedule` : Key / Value / Effectを指定
+- `key=:NoSchedule` : Key / Effectを指定(Valueは空文字扱い)
+
+### Taintの削除
+
+作成する際は以下の2種類がある。
+
+- `key:NoSchedule-` : Key / Effectを指定。KeyとEffectが一致するValueを全て削除
+- `key-` : Keyを指定。Keyが一致するValueとEffectを全て削除
 
 
+### Taintを試す
+
+それではTaintをNodeに追加してみる。 `kubectl taint` を実行する。
+
+```plain
+$ kubectl taint node minikube test-taint=hoge:NoSchedule
+node/minikube tainted
+```
+
+Taintを確認してみよう。
+
+```plain
+$ kubectl describe node/minikube
+Name:               minikube
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/hostname=minikube
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 24 Dec 2018 03:22:13 +0900
+Taints:             test-taint=hoge:NoSchedule
+Unschedulable:      false
+~~~
+```
+
+Taintが追加されたことがわかる。(出力結果の下を省略している)
+
+さて、Manifestを適用してPodを作成し取得してみよう。
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:alpine
+  terminationGracePeriodSeconds: 0
+```
+
+```plain
+$ kubectl apply -f nginx.yaml
+pod/nginx created
+$ kubectl get -f nginx.yaml
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   0/1     Pending   0          34s
+```
+
+`Pending` のままだ。 `kubectl describe` で確認してみよう。
+
+```plain
+$ kubectl describe -f nginx.yaml
+Name:               nginx
+Namespace:          default
+Priority:           0
+PriorityClassName:  <none>
+Node:               <none>
+Labels:             <none>
+Annotations:        kubectl.kubernetes.io/last-applied-configuration:
+                      {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"containers":[{"image":"nginx:a...
+Status:             Pending
+IP:
+Containers:
+  nginx:
+    Image:        nginx:alpine
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-fqjxc (ro)
+Conditions:
+  Type           Status
+  PodScheduled   False
+Volumes:
+  default-token-fqjxc:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-fqjxc
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason            Age                From               Message
+  ----     ------            ----               ----               -------
+  Warning  FailedScheduling  52s (x2 over 52s)  default-scheduler  0/1 nodes are available: 1 node(s) had taints that the pod didn't tolerate.
+```
+
+`Toleration` がない、ということでスケジュールされてないことがわかる。 `NoSchedule` から `PreferNoSchedule` に変更して、Taintを確認しよう。
 
 
+```plain
+$ kubectl taint node minikube test-taint=hoge:PreferNoSchedule
+node/minikube tainted
+$ kubectl taint node minikube test-taint:NoSchedule-
+node/minikube untainted
+```
 
+Podの方を確認してみよう。
 
+```plain
+$ kubectl get po
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          89s
+```
 
+スケジュールされたことがわかる。
 
+それではTaintを `PreferNoSchedule` を `NoExecute` に変更して、Taintを確認しよう。
+
+```plain
+$ kubectl taint node minikube test-taint=hoge:NoExecute
+node/minikube tainted
+$ kubectl taint node minikube test-taint:PreferNoSchedule-
+node/minikube untainted
+```
+
+再度Podの方を確認してみよう。
+
+```plain
+$ kubectl get po
+No resources found.
+```
+
+実行されていたPodが削除されていることがわかる。
+
+このようにPodをNodeにスケジュールさせない / 実行させない仕組みがTaintだ。
+
+##  Toleration
+
+Tolerationは直訳だと容認や寛容、などの意味を持つ。
+PodがNodeについているTaintを容認するかを指定する機能だ。
+
+`toleration` にマッチしたTaintを容認し、そのNodeにスケジュールできるようになる。
+
+このTolerationはPodの `spec.tolerations` にリストで指定する。指定するフィールドは以下のものだ。
+
+- `key` : TaintのKeyを指定
+- `operator` : Valueに比較の種類を指定。 `Equal` と `Exists` が指定できる。デフォルトは `Equal` だ
+- `value` : TaintのValueを指定。 `operator` が `Exists` の場合、Valueを省略できる
+- `effect` : TaintのEffectを指定。指定しなかった場合、全てのEffectにマッチする
+- `tolerationSeconds` : NoExecuteを指定した際、追い出されるまでの時間を秒数で指定する。指定しなかった場合、追い出されないないようになる。0や負の数を指定した場合、即時に追い出される
+
+以下が指定例だ。
+
+```yaml
+tolerations:
+- key: test-taint
+  value: hoge
+  effect: NoSchedule
+```
+
+### Tolerationを試す
+
+Tolerationを試してみよう。まず、NodeにTaintを追加する。
+
+```plain
+$ kubectl taint node minikube test-taint=hoge:NoSchedule
+node/minikube tainted
+```
+
+それでは以下のManifestを適用してPodを作成し、取得してみる。
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:alpine
+  terminationGracePeriodSeconds: 0
+```
+
+```plain
+$ kubectl get po
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   0/1     Pending   0          4s
+```
+
+先ほどと同様にPendingのままだ。それでは `tolerations` を設定してみよう。
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-toleration
+spec:
+  containers:
+  - name: nginx
+    image: nginx:alpine
+  terminationGracePeriodSeconds: 0
+  tolerations:
+  - key: test-taint
+    value: hoge
+    effect: NoSchedule
+```
+
+`test-taint=hoge:NoSchedule` というTaintは容認するように設定を行った。それでは適用して取得してみよう。
+
+```plain
+$ kubectl apply -f nginx-toleration.yaml
+pod/nginx-toleration created
+$ kubectl get -f nginx-toleration.yaml
+NAME               READY   STATUS    RESTARTS   AGE
+nginx-toleration   1/1     Running   0          5s
+```
+
+このようにTaint(汚点)をToleration(容認)してスケジュールされた。
+
+TaintとTolerationは単語の意味合いで覚えるのがいいのかなと思う。
 
 
 --------------------------------------------------
