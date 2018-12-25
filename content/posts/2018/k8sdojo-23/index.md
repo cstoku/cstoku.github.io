@@ -95,6 +95,8 @@ Use "kubectl options" for a list of global command-line options (applies to all 
 
 ## Basic Commands (Beginner)
 
+基礎コマンド初級編。
+
 ### create
 
 createコマンドはリソースの作成を行う。
@@ -175,35 +177,122 @@ kubectl set env deploy nginx HOGE=FUGA
 
 ## Basic Commands (Intermediate)
 
-### explain        Documentation of resources
+基礎コマンド中級編。
+
+### explain
+
+リソースのドキュメントが表示できる。
+
+コマンドの引数にフィールドを `.` でつなげることでそのオブジェクトに含まれるフィールドのドキュメントが出力される。
+
+このフィールドなんだったっけ？という疑問にCLIで解答が探せるぞ！
+
+以下が使用例だ。
+
+```bash
+kubectl explain pod.spec.containers
+
+kubectl set env pdb.spec
+```
+
+### get
+
+リソースの取得・表示だ。
+
+LabelSelectorを使った取得( `-l`, `--selector` )や全Namespaceからの取得( `--all-namespaces` )、出力フォーマットの指定( `-o` , `--output` )などのオプションを利用して柔軟なリソースの取得を行える。
+
+以下が使用例だ。
+
+```bash
+kubctl get pod --all-namespaces
+
+kubectl get deploy -l env=prod -o yaml
+```
+
+### edit
+
+指定リソースをエディタで編集する。
+
+運用時には選択肢として入らないと思うが、テスト・開発中ではかなり便利だと思う。
+
+また、 `KUBE_EDITOR` という環境変数にエディタをセットしておくとそのエディタで編集することが出来る。
+
+以下が使用例だ。
+
+```
+kubectl edit deploy nginx
+
+KUBE_EDITOR=nano kubectl edit svc nginx
+```
 
 
+### delete
 
-### get            Display one or many resources
+リソースの削除だ。
 
+リソースの選択についてはLabelSelector( `-l`, `--selector` )も使える。
 
+また、名前空間にあるリソースを一掃する際には `--all` が便利だ。ただ、一掃できる危険なコマンドなので注意してほしい。
 
-### edit           Edit a resource on the server
+Podがなかなか削除されないときなどに `--grace-period=0 --force` という組み合わせたオプションを利用することがよくあるので覚えておくと良いかも知れない。
 
+以下が使用例だ。
 
+```
+kubectl delete -f nginx.yaml
 
-### delete         Delete resources by filenames, stdin, resources and names, or by resources and label selector
+kubectl delete deploy --all
 
-
+kubectl delete pod nginx --grace-period=0 --force
+```
 
 ## Deploy Commands
 
-### rollout        Manage the rollout of a resource
+デプロイに関するコマンド。
 
+### rollout
 
+ リソースのロールアウトを管理するコマンドだ。以下のサブコマンドを持っている。
 
-### scale          Set a new size for a Deployment, ReplicaSet, Replication Controller, or Job
+ - `history` : ロールアウト履歴の表示
+ - `pause` : ロールアウトの一時停止
+ - `resume` : ロールアウトの再開
+ - `status` : ロールアウトのステータスを表示
+ - `undo` : ロールバックの実行
 
+ このコマンドについては [Kubernetes道場 8日目 - ReplicaSet / Deploymentについて](/posts/2018/k8sdojo-08/) で扱っているので参考にすると良いだろう。
 
+以下が使用例だ。
 
-### autoscale      Auto-scale a Deployment, ReplicaSet, or ReplicationController
+```
+kubectl rollout history deploy nginx
 
+kubectl rollout undo deploy nginx --to-revision=2
+```
 
+### scale
+
+リソースのスケール処理を行う。具体的にはリソースの `replicas` の変更を行う。
+
+スケールするためだけであれば `apply` や `edit` などよりこのコマンドを利用したほうが簡単だ。(操作性的な観点のみ)
+
+以下が使用例だ。
+
+```
+kubectl scale deploy nginx --replicas=5
+```
+
+### autoscale
+
+オートスケールのルールを設定する。
+
+Podの最大数( `--max` )だけ指定が必須だ。 CPU使用率を使ったスケール( `--cpu-percent` )を設定することも可能だ。
+
+以下が使用例だ。
+
+```
+kubectl scale deploy nginx --replicas=5
+```
 
 ## Cluster Management Commands
 
