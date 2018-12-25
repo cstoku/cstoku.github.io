@@ -527,7 +527,7 @@ diffがあった場合にexit statusが変化するためCIなどの差分チェ
 kubectl diff -f nginx.yaml
 ```
 
-### apply          ファイル名を指定または標準入力経由でリソースにコンフィグを適用する
+### apply
 
 指定したリソースの設定を適用する。
 
@@ -541,7 +541,7 @@ kubectl diff -f nginx.yaml
 kubectl apply -f nginx.yaml
 ```
 
-### patch          Update field(s) of a resource using strategic merge patch
+### patch
 
 指定したリソースにパッチを当てる。
 
@@ -555,7 +555,7 @@ kubectl apply -f nginx.yaml
 kubectl patch pod nginx -p '{"spec":{"containers":[{"name":"nginx","image":"nginx:alpine"}]}}'
 ```
 
-### replace        Replace a resource by filename or stdin
+### replace
 
 リソースを置き換える。
 
@@ -579,7 +579,7 @@ kubectl patch pod nginx -p '{"spec":{"containers":[{"name":"nginx","image":"ngin
 kubectl replace -f nginx.yaml
 ```
 
-### wait           Experimental: Wait for a specific condition on one or many resources.
+### wait
 
 指定したリソースの状態になるまで待機する。
 
@@ -591,7 +591,7 @@ v1.13.1現在でこの機能はExperimentalだ。なのでここでは詳しく�
 kubectl wait --for=condition=Ready pod/nginx
 ```
 
-### convert        Convert config files between different API versions
+### convert
 
 ManifestのAPIバージョン間の変換を行う。
 
@@ -605,7 +605,7 @@ kubectl convert -f nginx.yaml
 
 ## Settings Commands
 
-### label          Update the labels on a resource
+### label
 
 リソースにLabelを追加、更新する。
 
@@ -619,7 +619,7 @@ kubectl label pod/nginx env=prod
 kubectl label pod/nginx role-
 ```
 
-### annotate       リソースのアノテーションを更新する
+### annotate
 
 リソースにアノテーションを追加、更新する。
 
@@ -633,7 +633,7 @@ kubectl annotation pod/nginx descriptioin="example application."
 kubectl annotation pod/nginx descriptioin-
 ```
 
-### completion     Output shell completion code for the specified shell (bash or zsh)
+### completion
 
 bashやzshの補完スクリプトを出力する。
 
@@ -649,7 +649,7 @@ kubectl completion zsh
 
 その他のコマンド。
 
-### api-resources  Print the supported API resources on the server
+### api-resources
 
 サポートしているリソースを表示する。
 
@@ -665,7 +665,7 @@ kubectl api-resources
 kubectl api-resources --namespaced=false
 ```
 
-### api-versions   Print the supported API versions on the server, in the form of "group/version"
+### api-versions
 
 サポートしているAPIバージョンを表示する。
 
@@ -677,7 +677,7 @@ kubectl api-resources --namespaced=false
 kubectl api-versions
 ```
 
-### config         kubeconfigファイルを変更する
+### config
 
 kubeconfigの設定を変更する。
 
