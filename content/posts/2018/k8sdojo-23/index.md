@@ -478,76 +478,260 @@ KubernetesのAPIサーバーへのProxyサーバーとして動作させる。
 kubectl proxy --port 8080
 ```
 
-### cp             Copy files and directories to and from containers.
+### cp
 
+PodのコンテナへファイルをまたはPodのコンテナからファイルをコピーする。
 
+Podのコンテナからファイルをコピーしてくる場合はまだいいが、Podのコンテナへファイルをコピーする操作は可能だが、運用的な観点から避けたほうが良いだろう。
 
-### auth           Inspect authorization
+この操作が可能なのは対象のコマンドにtarコマンドが入っているコンテナのみだ。
 
+以下が使用例だ。
 
+```bash
+kubectl cp  nginx:/etc/nginx nginx-conf
+```
+
+### auth
+
+認証認可に関するコマンドだ。サブコマンドが2つある。
+
+- `can-i` : 指定した操作が許可されているかを確認するコマンド
+- `reconcile` : Role / RoleBinding / ClusterRole / ClusterRoleBindingのルールをチェックする
+
+通常ほぼこのコマンドを触ることはないが、 `can-i` は権限の確認、 `reconcile` はRBACのリソースを適用する前に実行しておくと良いだろう。
+
+以下が使用例だ。
+
+```bash
+kubectl can-i create pods/nginx
+
+kubectl reconcile -f rbac-rules.yaml
+```
 
 ## Advanced Commands
 
-### diff           Diff live version against would-be applied version
+上級者向けコマンド。
 
+といっても割と使うものもある。
 
+### diff
+
+指定したリソースのdiffを出力する。
+
+diffがあった場合にexit statusが変化するためCIなどの差分チェックなどで利用できるかも。
+
+以下が使用例だ。
+
+```bash
+kubectl diff -f nginx.yaml
+```
 
 ### apply          ファイル名を指定または標準入力経由でリソースにコンフィグを適用する
 
+指定したリソースの設定を適用する。
 
+ない場合は作成され、既にある場合は差分を適用する。
+
+実行時に明確な作成や更新、という意味をもたせる意味がないのであればこのコマンドで一本化できるので非常に便利だ。
+
+以下が使用例だ。
+
+```bash
+kubectl apply -f nginx.yaml
+```
 
 ### patch          Update field(s) of a resource using strategic merge patch
 
+指定したリソースにパッチを当てる。
 
+`-p` オプションで変更したい部分だけのオブジェクトを指定する。
+
+なれるまで大変だが、なれると少しの変更についてはこのpatchコマンドが使いやすくなる。かも。:sweat_smile:
+
+以下が使用例だ。
+
+```bash
+kubectl patch pod nginx -p '{"spec":{"containers":[{"name":"nginx","image":"nginx:alpine"}]}}'
+```
 
 ### replace        Replace a resource by filename or stdin
 
+リソースを置き換える。
 
+`kubectl apply` のリソースの更新の別コマンドと覚えておくとよいだろう。
+
+1. 作成
+  - `kubectl create`
+  - `kubectl apply`
+2. 更新
+  - `kubectl replace`
+  - `kubectl apply`
+3. 削除 
+  - `kubectl delete`
+  - `kubectl apply --prune` OR `kubectl delete`
+
+このような関係になっていると私は理解している。こう見ると `apply` が便利すぎる。。。
+
+以下が使用例だ。
+
+```bash
+kubectl replace -f nginx.yaml
+```
 
 ### wait           Experimental: Wait for a specific condition on one or many resources.
 
+指定したリソースの状態になるまで待機する。
 
+v1.13.1現在でこの機能はExperimentalだ。なのでここでは詳しくは解説しない。
+
+使用例だけ載せておこう。
+
+```bash
+kubectl wait --for=condition=Ready pod/nginx
+```
 
 ### convert        Convert config files between different API versions
 
+ManifestのAPIバージョン間の変換を行う。
 
+`--output-version` オプションで変換後のバージョンを指定できる。
+
+使用例だけ載せておこう。
+
+```bash
+kubectl convert -f nginx.yaml
+```
 
 ## Settings Commands
 
 ### label          Update the labels on a resource
 
+リソースにLabelを追加、更新する。
 
+このコマンドは [Kubernetes道場 17日目 - Label / NodeSelector / Annotationについて](/posts/2018/k8sdojo-17/) で解説しているので、詳しく知りたい方は参考にしてほしい。
+
+以下が使用例だ。
+
+```bash
+kubectl label pod/nginx env=prod
+
+kubectl label pod/nginx role-
+```
 
 ### annotate       リソースのアノテーションを更新する
 
+リソースにアノテーションを追加、更新する。
 
+このコマンドは [Kubernetes道場 17日目 - Label / NodeSelector / Annotationについて](/posts/2018/k8sdojo-17/) で解説しているので、詳しく知りたい方は参考にしてほしい。
+
+以下が使用例だ。
+
+```bash
+kubectl annotation pod/nginx descriptioin="example application."
+
+kubectl annotation pod/nginx descriptioin-
+```
 
 ### completion     Output shell completion code for the specified shell (bash or zsh)
 
+bashやzshの補完スクリプトを出力する。
 
+以下が使用例だ。
+
+```bash
+kubectl completion bash
+
+kubectl completion zsh
+```
 
 ## Other Commands
 
+その他のコマンド。
+
 ### api-resources  Print the supported API resources on the server
 
+サポートしているリソースを表示する。
 
+`--namespaced` オプションでNamespaceで分離される/されないリソースのみを表示できる。
+
+また、このコマンドでリソースの短縮形の確認が可能だ。
+
+以下が使用例だ。
+
+```bash
+kubectl api-resources
+
+kubectl api-resources --namespaced=false
+```
 
 ### api-versions   Print the supported API versions on the server, in the form of "group/version"
 
+サポートしているAPIバージョンを表示する。
 
+形式は `<Group>/<Version>` で出力される。
+
+以下が使用例だ。
+
+```bash
+kubectl api-versions
+```
 
 ### config         kubeconfigファイルを変更する
 
+kubeconfigの設定を変更する。
 
+このコマンドには以下のサブコマンドがある。
 
-### plugin         Provides utilities for interacting with plugins.
+- `current-context` : 現在使用しているコンテキストの表示
+- `use-context` : 使用するコンテキストの選択
+- `rename-context` : コンテキストのリネーム
+- `get-contexts` : コンテキストの取得
+- `set-context` : コンテキストの追加/更新
+- `delete-context` : コンテキストの削除
+- `get-clusters` : クラスタ情報の取得
+- `set-cluster` : クラスタ情報の追加/更新
+- `delete-cluster` : クラスタ情報の削除
+- `set-credentials` : クレデンシャルの追加/更新
+- `set` : プロパティ名と値を指定した情報の追加/更新
+- `unset` : プロパティの削除
+- `view` : kubeconfigの表示
 
+このコマンドだけで1記事かけそうな物量なので別の時に解説できればと思う。
 
+以下が使用例だ。
 
-### version        Print the client and server version information
+```bash
+kubectl config use-context minikube
 
+kubectl config view
+```
 
+### plugin
 
+kubectlのプラグインについてのコマンドだ。
+
+v1.13.1現在ではサブコマンドで `list` のみが実行できる。このサブコマンドは利用できるpluginをリストアップしてくれる。
+
+以下が使用例だ。
+
+```bash
+kubectl plugin list
+```
+
+### version
+
+kubectlのバージョンとサーバー側のバージョンを表示する。
+
+`--client` を指定することでサーバーに通信せず、kubectlのバージョンのみ表示するようになる。
+
+以下が使用例だ。
+
+```bash
+kubectl version
+
+kubectl version --client
+```
 
 
 --------------------------------------------------
@@ -555,7 +739,7 @@ kubectl proxy --port 8080
 
 というわけで今回はここまで。
 
-次回は  について見ていこう。
+次回はKubernetesの各コンポーネントについて見ていこう。
 
 それでは。
 
