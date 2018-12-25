@@ -219,7 +219,7 @@ kubectl get deploy -l env=prod -o yaml
 
 以下が使用例だ。
 
-```
+```bash
 kubectl edit deploy nginx
 
 KUBE_EDITOR=nano kubectl edit svc nginx
@@ -238,7 +238,7 @@ Podがなかなか削除されないときなどに `--grace-period=0 --force` �
 
 以下が使用例だ。
 
-```
+```bash
 kubectl delete -f nginx.yaml
 
 kubectl delete deploy --all
@@ -264,7 +264,7 @@ kubectl delete pod nginx --grace-period=0 --force
 
 以下が使用例だ。
 
-```
+```bash
 kubectl rollout history deploy nginx
 
 kubectl rollout undo deploy nginx --to-revision=2
@@ -278,7 +278,7 @@ kubectl rollout undo deploy nginx --to-revision=2
 
 以下が使用例だ。
 
-```
+```bash
 kubectl scale deploy nginx --replicas=5
 ```
 
@@ -290,65 +290,193 @@ Podの最大数( `--max` )だけ指定が必須だ。 CPU使用率を使った�
 
 以下が使用例だ。
 
-```
-kubectl scale deploy nginx --replicas=5
+```bash
+kubectl autoscale deploy nginx --max=20 --cpu-percent=80
 ```
 
 ## Cluster Management Commands
 
+クラスタ管理に関するコマンド。
+
 ### certificate    Modify certificate resources.
 
+KubernetesのCSRを管理するコマンドだ。
 
+以下が使用例だ。
 
-### cluster-info   Display cluster info
+サブコマンドで `approve` と `deny` があり、CSRを許可または拒否する。
 
+以下が使用例だ。
 
+```bash
+kubectl certificate approve user-request-01
+```
 
-### top            Display Resource (CPU/Memory/Storage) usage.
+### cluster-info
 
+クラスタの情報を表示する。
 
+`cluster-info` だけを実行するとKubernetesのMasterの接続情報を表示する。
 
-### cordon         Mark node as unschedulable
+また `dump` サブコマンドがあり、クラスタの状態を出力する。 `--all-namespace` オプションを付けてクラスタ全体の状態をdumpすることも可能だ。
 
+以下が使用例だ。
 
+```bash
+kubectl cluster-info
 
-### uncordon       Mark node as schedulable
+kubectl cluster-info dump --all-namespaces --output-directory=path/to/dump
+```
 
+### top
 
+NodeやPodのリソース使用量を表示する。
 
-### drain          Drain node in preparation for maintenance
+このコマンドを使用するにはheapsterというコンポーネントが入っている必要がある。
 
+以下が使用例だ。
 
+```bash
+kubectl top node
 
-### taint          Update the taints on one or more nodes
+kubectl top pod -l app=nginx
+```
 
+### cordon
 
+指定Nodeをスケジュールできないようにする。
+
+このコマンドは [Kubernetes道場 21日目 - Cordon / Drain / PodDisruptionBudgetについて](/posts/2018/k8sdojo-21/) で解説しているので、詳しく知りたい方は参考にしてほしい。
+
+以下が使用例だ。
+
+```bash
+kubectl cordon minikube
+```
+
+### uncordon
+
+指定Nodeをスケジュールできるようにする。
+
+このコマンドは [Kubernetes道場 21日目 - Cordon / Drain / PodDisruptionBudgetについて](/posts/2018/k8sdojo-21/) で解説しているので、詳しく知りたい方は参考にしてほしい。
+
+以下が使用例だ。
+
+```bash
+kubectl uncordon minikube
+```
+
+### drain
+
+Nodeを停止させる前準備としての処理を行う。具体的にはcordonとPodのEvictionを行う。
+
+このコマンドは [Kubernetes道場 21日目 - Cordon / Drain / PodDisruptionBudgetについて](/posts/2018/k8sdojo-21/) で解説しているので、詳しく知りたい方は参考にしてほしい。
+
+以下が使用例だ。
+
+```bash
+kubectl drain --ignore-daemonsets --force minikube
+```
+
+### taint
+
+NodeにTaintを追加する。
+
+このコマンドは [Kubernetes道場 18日目 - Affinity / Anti-Affinity / Taint / Tolerationについて](/posts/2018/k8sdojo-18/) で解説しているので、詳しく知りたい方は参考にしてほしい。
+
+以下が使用例だ。
+
+```bash
+kubectl taint node minikube dedicated=admin:NoSchedule
+```
 
 ## Troubleshooting and Debugging Commands
 
-### describe       Show details of a specific resource or group of resources
+トラブルシューティングとデバッグに関するコマンド。
 
+### describe
 
+指定したリソースの詳細を表示する。
 
-### logs           Print the logs for a container in a pod
+リソースの設定や、状態、イベントの履歴などが表示される。
 
+以下が使用例だ。
 
+```bash
+kubectl describe deploy nginx
+```
 
-### attach         Attach to a running container
+### logs
 
+コンテナのログを表示する。
 
+このコマンドはアプリケーションのデバッグの際に非常に有用なので覚えておくといいだろう。
 
-### exec           Execute a command in a container
+Podに複数のコンテナがある場合は `-c` オプションでコンテナを選択する。
 
+以下が使用例だ。
 
+```bash
+kubectl logs app -c memcached
 
-### port-forward   Forward one or more local ports to a pod
+kubectl logs -f nginx
+```
 
+### attach
 
+Pod内のコンテナにアタッチする。
 
-### proxy          Run a proxy to the Kubernetes API server
+このコマンドはほとんど使うことはないだろう。Dockerのattachコマンドと内容は同じだ。
 
+以下が使用例だ。
 
+```bash
+kubectl attach -it app -c memcached
+```
+
+### exec
+
+Pod内のコンテナでコマンドを実行する。
+
+このコマンドはデバッグの際に非常に有用なので覚えておくといいだろう。
+
+以下が使用例だ。
+
+```bash
+kubectl exec -it nginx bash
+```
+
+### port-forward
+
+Podに対してのポートフォワードを行う。
+
+ローカルで実行するkubectlとPod間でポートフォワードを作成してくれる。
+
+ポートの指定方法は以下の方法がある。
+
+- `8080` : ローカルの8080番とPodの8080番の間で作成
+- `8080:80` : ローカルの8080番とPodの80番の間で作成
+- `:80` : ローカルのランダムなポート番号とPodの8080番の間で作成
+
+以下が使用例だ。
+
+```bash
+kubectl port-forward deploy/nginx 8080:80
+```
+
+### proxy
+
+KubernetesのAPIサーバーへのProxyサーバーとして動作させる。
+
+これのいいところはkubectlで使用してた認証情報を利用してくれるところだ。
+
+これはKubernetesを拡張したい人向けだったりするので、アプリ開発者の方などは特に気にしなくていいと思う。
+
+以下が使用例だ。
+
+```bash
+kubectl proxy --port 8080
+```
 
 ### cp             Copy files and directories to and from containers.
 
