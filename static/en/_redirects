@@ -1,6 +1,8 @@
 # Redirect default Netlify subdomain to primary domain
-https://en.cstoku.me/*               https://en.cstoku.io/:splat 301!
-https://cstoku-blog-en.netlify.com/* https://en.cstoku.io/:splat 301!
+https://en.cstoku.io/*               https://en.cstoku.dev/:splat 301!
+https://en.cstoku.me/*               https://en.cstoku.dev/:splat 301!
+https://cstoku-blog-en.netlify.com/* https://en.cstoku.dev/:splat 301!
 
 # Force HTTPS
-http://en.cstoku.me/*               https://en.cstoku.io/:splat 301!
+http://en.cstoku.io/*               https://en.cstoku.dev/:splat 301!
+http://en.cstoku.me/*               https://en.cstoku.dev/:splat 301!
