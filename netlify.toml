@@ -19,7 +19,7 @@ NODE_ENV = "production"
 [context.staging.environment]
 NODE_ENV = "production"
 
-[context.branch-preview]
+[context.branch-deploy]
 command = """
 yarn &&
 yarn run webpack &&
