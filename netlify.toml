@@ -33,7 +33,7 @@ command = """
 yarn &&
 yarn run webpack &&
 sed -i "s|__BASE_URL__|$DEPLOY_PRIME_URL|" config/deploy-preview/languages.$TARGET_LANG.yaml &&
-sed -i "s|__BASE_URL__||" config/deploy-preview/languages.*.yaml &&
+sed -i "s|__BASE_URL__|/|" config/deploy-preview/languages.*.yaml &&
 hugo --gc -e $CONTEXT &&
 yarn run workbox generateSW workbox-config.ja.js
 yarn run workbox generateSW workbox-config.en.js
