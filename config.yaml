@@ -1,4 +1,4 @@
-baseURL: https://disqus.cstoku.io/
+baseURL: https://disqus.cstoku.dev/
 disableKinds:
   - taxonomy
   - taxonomyTerm
