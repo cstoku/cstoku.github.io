@@ -1,0 +1,108 @@
+#
+# Hugo Parameters
+#
+title: "Toku's Blog"
+
+buildDrafts: true
+buildFuture: true
+buildExpired: true
+
+defaultContentLanguage: ja
+
+enableGitInfo: true
+enableRobotsTXT: true
+enableEmoji: true
+
+metaDataFormat: yaml
+
+paginate: 10
+paginatePath: "page"
+
+pygmentsOptions: "linenos=table"
+pygmentsCodefences: true
+pygmentsUseClasses: true
+
+ignoreFiles: [ "\\.un~$" ]
+
+staticDir: static/global
+
+taxonomies:
+  tag: tags
+
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
+
+imaging:
+  resampleFilter: Lanczos
+  quality: 85
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Post"
+      url: "/posts/"
+      weight: 2
+    - name: "Slide"
+      url: "/slides/"
+      weight: 3
+    - name: "Tags"
+      url: "/tags/"
+      weight: 3
+    - name: "About"
+      url: "/about/"
+      weight: 4
+    - name: "RSS Feed"
+      url: "/index.xml"
+      weight: 10
+      identifier: feed
+
+#
+# Markdown Processer(Blackfriday) Options
+#
+blackfriday:
+  taskList: true
+  smartypants: true
+  smartypantsQuotesNBSP: false
+  angledQuotes: true
+  fractions: false
+  smartDashes: true
+  latexDashes: true
+  hrefTargetBlank: false
+  plainIDAnchors: true
+  extensions: []
+  extensionmask: []
+
+#
+# Output Formats
+#
+mediaTypes:
+  application/atom+xml:
+    suffixes: ["xml"]
+
+outputFormats:
+  ATOM:
+    name: atom
+    mediaType: application/atom+xml
+    isHTML: false
+    isPlainText: true
+    noUgly: true
+  MF:
+    name: mf
+    baseName: manifest
+    rel: manifest
+    mediaType: application/json
+    isHTML: false
+    isPlainText: true
+    noUgly: true
+
+outputs:
+  home: ["HTML", "ATOM", "MF"]
+  page: ["HTML"]
+  section: ["HTML"]
+  taxonomyTerm: ["HTML"]
+  taxonomy: ["HTML"]
+
