@@ -8,7 +8,6 @@ buildFuture: false
 buildExpired: false
 
 defaultContentLanguage: ja
-defaultContentLanguageInSubdir: true
 
 enableGitInfo: true
 enableRobotsTXT: true

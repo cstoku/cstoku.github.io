@@ -5,7 +5,7 @@ ID = "cstoku-blog"
 command = """
 yarn &&
 yarn run webpack &&
-hugo --gc -e $CONTEXT -b $URL &&
+hugo --gc &&
 yarn run workbox generateSW workbox-config.ja.js
 yarn run workbox generateSW workbox-config.en.js
 """
@@ -19,11 +19,21 @@ NODE_ENV = "production"
 [context.staging.environment]
 NODE_ENV = "production"
 
+[context.branch-preview]
+command = """
+yarn &&
+yarn run webpack &&
+hugo --gc -e $BRANCH &&
+yarn run workbox generateSW workbox-config.ja.js
+yarn run workbox generateSW workbox-config.en.js
+"""
+
 [context.deploy-preview]
 command = """
 yarn &&
 yarn run webpack &&
-hugo --gc -e $CONTEXT -b $DEPLOY_PRIME_URL &&
+sed -i "s|__BASE_URL__|$DEPLOY_PRIME_URL|" config/deploy-preview/languages.$TARGET_LANG.yaml &&
+hugo --gc -e $CONTEXT &&
 yarn run workbox generateSW workbox-config.ja.js
 yarn run workbox generateSW workbox-config.en.js
 """
