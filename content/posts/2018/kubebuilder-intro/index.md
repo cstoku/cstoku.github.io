@@ -95,7 +95,7 @@ cd $GOPATH/src/github.com/cstoku/kubebuilder-test-controller
 - `--owner` : このソフトウェアのオーナーを指定。Copyrightに差し込んでくれる
 
 ```sh
-kubebuilder init --domain cstoku.io --license apache2 --owner cstoku
+kubebuilder init --domain cstoku.dev --license apache2 --owner cstoku
 ```
 
 途中 `dep ensure` 実行するけどいい？と聞いてくるので `y` を選択して実行させよう。
@@ -211,7 +211,7 @@ $ make install
  CRD manifests generated under '/home/cs_toku/go/src/github.com/cstoku/kubebuilder-test-controller/config/crds'
  RBAC manifests generated under '/home/cs_toku/go/src/github.com/cstoku/kubebuilder-test-controller/config/rbac'
  kubectl apply -f config/crds
- customresourcedefinition.apiextensions.k8s.io/echofields.trial.cstoku.io created
+ customresourcedefinition.apiextensions.k8s.io/echofields.trial.cstoku.dev created
 ```
 
 ログを見る感じ、 `controller-gen` を実行してCRDを適用したようだ。
@@ -242,7 +242,7 @@ go run ./cmd/manager/main.go
 
 ```plain
 $ kubectl apply -f config/samples/trial_v1alpha1_echofield.yaml
-echofield.trial.cstoku.io/echofield-sample created
+echofield.trial.cstoku.dev/echofield-sample created
 ```
 
 するとコントローラーを実行している方でログが出力されているはずだ。
@@ -497,7 +497,7 @@ go run vendor/sigs.k8s.io/controller-tools/cmd/controller-gen/main.go all
 CRD manifests generated under '/home/cs_toku/go/src/github.com/cstoku/kubebuilder-test-controller/config/crds'
 RBAC manifests generated under '/home/cs_toku/go/src/github.com/cstoku/kubebuilder-test-controller/config/rbac'
 kubectl apply -f config/crds
-customresourcedefinition.apiextensions.k8s.io/echofields.trial.cstoku.io configured
+customresourcedefinition.apiextensions.k8s.io/echofields.trial.cstoku.dev configured
 $ make run
 make run
 go generate ./pkg/... ./cmd/...
@@ -520,7 +520,7 @@ go run ./cmd/manager/main.go
 改めて、 `EchoField` のリソースを作成してみよう。以下のようなManifestを作成した。
 
 ```yaml
-apiVersion: trial.cstoku.io/v1alpha1
+apiVersion: trial.cstoku.dev/v1alpha1
 kind: EchoField
 metadata:
   name: echofield-sample
@@ -532,20 +532,20 @@ spec:
 
 ```plain
 kubectl apply -f echofield.yaml
-echofield.trial.cstoku.io/echofield-sample created
+echofield.trial.cstoku.dev/echofield-sample created
 kubectl get -f echofield.yaml -o yaml
-apiVersion: trial.cstoku.io/v1alpha1
+apiVersion: trial.cstoku.dev/v1alpha1
 kind: EchoField
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"trial.cstoku.io/v1alpha1","kind":"EchoField","metadata":{"annotations":{},"name":"echofield-sample","namespace":"default"},"spec":{"field":"hello!!"}}
+      {"apiVersion":"trial.cstoku.dev/v1alpha1","kind":"EchoField","metadata":{"annotations":{},"name":"echofield-sample","namespace":"default"},"spec":{"field":"hello!!"}}
   creationTimestamp: 2018-12-20T18:25:22Z
   generation: 2
   name: echofield-sample
   namespace: default
   resourceVersion: "371823"
-  selfLink: /apis/trial.cstoku.io/v1alpha1/namespaces/default/echofields/echofield-sample
+  selfLink: /apis/trial.cstoku.dev/v1alpha1/namespaces/default/echofields/echofield-sample
   uid: 9ca1c900-0484-11e9-adf0-dc51cfa8f3cb
 spec:
   field: hello!!
