@@ -14,6 +14,7 @@ https://blog.sce-toku.jp/*          https://cstoku.dev/:splat 301!
 https://sce-toku.jp/*               https://cstoku.dev/:splat 301!
 
 # Force HTTPS
+http://cstoku.dev/*                 https://cstoku.dev/:splat 301!
 http://cstoku.io/*                  https://cstoku.dev/:splat 301!
 http://www.sce-toku.jp/*            https://cstoku.dev/:splat 301!
 http://blog.sce-toku.jp/*           https://cstoku.dev/:splat 301!
