@@ -22,14 +22,13 @@ resources:
 - name: img4
   src: img4.jpg
 
-
 ---
 
 # 参加の経緯
 
 「[HashiCorp Terraform & Vault Enterprise 勉強会 in 金沢](https://connpass.com/event/120462/)」に参加してきた。
 
-Vaultの話が聞ける！！と思ってポチったら金沢だった。っていう落ちなのですが。
+Vaultの話が聞ける！！と思ってポチったら金沢だった。っていう落ちなのだけど。
 
 北陸というか石川県に行ったことなかったし、ついでにウロウロしてこようっていう感じで観光含め行ってきた。
 
