@@ -3,11 +3,12 @@
 #
 title: "Toku's Blog"
 
-buildDrafts: false
-buildFuture: false
-buildExpired: false
+buildDrafts: true
+buildFuture: true
+buildExpired: true
 
 defaultContentLanguage: ja
+defaultContentLanguageInSubdir: true
 
 enableGitInfo: true
 enableRobotsTXT: true
@@ -115,7 +116,6 @@ languages:
     languageCode: ja
     languageName: Japanese
     weight: 1
-    baseURL: https://cstoku.dev
     copyright: © 2016-{year} {name}
     hasCJKLanguage: true
     summaryLength: 120
@@ -144,8 +144,6 @@ languages:
         uid: "131178169"
       youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
       flattr: ""
-      searchConsole: "zQny9DWB2aOiSbSDUHq0cY4xMwaB5ccSyzdvYvU446c"
-      googleAnalytics: UA-71075507-1
       disqusIframeURL: https://disqus.cstoku.dev/
       maxTaxonomyContents: 5
       atomLimit: 15
@@ -159,7 +157,6 @@ languages:
     languageCode: en
     languageName: English
     weight: 2
-    baseURL: https://en.cstoku.dev
     copyright: © 2016-{year} {name}
     hasCJKLanguage: false
     summaryLength: 120
@@ -188,8 +185,6 @@ languages:
         uid: "131178169"
       youtube: "UCqZ86iRrENKkWgjxJqBfVnQ"
       flattr: ""
-      searchConsole: "zQny9DWB2aOiSbSDUHq0cY4xMwaB5ccSyzdvYvU446c"
-      googleAnalytics: UA-71075507-1
       disqusIframeURL: https://disqus.cstoku.dev/
       maxTaxonomyContents: 5
       atomLimit: 15
