@@ -196,7 +196,7 @@ NamespaceはManifestを使用して作成することも出来る。
 
 ```yaml
 apiVersion: v1
-Kind: Namespace
+kind: Namespace
 metadata:
   name: test-ns
 ```
