@@ -1,9 +1,27 @@
-*.un~
+# vim
 *.swp
+*.un~
+
+# Artifacts
 layouts/partials/head/amp/css/
+public/
 static/assets/
 static/en/sw.js
 static/ja/sw.js
-public/
+
+# hugo
+.hugo_build.lock
+hugo_stats.json
+resources/_gen
+
+# node
 node_modules/
-resources/
+
+# yarn zero-installs
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
