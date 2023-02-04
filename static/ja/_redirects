@@ -1,3 +1,4 @@
+#
 # Redirect domain aliases to primary domain
 https://ja.cstoku.dev               https://cstoku.dev 301!
 https://cstoku.io                   https://cstoku.dev 301!

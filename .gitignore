@@ -2,6 +2,8 @@
 *.swp
 layouts/partials/head/amp/css/
 static/assets/
+static/en/sw.js
+static/ja/sw.js
 public/
 node_modules/
 resources/

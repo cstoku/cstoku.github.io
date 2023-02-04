@@ -12,3 +12,6 @@ workLocationRegion:
   other: 東京
 workLocationName:
   other: 日本 東京
+
+noContentMsg:
+  other: 準備中・・・

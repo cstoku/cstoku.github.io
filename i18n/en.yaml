@@ -12,3 +12,6 @@ workLocationRegion:
   other: Tokyo
 workLocationName:
   other: Tokyo, Japan
+
+noContentMsg:
+  other: Sorry, Under Construction...
