@@ -1,7 +1,7 @@
 version: '3'
 services:
   webpack:
-    image: node
+    image: node:19.6.0-alpine
     command:
       - /bin/sh
       - -c
@@ -15,7 +15,7 @@ services:
     build:
       context: .
       args:
-        HUGO_VERSION: 0.52
+        HUGO_VERSION: 0.110.0
     command:
       - hugo
       - server
