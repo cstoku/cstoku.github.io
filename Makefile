@@ -1,15 +1,43 @@
-all: webpack static/ja/sw.js static/en/sw.js
-	hugo
+ENV = production
 
-webpack: node_modules
-	yarn run webpack
+SW := public/sw
+CSS := layouts/partials/head/amp/css
 
-static/ja/sw.js: workbox-config.ja.js node_modules
-	yarn run workbox generateSW workbox-config.ja.js
+ifeq ($(ENV),development)
+	MODE := development
+else
+	MODE := production
+endif
+export NODE_ENV := $(MODE)
 
-static/en/sw.js: workbox-config.en.js node_modules
-	yarn run workbox generateSW workbox-config.en.js
+all: $(SW)
 
-node_modules: package.json yarn.lock
-	yarn
-	touch node_modules
+.PHONY: hugo
+hugo: public
+
+.PHONY: webpack
+webpack: $(CSS)
+
+.PHONY: clean
+clean:
+	rm -rf public resources/_gen $(CSS)
+
+.PHONY: cleanall
+cleanall: clean
+	rm -rf node_modules
+
+$(SW): public workbox-config.js
+	@yarn run workbox generateSW workbox-config.js
+	@touch $@
+
+public: $(CSS)
+	@hugo -e $(ENV)
+	@touch $@
+
+$(CSS): node_modules
+	@yarn run webpack --mode=$(MODE)
+	@touch $@
+
+node_modules: package.json
+	@yarn
+	@touch $@

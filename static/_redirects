@@ -1,0 +1,10 @@
+# Redirect domain aliases to primary domain
+# Force HTTPS
+http://cstoku.dev/*                 https://cstoku.dev/:splat 301!
+
+# Redirect for old articles
+/blog/:year/:month/:date/:slug/     /posts/:year/:slug/     301!
+
+# EN
+# Redirect default Netlify subdomain to primary domain
+http://en.cstoku.dev/*                   https://en.cstoku.dev/:splat 301!

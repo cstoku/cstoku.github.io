@@ -1,14 +1,13 @@
-import * as webpack from 'webpack'
 import * as path from 'path'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 
-const env = process.env.NODE_ENV
+const mode = process.env.NODE_ENV || 'production'
 const DIST_DIR = path.resolve(__dirname, 'layouts/partials/head/amp/css')
 
 module.exports = {
-  mode: 'development',
+  mode: mode,
   entry: {
     style: './src/pcss/style.amp.pcss',
     hybrid: './src/css/hybrid.css',
@@ -28,7 +27,7 @@ module.exports = {
             options: {
               importLoaders: 1,
               url: false,
-              sourceMap: env !== 'production',
+              sourceMap: mode !== 'production',
             }
           },
           {
@@ -36,7 +35,7 @@ module.exports = {
             options: {
               postcssOptions: {
                 plugins: [
-                  ['postcss-import', {addDependencyTo: webpack}],
+                  'postcss-import',
                   ['postcss-url', {url: 'inline'}],
                   ['postcss-preset-env', {stage: 0}],
                   'postcss-browser-reporter',
@@ -45,7 +44,7 @@ module.exports = {
                   //require('stylelint')(),
                 ],
               },
-              sourceMap: env !== 'production'
+              sourceMap: mode !== 'production'
             }
           }
         ]
@@ -53,7 +52,7 @@ module.exports = {
     ],
   },
 optimization: {
-  minimizer: env === 'production' ? [new CssMinimizerPlugin()] : []
+  minimizer: mode === 'production' ? [new CssMinimizerPlugin()] : []
 },
   plugins: [
     new RemoveEmptyScriptsPlugin({}),

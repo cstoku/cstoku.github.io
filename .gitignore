@@ -6,8 +6,6 @@
 layouts/partials/head/amp/css/
 public/
 static/assets/
-static/en/sw.js
-static/ja/sw.js
 
 # hugo
 .hugo_build.lock

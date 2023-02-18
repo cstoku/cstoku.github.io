@@ -38,8 +38,8 @@
     {{ partial "googleanalytics.html" . }}
     {{- end }}
     <amp-install-serviceworker
-        src="{{ absURL "/sw.js" }}"
-        data-iframe-src="{{ absURL "/isw.html" }}"
+        src="{{ absURL "/sw/sw.js" }}"
+        data-iframe-src="{{ absURL "/sw/sw.html" }}"
         layout="nodisplay">
     </amp-install-serviceworker>
     <script type="application/ld+json">
